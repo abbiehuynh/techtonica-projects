@@ -1,3 +1,10 @@
 body {
   background-color: #82b27c;
 }
+
+div h1, h2 {
+  background-color: #82b27c;
+  color: rgb(248, 241, 205);
+  font-family: "Archivo Black", sans-serif;
+}
+
