@@ -11,3 +11,8 @@ div h1, h2 {
 .description {
   width: 600px;
 }
+
+.left {
+  float: left;
+  width: 600px;
+}
