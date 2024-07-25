@@ -4,6 +4,7 @@ body {
 
 h1, h2 {
   font-family: "Fraunces", serif;
+  
 }
 
 div {
@@ -13,14 +14,23 @@ div {
   font-style: normal;
 }
 
+ul.ingredients {
+  list-style-type: none;
+}
+
+
 #recipeHeader {
-  margin-left: 450px;
+  border: 5px solid #b3d9ae;
+  margin-left: 400px;
+  text-align: center;
 }
 
 .description {
+  border: 5px solid #b3d9ae;
   width: 800px;
   text-align: center;
-  margin-left: 300px;
+  padding: 10px;
+  margin: 10px 250px 10px;
 }
 
 img {
