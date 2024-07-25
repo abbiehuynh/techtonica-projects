@@ -1,10 +1,11 @@
 body {
-  background-color: #82b27c;
+  background-color: ##b3d9ae;
 }
 
 h1, h2 {
   font-family: "Fraunces", serif;
-  
+  text-align: center;
+  color: #EDEFE9;
 }
 
 div {
@@ -14,40 +15,57 @@ div {
   font-style: normal;
 }
 
-ul.ingredients {
-  list-style-type: none;
+#recipeHeader {
+  text-align: center;
 }
 
-
-#recipeHeader {
+ol.instructions {
+  width: 550px;
   border: 5px solid #b3d9ae;
-  margin-left: 400px;
-  text-align: center;
+  border-radius: 20px;
+  background-Color: #b3d9ae;
+  padding: 30px;
+}
+
+/* removes bullet points on ul */
+ul.ingredients {
+  list-style-type: none;
+  border: 5px solid #b3d9ae;
+  border-radius: 20px;
+  background-Color: #b3d9ae;
+  padding: 10px;
 }
 
 .description {
+  margin: auto;
+  width: 75%;
   border: 5px solid #b3d9ae;
-  width: 800px;
+  border-radius: 20px;
+  background-Color: #b3d9ae;
   text-align: center;
   padding: 10px;
-  margin: 10px 250px 10px;
 }
 
 img {
   border-radius: 60px;
-  padding: 20px;
+  height: 500px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
 }
 
 .left {
-  width: 600px;
+  width: 45%;
   float: left;
   margin-top: 30px;
+  margin-left: 20px;
   padding: 30px;
 }
 
 .right {
-  width: 600px;
+  width: 50%;
   float: left;
-  margin-left: 30px;
+  margin: 20px;
   padding: 20px;
 }

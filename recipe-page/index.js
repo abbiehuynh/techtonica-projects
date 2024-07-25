@@ -29,7 +29,7 @@ function changeBackgroundColor(color) {
     document.body.style.background = color;
     document.getElementById("img").style.background = color;
 }
-window.addEventListener("load",function(){ changeBackgroundColor("#b3d9ae")});
+window.addEventListener("load",function(){ changeBackgroundColor("#82b27c")});
 
 // b3d9ae
 
@@ -37,11 +37,11 @@ window.addEventListener("load",function(){ changeBackgroundColor("#b3d9ae")});
 function changeMargin(margin) {
     document.getElementById("recipeHeader").style.margin = margin;
 }
-window.addEventListener("load", function(){ changeMargin("10px 400px") });
+window.addEventListener("load", function(){ changeMargin("20px 10px 10px") });
 
 
 // change padding of elements
-document.getElementById("recipeHeader").style.padding = "10px 10px 10px 10px";
+document.getElementById("recipeHeader").style.padding = "10px";
 
 // creates rounded border radius 
 function roundCorners(round) {
