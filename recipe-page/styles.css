@@ -38,7 +38,7 @@ ul.ingredients {
 
 .description {
   margin: auto;
-  width: 75%;
+  width: 600px;
   border: 5px solid #b3d9ae;
   border-radius: 20px;
   background-Color: #b3d9ae;
@@ -56,7 +56,7 @@ img {
 }
 
 .left {
-  width: 45%;
+  width: 600px;
   float: left;
   margin-top: 30px;
   margin-left: 20px;
@@ -64,7 +64,7 @@ img {
 }
 
 .right {
-  width: 50%;
+  width: 600px;
   float: left;
   margin: 20px;
   padding: 20px;
