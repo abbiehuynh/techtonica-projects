@@ -37,7 +37,7 @@ window.addEventListener("load",function(){ changeBackgroundColor("#82b27c")});
 function changeMargin(margin) {
     document.getElementById("recipeHeader").style.margin = margin;
 }
-window.addEventListener("load", function(){ changeMargin("20px 10px 10px") });
+window.addEventListener("load", function(){ changeMargin("70px 10px 10px") });
 
 
 // change padding of elements

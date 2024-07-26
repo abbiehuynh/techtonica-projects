@@ -1,11 +1,12 @@
 body {
-  background-color: ##b3d9ae;
+  background-color: #b3d9ae;
 }
 
 h1, h2 {
   font-family: "Fraunces", serif;
   text-align: center;
   color: #EDEFE9;
+  padding: 10px;
 }
 
 div {
@@ -20,7 +21,7 @@ div {
 }
 
 ol.instructions {
-  width: 550px;
+  width: auto;
   border: 5px solid #b3d9ae;
   border-radius: 20px;
   background-Color: #b3d9ae;
