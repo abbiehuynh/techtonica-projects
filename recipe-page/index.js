@@ -45,18 +45,18 @@ window.addEventListener("load", function(){ changeMargin("70px 10px 10px") });
 
 // adds checkboxes to ingredients list
 let ingredientsList = document.getElementById("ingredientsList");
-let listItems = Array.from(ingredientsList.getElementsByTagName("li"));
+let listItemsArr = Array.from(ingredientsList.getElementsByTagName("li"));
 
-listItems.forEach(item => {
+listItemsArr.forEach(item => {
   let text = item.innerText;
-  item.innerHTML = `<input type='checkbox' class= "checkbox" onclick="strikeThrough(this)" value='${text}'> ${text}</input>`;
+  item.innerHTML = `<input type='checkbox' class="checkbox" onclick="strikeThrough(this)" value='${text}'> ${text}</input>`;
 });
 
 // adds strikethrough to checkboxes when clicked
 let checkbox = document.getElementsByClassName("checkbox");
 
-// this is striking through all item, how to say just stike the item at 
-// the same position? [i]
+//this is striking through all item, how to say just stike the item at 
+//the same position? [i]
 function strikeThrough(checkbox) {
     if (checkbox.checked) {
         ingredientsList.style.textDecoration = "line-through";
@@ -65,6 +65,15 @@ function strikeThrough(checkbox) {
     }   
 };
 
+// let item = event.currentTarget;
+//     item.style.textDecoration = "line-through";
+       
+
+// ingredientsList.style.textDecoration = "line-through";
+// } else {
+//     ingredientsList.style.textDecoration = "none";
+// }   
+// console.log(strikeThrough(e));
 
 // please ignore below
 // checkbox.addEventListener("change", function() {
@@ -93,7 +102,11 @@ function strikeThrough(checkbox) {
 
 // let label = document.createElement("label");
 // label.htmlFor = "id";
-// label.appendChild(document.createTextNode("label"));
 
+// let ingredientsClass = ingredientsList.querySelectorAll(".ingredients");
+// let ingredients = ingredientsClass.children;
+// // label.appendChild(listItems);
+// console.log(ingredients);
+// ingredientsDiv.appendChild("label");
 // ingredientsList.appendchild(checkbox);
 // ingredientsList.appendChild(label);
