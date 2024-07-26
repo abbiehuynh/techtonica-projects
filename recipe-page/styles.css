@@ -58,7 +58,6 @@ img {
 
 .left {
   width: 600px;
-  float: left;
   margin-top: 30px;
   margin-left: 20px;
   padding: 30px;
@@ -66,7 +65,14 @@ img {
 
 .right {
   width: 600px;
-  float: left;
   margin: 20px;
   padding: 20px;
+}
+
+#congratulations {
+  text-align: center;
+}
+
+.otherRecipes {
+  text-align: center;
 }
