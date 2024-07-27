@@ -105,6 +105,7 @@ img {
 @media screen and (max-width: 550px) {
   .description {
     width: 450px;
+    margin-left: 40px;
   }
 }
 

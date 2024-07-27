@@ -18,6 +18,7 @@ function clickMeTwo() {
 }
 */ 
 
+// ---WHEN PAGE LOADS---
 // changes background color of page when page loads
 function changeBackgroundColor(color) {
     document.body.style.background = color;
@@ -43,27 +44,50 @@ window.addEventListener("load", function(){ changeMargin("70px 10px 10px") });
 // window.addEventListener("load", function(){ roundCorners("25px") });
 // label - ingredient, label text innerHTML
 
-// adds checkboxes to ingredients list
-let ingredientsList = document.getElementById("ingredientsList");
-let listItemsArr = Array.from(ingredientsList.getElementsByTagName("li"));
+// Ingredients List
+let ingredientsList = [
+    "1 lb. dried elbow pasta",
+    "1/2 cup unsalted butter",
+    "1/2 cup all purpose flour",
+    "1 1/2 cups whole milk",
+    "2 1/2 cups half and half",
+    "4 cups shredded medium cheddar cheese divided (after shredding)",
+    "2 cups shredded Gruyere cheese divided (after shredding)",
+    "1/2 Tbsp. salt",
+    "1/2 tsp. black pepper",
+   " 1/4 tsp. paprika"
+];
 
-listItemsArr.forEach(item => {
-  let text = item.innerText;
-  item.innerHTML = `<input type='checkbox' class="checkbox" onclick="strikeThrough(this)" value='${text}'> ${text}</input>`;
+let ingredientsListDiv = document.getElementById("ingredientsListDiv");
+
+// create list, checkbox, and label 
+ingredientsList.forEach(item => {
+    let list = document.createElement("ul");
+
+    let checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.name = "name";
+        checkbox.value = "value";
+        checkbox.id = item;
+
+    let label = document.createElement("label");
+    label.htmlFor = item;
+
+    label.appendChild(document.createTextNode(item));
+    list.appendChild(checkbox);
+    list.appendChild(label);
+    ingredientsListDiv.appendChild(list);
+
 });
 
-// adds strikethrough to checkboxes when clicked
-let checkbox = document.getElementsByClassName("checkbox");
-
-//this is striking through all item, how to say just stike the item at 
-//the same position? [i]
-function strikeThrough(checkbox) {
-    if (checkbox.checked) {
-        ingredientsList.style.textDecoration = "line-through";
-    } else {
-        ingredientsList.style.textDecoration = "none";
-    }   
-};
+// create strikeThrough when checkbox is clicked
+// function strikeThrough()) {
+//     if (checkbox.checked) {
+//         ingredientsList.style.textDecoration = "line-through";
+//     } else {
+//         ingredientsList.style.textDecoration = "none";
+//     }   
+// };
 
 // let item = event.currentTarget;
 //     item.style.textDecoration = "line-through";
@@ -95,10 +119,6 @@ function strikeThrough(checkbox) {
 //     }
 // };
 // checkbox.addEventListener("change",
-// checkbox.type = "checkbox";
-// checkbox.name = "name";
-// checkbox.value = "value";
-// checkbox.id = "id";
 
 // let label = document.createElement("label");
 // label.htmlFor = "id";
