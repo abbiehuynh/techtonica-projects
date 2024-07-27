@@ -1,6 +1,6 @@
 
 // ---INGREDIENTS---
-// Ingredients List
+// creating array of ingredients
 let ingredientsList = [
     "1 lb. dried elbow pasta",
     "1/2 cup unsalted butter",
@@ -14,38 +14,50 @@ let ingredientsList = [
    " 1/4 tsp. paprika"
 ];
 
+// creating variable for div of ingredients list
 let ingredientsListDiv = document.getElementById("ingredientsListDiv");
 
-// create list, checkbox, and label 
+// iteriating through each ingredient
 ingredientsList.forEach(item => {
+    // creating unordered list 
     let list = document.createElement("ul");
-
+    
+    // creating checkbox element
     let checkbox = document.createElement("input");
+        // assigning attributes to created checkbox
         checkbox.type = "checkbox";
         checkbox.name = "name";
         checkbox.value = "value";
         checkbox.id = item;
-
+    
+    // creating label for checkbox
     let label = document.createElement("label");
+    // assigning attribute for created label tag
     label.htmlFor = item;
 
-    // appending 
+    // appending created text to created label tag
     label.appendChild(document.createTextNode(item));
+    // appending checkbox and label to div - unordered list
     list.appendChild(checkbox);
     list.appendChild(label);
+    // appending unordered list to div - ingredients list
     ingredientsListDiv.appendChild(list);
 
-    // styling 
+    // ---STYLING--- 
+    // creates space between checkbox and text (ingredient item)
     checkbox.style.marginRight = "20px";
-
+    
+    // styles ingredients list
     list.style.fontFamily = "'Poppins', sans-serif";
     list.style.fontSize = "1.4em";
-    
+
+    // styles ingredients list div
     ingredientsListDiv.style.margin = "20px";
     ingredientsListDiv.style.padding = "30px 25px 10px";
     ingredientsListDiv.style.borderRadius = "40px";
     ingredientsListDiv.style.backgroundColor = "#b3d9ae";
 
+    // ---STRIKETHROUGH---
     // strikethrough ingredient when checkbox is clicked
     checkbox.addEventListener("click", strikeThrough);
     function strikeThrough() {
@@ -58,6 +70,7 @@ ingredientsList.forEach(item => {
 
 });
 
+// ---OTHER DOM MANIPULATION---
 // Adds statement after "congratulations...
 let enjoy = document.getElementById("congratulations");
 let enjoyText = document.createTextNode(" Enjoy your yummy baked mac and cheese!");
