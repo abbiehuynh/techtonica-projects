@@ -1,5 +1,4 @@
 
-
 // ---INGREDIENTS---
 // Ingredients List
 let ingredientsList = [
@@ -58,3 +57,37 @@ ingredientsList.forEach(item => {
     };
 
 });
+
+// Adds statement after "congratulations...
+let enjoy = document.getElementById("congratulations");
+let enjoyText = document.createTextNode(" Enjoy your yummy baked mac and cheese!");
+enjoy.appendChild(enjoyText);
+
+// ---WHEN PAGE LOADS---
+// changes background color of page when page loads
+function changeBackgroundColor(color) {
+    document.body.style.background = color;
+    document.getElementById("img").style.background = color;
+}
+window.addEventListener("load",function(){ changeBackgroundColor("#82b27c")});
+
+// changes margin or recipeHeader
+function changeMargin(margin) {
+    document.getElementById("recipeHeader").style.margin = margin;
+}
+window.addEventListener("load", function(){ changeMargin("70px 10px 10px") });
+
+/* for funsies
+// button: changes background color
+function backgroundColor(){
+    document.body.style.backgroundColor = "white";
+}
+// button "cool"
+function clickMe() {
+    document.getElementById("cool").innerHTML = "You're so cool!";
+}
+// button "cohort"
+function clickMeTwo() {
+    document.getElementById("cohort").innerHTML = "We're going to get through this together!";
+}
+*/ 
