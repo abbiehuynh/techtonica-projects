@@ -32,18 +32,7 @@ function changeMargin(margin) {
 }
 window.addEventListener("load", function(){ changeMargin("70px 10px 10px") });
 
-// change padding of elements
-// document.getElementById("recipeHeader").style.padding = "10px";
-
-// creates rounded border radius 
-// function roundCorners(round) {
-//     document.getElementById("recipeHeader").style.borderRadius = round;
-//     // come back to this
-//     // document.querySelectorAll("description").style.borderRadius = round;
-// }
-// window.addEventListener("load", function(){ roundCorners("25px") });
-// label - ingredient, label text innerHTML
-
+// ---INGREDIENTS---
 // Ingredients List
 let ingredientsList = [
     "1 lb. dried elbow pasta",
@@ -78,8 +67,18 @@ ingredientsList.forEach(item => {
     list.appendChild(label);
     ingredientsListDiv.appendChild(list);
 
+    // styling 
+    list.style.fontFamily = "'Poppins', sans-serif";
+    list.style.fontSize = "1.5em";
+    
+    ingredientsListDiv.style.margin = "20px";
+    ingredientsListDiv.style.padding = "30px 25px 10px";
+    ingredientsListDiv.style.borderRadius = "40px";
+    ingredientsListDiv.style.backgroundColor = "#b3d9ae";
+
 });
 
+// ---STRIKETHROUGH TEXT---
 // create strikeThrough when checkbox is clicked
 // function strikeThrough()) {
 //     if (checkbox.checked) {
@@ -119,14 +118,3 @@ ingredientsList.forEach(item => {
 //     }
 // };
 // checkbox.addEventListener("change",
-
-// let label = document.createElement("label");
-// label.htmlFor = "id";
-
-// let ingredientsClass = ingredientsList.querySelectorAll(".ingredients");
-// let ingredients = ingredientsClass.children;
-// // label.appendChild(listItems);
-// console.log(ingredients);
-// ingredientsDiv.appendChild("label");
-// ingredientsList.appendchild(checkbox);
-// ingredientsList.appendChild(label);
