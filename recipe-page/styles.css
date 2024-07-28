@@ -35,7 +35,7 @@ div {
 ol.instructions {
   width: auto;
   border: 5px solid #b3d9ae;
-  border-radius: 20px;
+  border-radius: 40px;
   background-Color: #b3d9ae;
   padding: 50px;
 }
@@ -48,23 +48,27 @@ ol.instructions {
   margin: auto;
   width: 600px;
   border: 5px solid #b3d9ae;
-  border-radius: 20px;
+  border-radius: 40px;
   background-Color: #b3d9ae;
   text-align: center;
   padding: 10px;
 }
 
 img {
-  border-radius: 60px;
+  border-radius: 40px;
   height: 500px;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  padding: 10px;
+  box-shadow: 20px 20px 5px #6b8668;
 }
 
 #img {
   text-align: center;
+}
+
+.credit {
+  margin-top: 30px;
 }
 
 .left {
@@ -83,15 +87,27 @@ img {
 .step:hover {
   color:#82a07e;
   background-color: #EDEFE9;
+  padding: 6px;
+  border-radius: 35px;
 }
 
 .ing:hover {
   color:#EDEFE9;
-  background-color:#82a07e
+  background-color:#82a07e;
+  padding: 4px;
+  border-radius: 20px;
 }
 
 #congratulations {
+  font-size: 1.4em;
   text-align: center;
+}
+
+#congratulations:hover {
+  color:#EDEFE9;
+  background-color: #4f684c;
+  padding: 10px;
+  border-radius: 40px;
 }
 
 .otherRecipes {
