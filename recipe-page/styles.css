@@ -11,6 +11,15 @@ h1, h2 {
   padding: 10px;
 }
 
+h3 {
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+  font-size: 2em;
+  text-align: center;
+  text-decoration: underline;
+  color: #EDEFE9;
+  padding: 10px;
+}
 
 div {
   background-color: #82b27c;
