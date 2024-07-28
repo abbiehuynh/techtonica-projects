@@ -1,5 +1,5 @@
 body {
-  background-color: #b3d9ae;
+  background-color: #82a07e;
 }
 
 h1, h2 {
@@ -80,6 +80,16 @@ img {
   padding: 20px;
 }
 
+.step:hover {
+  color:#82a07e;
+  background-color: #EDEFE9;
+}
+
+.ing:hover {
+  color:#EDEFE9;
+  background-color:#82a07e
+}
+
 #congratulations {
   text-align: center;
 }
@@ -87,6 +97,7 @@ img {
 .otherRecipes {
   text-align: center;
 }
+
 
 /* media queries */
 /* phones */
