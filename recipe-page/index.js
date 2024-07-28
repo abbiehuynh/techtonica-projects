@@ -7,11 +7,11 @@ let ingredientsList = [
     "1/2 cup all purpose flour",
     "1 1/2 cups whole milk",
     "2 1/2 cups half and half",
-    "4 cups shredded medium cheddar cheese divided (after shredding)",
-    "2 cups shredded Gruyere cheese divided (after shredding)",
+    "4 cups shredded medium cheddar cheese divided",
+    "2 cups shredded Gruyere cheese divided",
     "1/2 Tbsp. salt",
     "1/2 tsp. black pepper",
-   " 1/4 tsp. paprika"
+    "1/4 tsp. paprika"
 ];
 
 // creating variable for div of ingredients list
@@ -49,7 +49,8 @@ ingredientsList.forEach(item => {
     
     // styles ingredients list
     list.style.fontFamily = "'Poppins', sans-serif";
-    list.style.fontSize = "1.4em";
+    list.style.fontSize = "1.5em";
+    list.style.position = "inside";
 
     // styles ingredients list div
     ingredientsListDiv.style.margin = "20px";
