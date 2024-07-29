@@ -1,17 +1,25 @@
 .container {
    display:grid;
    grid-template-columns: repeat(12, 1fr);
+   grid-template-rows: 40px 100px 40px;
 }
 
 .header {
+    grid-row: 1;
     grid-column: span 12;
-  }
-  .navigation-menu {
+}
+  
+.navigation-menu {
+    grid-row: 1;
     grid-column: span 4;
-  }
-  .main-content {
+}
+  
+.main-content {
+    grid-row: 2;
     grid-column: span 8;
-  }
-  .footer {
+}
+  
+.footer {
+    grid-row: 3;
     grid-column: span 12;
-  }
+}
