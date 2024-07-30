@@ -49,7 +49,7 @@ nav ul li a:hover {
 
 .container {
    display: grid;
-   grid-template-columns: repeat(3, 1fr);
+   grid-template-columns: 1;
    grid-gap: 1em;
    padding: 40px;
 }
@@ -85,6 +85,7 @@ nav ul li a:hover {
     padding: 10px 40px 5px 60px;
     background-color: #e8b536;
     height: 550px;
+    margin: 100px 500px;
 }
 
 .greeting-img {
