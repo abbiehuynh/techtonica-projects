@@ -118,11 +118,39 @@ div p {
 .name-and-description {
     grid-row: 3;
 }
+
 .main-content {
-    grid-row: 3;
+    grid-row: 4;
 }
   
+form {
+    border: 2px solid #776958;
+    border-radius: 40px;
+    background-color: #758651;
+    padding: 20px;
+    width: 600px;
+    justify-content: center;
+    justify-self: center;
+    margin: 20px 300px;
+}
+
+form p {
+    text-align: center;
+    background-color: #758651;
+}
+
+input {
+    display: grid;
+    justify-content: center;
+}
+
+#button {
+    display: block;
+    justify-content: center;
+}
+
+
 .footer {
-    grid-row: 4;
+    grid-row: 5;
     grid-column: span 12;
 }
