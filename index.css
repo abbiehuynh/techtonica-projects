@@ -2,6 +2,8 @@
 * {
     box-sizing: border-box;
     background-color: #b6c369;
+    margin: 0;
+    padding: 0;
 }
 
 nav {
@@ -48,12 +50,19 @@ nav ul li:hover {
    grid-gap: 1em;
 }
 
-.header {
+#welcome {
+    width: 100%;
+    background-color: #f1e2d0;
+}
+
+.container-header {
     grid-row: 1;
     grid-column: span 12;
     text-align: center;
+    padding: 10px;
+    background-color: #f1e2d0;
 }
-  
+
 #profile-pic {
     width: 500px;
     border-radius: 30px;
