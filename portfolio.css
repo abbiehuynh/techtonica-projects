@@ -50,16 +50,15 @@ nav ul li a:hover {
 
 .container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1em;
     padding: 40px;
+    width: 100%;
  }
- 
+
  #welcome {
      width: 100%;
      background-color: #f1e2d0;
  }
- 
+
 .name {
     padding: 20px;
     margin-left: 60px;
@@ -96,7 +95,7 @@ nav ul li a:hover {
     .tech-exp-text {
         margin-left: 20px;
         font-weight: 100;
-    } 
+    }
     #apprentice {
         text-decoration: none;
     }
