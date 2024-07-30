@@ -8,7 +8,7 @@
 
 nav {
     background-color: #f1e2d0;
-    
+    width: 100%;
 }
 
 nav ul {
@@ -21,6 +21,7 @@ nav ul {
     list-style-type: none;
     margin-bottom: 160px;
     background-color: #f1e2d0;
+    padding-bottom: 10px;
 }
 
 nav ul li {
@@ -39,8 +40,11 @@ nav ul li a {
     text-decoration: none;
 }
 
-nav ul li:hover {
-    background-color: #b3d9ae;
+nav ul li a:hover {
+    color:#f1e2d0;
+    background-color: #e8b536;
+    border-radius: 30px;
+    padding: 8px;
 }
 
 .container {
@@ -75,6 +79,7 @@ nav ul li:hover {
 .greeting {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    justify-self: center;
     border: 2px solid black;
     border-radius: 40px;
     padding: 10px 40px 5px 60px;
