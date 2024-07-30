@@ -19,7 +19,7 @@ nav ul {
     justify-items: end;
     justify-self: start;
     list-style-type: none;
-    margin: 0;
+    margin-bottom: 160px;
     background-color: #f1e2d0;
 }
 
@@ -44,10 +44,10 @@ nav ul li:hover {
 }
 
 .container {
-   display:grid;
-   grid-template-rows: 20% 50px 500px 100px;
-   grid-template-columns: 3fr 1fr;
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
    grid-gap: 1em;
+   padding: 40px;
 }
 
 #welcome {
@@ -67,22 +67,57 @@ nav ul li:hover {
     width: 500px;
     border-radius: 30px;
     display: block;
-    margin-left: 100px;
     padding: 20px 20px 100px 20px;
     background-color: white;
+    border: 2px solid #776958;
 }
 
 .greeting {
-    grid-row: 1;
-    grid-column: span 12;
-    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 2px solid black;
+    border-radius: 40px;
+    padding: 10px 40px 5px 60px;
+    background-color: #e8b536;
+    height: 550px;
 }
 
+.greeting-img {
+    background-color: #e8b536;
+    border-radius: 40px;
+    margin-top: -150px;
+    height: 500px;
+}
+
+.greeting-text {
+    font-family: "Playfair Display", serif;
+    font-size: 3.5em;
+    text-align: left;
+    background-color: #f1e2d0;
+    border: 2px solid #776958;
+    border-radius: 40px;
+    padding: 50px;
+    width: 600px;
+    margin: 120px 50px 200px 50px;
+}
+
+div p {
+    background-color: #f1e2d0;
+}
+
+#i-am {
+    font-family: "Playfair Display", serif;
+    font-size: .6em;
+}
+
+.name-and-description {
+    grid-row: 3;
+}
 .main-content {
-    grid-row: 1;
-    grid-column: span 8;
+    grid-row: 3;
 }
   
 .footer {
+    grid-row: 4;
     grid-column: span 12;
 }
