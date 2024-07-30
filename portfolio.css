@@ -4,6 +4,7 @@
     background-color: #b6c369;
     margin: 0;
     padding: 0;
+    font-family: "Poppins", sans serif;
 }
 
 nav {
@@ -59,6 +60,17 @@ nav ul li a:hover {
      background-color: #f1e2d0;
  }
  
+.name {
+    padding: 20px;
+    margin-left: 60px;
+    text-align: left;
+    h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 3em;
+    }
+}
+
+
  .container-header {
      grid-row: 1;
      grid-column: span 12;
@@ -67,12 +79,33 @@ nav ul li a:hover {
      background-color: #f1e2d0;
  }
 
+ h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 2em;
+}
+
  .resume {
     margin-left: 20px;
     padding: 20px;
+    border-right: 5px #e8b536;
 
     h2 {
         text-decoration: underline;
+        padding: 20px;
+    }
+    .tech-exp-text {
+        margin-left: 20px;
+        font-weight: 100;
+    } 
+    #apprentice {
+        text-decoration: none;
+    }
+    .skills li {
+        margin-left: 20px;
+    }
+    .education-text {
+        margin-left: 20px;
+        font-weight: 100;
     }
  }
 
