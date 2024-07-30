@@ -51,19 +51,29 @@ nav ul li:hover {
 .header {
     grid-row: 1;
     grid-column: span 12;
+    text-align: center;
 }
   
-.navigation-menu {
+#profile-pic {
+    width: 500px;
+    border-radius: 30px;
+    display: block;
+    margin-left: 100px;
+    padding: 20px 20px 100px 20px;
+    background-color: white;
+}
+
+.greeting {
     grid-row: 1;
-    grid-column: span 4;
+    grid-column: span 12;
+    text-align: center;
 }
-  
+
 .main-content {
-    grid-row: 2;
+    grid-row: 1;
     grid-column: span 8;
 }
   
 .footer {
-    grid-row: 3;
     grid-column: span 12;
 }
