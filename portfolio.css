@@ -76,8 +76,6 @@ nav ul li a:hover {
 
 
  .container-header {
-     grid-row: 1;
-     grid-column: span 12;
      text-align: center;
      padding: 10px;
      background-color: #f1e2d0;
@@ -88,8 +86,69 @@ nav ul li a:hover {
     font-size: 4em;
 }
 
- .resume {
+.container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto auto auto;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.name {
+    display: grid;
+    grid-column: 1 / 5;
+    grid-row: 1 / 2;
+    margin-left: 5%;
+}
+
+.resume {
+    display: grid;
+    grid-column: 1 / 2;
+    grid-row: 2 / 5;
     margin-left: 20px;
-    padding: 20px;
+    padding: 40px;
     border-right: 5px #e8b536;
  }
+
+.skills {
+    padding: 20px;
+    margin-left: 40px;
+    background-color: #f1e2d0;
+    border-radius: 40px;
+    h2 {
+        font-size: 3em;
+        margin-left: 5%;
+        background-color: #f1e2d0;
+    }
+}
+
+.skills-list {
+    font-size: 2.5em;
+    margin-left: 10%;
+    background-color: #f1e2d0;
+    li {
+        background-color: #f1e2d0;
+    }
+}
+
+.education {
+    padding: 20px;
+    margin-left: 40px;
+    background-color: #f1e2d0;
+    border-radius: 40px;
+    h2 {
+        font-size: 3em;
+        margin-left: 5%;
+        background-color: #f1e2d0;
+    }
+}
+
+.education-text {
+    font-size: 2.5em;
+    margin-left: 5%;
+    background-color: #f1e2d0;
+    p, strong {
+        background-color: #f1e2d0; 
+    }
+}
+
