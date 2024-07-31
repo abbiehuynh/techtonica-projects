@@ -113,41 +113,53 @@ nav ul li a:hover {
 .skills {
     padding: 20px;
     margin-left: 40px;
-    background-color: #f1e2d0;
+    width: 600px;
     border-radius: 40px;
     h2 {
+        padding: 10px 20px;
         font-size: 3em;
         margin-left: 5%;
-        background-color: #f1e2d0;
+        border-radius: 40px 40px 0px 0px;
+        background-color: #e8b536
     }
 }
 
 .skills-list {
     font-size: 2.5em;
-    margin-left: 10%;
+    margin-left: 5%;
     background-color: #f1e2d0;
+    padding: 20px;
+    width: 530px;
+    border-radius: 0px 0px 40px 40px;
     li {
+        margin-left: 10%;
+        padding: 10px 20px;
         background-color: #f1e2d0;
     }
 }
 
 .education {
     padding: 20px;
-    margin-left: 40px;
-    background-color: #f1e2d0;
+    margin-left: 30px;
+    width: 900px;
     border-radius: 40px;
     h2 {
+        padding: 10px 20px;
         font-size: 3em;
         margin-left: 5%;
-        background-color: #f1e2d0;
+        border-radius: 40px 40px 0px 0px;
+        background-color: #e8b536;
     }
 }
 
 .education-text {
-    font-size: 2.5em;
+    font-size: 2em;
     margin-left: 5%;
     background-color: #f1e2d0;
+    padding: 20px;
+    border-radius: 0px 0px 40px 40px;
     p, strong {
+        padding: 10px 20px;
         background-color: #f1e2d0; 
     }
 }
