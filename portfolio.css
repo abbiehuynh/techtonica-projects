@@ -20,7 +20,7 @@ nav ul {
     justify-items: end;
     justify-self: start;
     list-style-type: none;
-    margin-bottom: 160px;
+    margin-bottom: 20px;
     background-color: #f1e2d0;
     padding-bottom: 10px;
 }
@@ -48,15 +48,17 @@ nav ul li a:hover {
     padding: 8px;
 }
 
-.container {
-    display: grid;
-    padding: 40px;
-    width: 100%;
- }
-
  #welcome {
      width: 100%;
      background-color: #f1e2d0;
+ }
+
+ .container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto auto;
+    padding: 40px;
+    width: 100%;
  }
 
 .name {
@@ -65,7 +67,10 @@ nav ul li a:hover {
     text-align: left;
     h1 {
         font-family: "Playfair Display", serif;
-        font-size: 3em;
+        font-size: 6em;
+    }
+    p {
+        font-size: 2em;
     }
 }
 
@@ -80,35 +85,11 @@ nav ul li a:hover {
 
  h1 {
     font-family: "Playfair Display", serif;
-    font-size: 2em;
+    font-size: 4em;
 }
 
  .resume {
     margin-left: 20px;
     padding: 20px;
     border-right: 5px #e8b536;
-
-    h2 {
-        text-decoration: underline;
-        padding: 20px;
-    }
-    .tech-exp-text {
-        margin-left: 20px;
-        font-weight: 100;
-    }
-    #apprentice {
-        text-decoration: none;
-    }
-    .skills li {
-        margin-left: 20px;
-    }
-    .education-text {
-        margin-left: 20px;
-        font-weight: 100;
-    }
- }
-
- .projects {
-    margin-left: 20px;
-    padding: 20px;
  }
