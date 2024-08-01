@@ -154,7 +154,7 @@ div p {
     border-radius: 40px;
     background-color: #f1e2d0;
     padding: 40px;
-    height: 300px;
+    height: 600px;
     width: 800px;
     justify-self: center;
 }
@@ -175,7 +175,7 @@ label {
     margin-bottom: 0.1em;
 }
 
-input[type="text"], input[type="email"] {
+input[type="text"], input[type="email"], input[type="tel"], textarea[id="message"] {
     width: 50%;
     margin-left: 20%;
     margin-bottom: 0.3em;
@@ -183,6 +183,10 @@ input[type="text"], input[type="email"] {
     border-radius: 40px;
     height: 30px;
     background-color: #e8b536;
+}
+
+textarea[id="message"] {
+    height: 60px;
 }
 
 button[type="submit"] {
