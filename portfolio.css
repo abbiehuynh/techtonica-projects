@@ -61,6 +61,41 @@ nav ul li a:hover {
     width: 100%;
  }
 
+.description {
+    display: grid;
+    grid-column: 2 / 4;
+    grid-row: 1 / 1;
+}
+
+.quote {
+    font-family: "Playfair Display", serif;
+    font-size: 3em;
+    font-style: italic;
+    overflow: hidden;
+    border-right: .1em solid #e8b536;
+    white-space: nowrap;
+    padding: 20px;
+    margin-left: 90px;
+    height: 90px;
+    width: 0;
+    animation: 
+        typing 2s steps(70, end) forwards,
+        blinking .8s infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blinking {
+    from { border-color: transparent }
+    to { border-color: #e8b536 }
+}
+
+
+
+
 .name {
     padding: 20px;
     margin-left: 60px;
