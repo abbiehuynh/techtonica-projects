@@ -128,6 +128,9 @@ div p {
 #i-am {
     font-family: "Playfair Display", serif;
     font-size: .6em;
+    overflow: hidden;
+    width: 0;
+    animation: typing 1s forwards;
 }
 
 .description {
