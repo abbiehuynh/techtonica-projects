@@ -149,7 +149,7 @@ div p {
     width: 800px;
 }
 
-#subscription-form {
+#contact-form {
     border: 2px solid #776958;
     border-radius: 40px;
     background-color: #f1e2d0;
@@ -159,7 +159,7 @@ div p {
     justify-self: center;
 }
 
-.subscribe-text {
+.contact-text {
     font-size: 2em;
     text-align: center;
     background-color: #f1e2d0;
