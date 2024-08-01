@@ -252,3 +252,43 @@ strong {
     margin-top: 5%;
     padding: 40px;
 }
+
+.container-social-media {
+    float: right;
+    a {
+        text-decoration: none;
+        padding: 20px;
+        border: 2px solid #776958;
+        border-radius: 40px;
+        color: #000;
+        background-color: #e8b536;
+        width: 100px;
+    }
+}
+
+div ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50px;
+    column-gap: 20px;
+    padding: 30px;
+    margin-right: 50px;
+    width: 100%;
+    list-style-type: none;
+    li {
+        font-family: "Poppins", sans serif;
+        font-weight: 600;
+        font-size: 1.5em;
+        text-decoration: none;
+        color: #000;
+        width: 90%;
+        text-align: center;
+        line-height: 50px;
+    }
+}
+
+div ul li a:hover {
+    color:#f1e2d0;
+    background-color: #e8b536;
+    cursor: pointer;
+}
