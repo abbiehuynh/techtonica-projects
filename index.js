@@ -1,7 +1,5 @@
 
 
-
-
 // access contact form from html
 document.getElementById("contact-form").addEventListener("submit", 
     
