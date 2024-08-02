@@ -286,7 +286,7 @@ nav ul li a:hover {
     display: grid;
     padding: 20px 30px;
     border-radius: 40px 40px 40px 40px;
-    background-color: #e8b536;
+    background-color: #ffe27c;
     margin-top: 20px;
 
     .project-img {
@@ -303,5 +303,6 @@ nav ul li a:hover {
 .projects {
     h2 {
         background-color:#ffe27c !important;
+
     }
 }
