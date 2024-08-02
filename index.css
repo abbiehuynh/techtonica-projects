@@ -314,3 +314,24 @@ nav ul {
     margin-bottom: 40px !important;
 }
 
+/* ipad */
+
+@media screen and (max-width: 2050px) {
+    body {
+        background-color: #b6c268;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    body {
+        background-color: #758652;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    body {
+        background-color: #ffe27c;
+    }
+}
+
+
