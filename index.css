@@ -307,3 +307,7 @@ div ul li a:hover {
     background-color: #e8b536;
     cursor: pointer;
 }
+
+nav ul {
+    margin-bottom: 40px !important;
+}
