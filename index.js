@@ -13,7 +13,6 @@ contactHere.addEventListener("mouseenter", (event) => {
     contactHere.classList.toggle("hover-effect");
   });
 
-
 // access contact form from html
 document.getElementById("contact-form").addEventListener("submit", 
 
@@ -28,7 +27,7 @@ function(event) {
     let phone = document.getElementById("phone").value;
     let address = document.getElementById("address").value;
     let message = document.getElementById("message").value;
-    
+
     //checks for valid patterns using regex
     let checkName = /^[a-zA-Z ]{2,30}$/;
     let checkEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
