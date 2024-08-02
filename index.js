@@ -13,12 +13,6 @@ contactHere.addEventListener("mouseenter", (event) => {
     contactHere.classList.toggle("hover-effect");
   });
 
-// declare variables of contact form
-let name = document.getElementById("name").value;
-let email = document.getElementById("email").value;
-let phone = document.getElementById("phone").value;
-let address = document.getElementById("address").value;
-let message = document.getElementById("message").value;
 
 // access contact form from html
 document.getElementById("contact-form").addEventListener("submit", 
@@ -28,6 +22,13 @@ function(event) {
     // prevents the deafult, which is submitting the form before checking required inputs
     event.preventDefault();
 
+    // declare variables of contact form
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let phone = document.getElementById("phone").value;
+    let address = document.getElementById("address").value;
+    let message = document.getElementById("message").value;
+    
     //checks for valid patterns using regex
     let checkName = /^[a-zA-Z ]{2,30}$/;
     let checkEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
