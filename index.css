@@ -53,16 +53,12 @@ nav ul li a:hover {
 
 #welcome {
     display: grid;
-    justify-items: center;
-    width: 100%;
-    background-color: #f1e2d0;
-}
-
-.container-header {
     grid-row: 1;
     grid-column: span 12;
     text-align: center;
     padding: 10px;
+    justify-items: center;
+    width: 100%;
     background-color: #f1e2d0;
 }
 
