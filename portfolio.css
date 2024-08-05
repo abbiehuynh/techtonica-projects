@@ -63,7 +63,7 @@ nav ul li a:hover {
     width: 100%;
  }
 
-.description {
+.quote {
     display: grid;
     grid-column: 2 / 4;
     grid-row: 1 / 1;
@@ -71,7 +71,7 @@ nav ul li a:hover {
     background-color: transparent;
 }
 
-.quote {
+.quote1 {
     font-family: "Playfair Display", serif;
     font-size: 3em;
     font-style: italic;
@@ -97,14 +97,14 @@ nav ul li a:hover {
     to { border-color: #e8b536 }
 }
 
-.quote:hover {
+.quote1:hover {
     padding: 20px;
     color: #b6c369;
     background-color: #ffe27c;
     border-radius: 30px;
 }
 
-.quote:hover{
+.quote1:hover{
     color:#758652 !important;
 }
 
