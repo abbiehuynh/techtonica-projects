@@ -109,9 +109,11 @@ nav ul li a:hover {
 }
 
 .name {
+    display: grid;
+    grid-column: 1 / 5;
+    grid-row: 1 / 2;
     padding: 20px;
-    margin-left: 60px;
-    text-align: left;
+    margin-left: 5%;
     h1 {
         font-family: "Playfair Display", serif;
         font-size: 6em;
@@ -132,13 +134,6 @@ nav ul li a:hover {
     grid-template-rows: auto auto auto auto;
     column-gap: 10px;
     row-gap: 10px;
-}
-
-.name {
-    display: grid;
-    grid-column: 1 / 5;
-    grid-row: 1 / 2;
-    margin-left: 5%;
 }
 
 .resume {
