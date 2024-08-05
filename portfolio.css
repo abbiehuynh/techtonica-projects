@@ -49,8 +49,10 @@ nav ul li a:hover {
 }
 
  #welcome {
-     width: 100%;
-     background-color: #f1e2d0;
+    text-align: center; 
+    width: 100%;
+    padding: 10px;
+    background-color: #f1e2d0;
  }
 
  .container {
@@ -118,12 +120,6 @@ nav ul li a:hover {
         font-size: 2em;
     }
 }
-
- .container-header {
-     text-align: center;
-     padding: 10px;
-     background-color: #f1e2d0;
- }
 
  h1 {
     font-family: "Playfair Display", serif;
