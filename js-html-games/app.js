@@ -80,7 +80,11 @@ document.addEventListener("DOMContentLoaded", function() {
         obstacle.style.left = obstaclePosition + "px";
 
         let timerId = setInterval(function () {
-            if (obstaclePosition < 0) {
+            // set game over condition to be...
+                //  obstacle has not passed cat
+                //  if both the obstacle and cat are in the same position
+                //  allows game to continue as long as cat jumps over obstacles
+            if (obstaclePosition > 0 && obstaclePosition < 60 & position < 60) {
                 // stops the timer or movement of obstacle when hits 0
                 clearInterval(timerId);
                 // creates alert for end of game - Game Over
