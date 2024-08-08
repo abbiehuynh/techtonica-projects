@@ -14,11 +14,11 @@ document.addEventListener("DOMContentLoaded", function() {
     function control(e) {
         // creates connection to space bar to jump
         if (e.code === "Space") {
-            console.log("jump");
-            jump();
+            // creates condition to prevent user from jumping while jumping (prevents double jumping)
+            if (!isJumping) {
+                jump(); 
+            }
         }
-
-    // prevent user from double jumping while jumping
     }
 
     // creates variable to override position of cat in css
