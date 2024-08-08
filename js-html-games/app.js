@@ -113,5 +113,16 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
     generateObstacles();
-})
 
+
+    // create score 
+        // earn points per each obstacle cleared
+
+    // create levels?
+        // higher the level, the more obstacles
+        // call on generateObstacles()
+
+
+
+});
+ 
