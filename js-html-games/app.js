@@ -74,10 +74,16 @@ document.addEventListener("DOMContentLoaded", function() {
         // creates class name obstacle for new div created
         obstacle.classList.add("obstacle");
         grid.appendChild(obstacle);
-        // overrides position of obstacle by moving it 1000px
+        // overrides position of obstacle by moving it 1000px to the left
         obstacle.style.left = obstaclePosition + "px";
 
         let timerId = setInterval(function () {
+            if (obstaclePosition < 0) {
+                // stops the timer or movement of obstacle when hits 0
+                clearInterval(timerId);
+                
+            }
+            
             obstaclePosition -= 10;
             obstacle.style.left = obstaclePosition + "px";
         }, 20);
