@@ -33,10 +33,15 @@ document.addEventListener("DOMContentLoaded", function() {
                 clearInterval(timerId);
                 // creates new timer for moving down
                 let downTimerId = setInterval(function() {
-                    console.log("down");
+                    // override css position to visually show down movement of cat
+                    position -= 5;
+                    count--;
+                    position = position * gravity;
+                    cat.style.bottom = position + "px";
+        
                 }, 20)
             }
-                // override css position
+
 
 
             // creates ability to move up, incrementing the position of the cat
