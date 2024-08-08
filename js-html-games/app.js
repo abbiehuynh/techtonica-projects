@@ -24,19 +24,31 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // jump function 
     function jump() {
+        let count = 0;
         // schedules the function to be executed repeatedly after a period of time
         let timerId = setInterval(function () {
-            
-            // ability to move up, incrementing the position of the cat
+            // creates ability to move down, create jump height limit
+            if (count === 15) {
+                // stops from continuously moving up when jump
+                clearInterval(timerId);
+                // creates new timer for moving down
+                let downTimerId = setInterval(function() {
+                    console.log("down");
+                }, 20)
+            }
+                // override css position
+
+
+            // creates ability to move up, incrementing the position of the cat
             position += 30;
+            // increments count every 20 milliseconds
+            count ++;
             // overrides position, multiplying by gravity to slow down jump 
             position = position * gravity;
             cat.style.bottom = position + "px";
+        // 20 milliseconds
         }, 20);
     
-
-        // ability to move back down, create jump height limit
-        // override css position
     }
 
     // obstacle generator funciton
