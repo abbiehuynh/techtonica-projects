@@ -53,8 +53,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 }, 20)
             }
 
-
-
             // creates ability to move up, incrementing the position of the cat
             position += 30;
             // increments count every 20 milliseconds
@@ -68,6 +66,14 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // obstacle generator funciton
+    function generateObstacles() {
+        // creates variable and new div called obstacle
+        const obstacle = document.createElement("div");
+        // creates class name obstacle for new div created
+        obstacle.classList.add("obstacle");
+        grid.appendChild(obstacle);
+    }
+    generateObstacles();
         // while game is not game over, generate obstacles
         // randomize generating
         // override css position 

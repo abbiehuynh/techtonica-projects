@@ -29,3 +29,11 @@ body {
     position: absolute;
     bottom: 0;
 }
+
+.obstacle {
+    background-image: url("trashcan.png");
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    bottom: 0;
+}
