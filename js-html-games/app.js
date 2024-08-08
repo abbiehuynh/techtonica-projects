@@ -22,6 +22,8 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
     }
+    // creates event listener for if a key is pressed down, calls the control function
+    document.addEventListener("keydown", control);
 
     // creates variable to override position of cat in css
     let position = 0;
@@ -111,8 +113,5 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
     generateObstacles();
-
-    // creates event listener for if a key is pressed down, calls the control function
-    document.addEventListener("keydown", control);
 })
 
