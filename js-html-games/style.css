@@ -37,3 +37,13 @@ body {
     position: absolute;
     bottom: 0;
 }
+
+#alert {
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 4em;
+    text-shadow: 5px 5px #9690b4;
+
+    text-align: center;
+    color: #dabc40;
+    
+}
