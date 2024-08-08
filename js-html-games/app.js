@@ -7,8 +7,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // creates variables for jump function
     let gravity = 0.9;
-    //creates an isJumping boolean
+    //creates an isJumping boolean for jump function
     let isJumping = false;
+    // creates isGameOver boolean
+    let isGameOver = false;
 
     // control function, pressing space bar triggers jump function
     function control(e) {
@@ -81,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (obstaclePosition < 0) {
                 // stops the timer or movement of obstacle when hits 0
                 clearInterval(timerId);
-                
+                isGameOver = true;
             }
             
             obstaclePosition -= 10;
