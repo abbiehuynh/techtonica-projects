@@ -5,8 +5,10 @@ document.addEventListener("DOMContentLoaded", function() {
     const grid = document.querySelector(".grid");
     const alert = document.getElementById("alert");
 
-    // create variables for jump function
+    // creates variables for jump function
     let gravity = 0.9;
+    //creates an isJumping boolean
+    let isJumping = false;
 
     // control function, pressing space bar triggers jump function
     function control(e) {
@@ -24,6 +26,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // jump function 
     function jump() {
+        // creates isJumping to be happening
+        isJumping = true;
         let count = 0;
         // schedules the function to be executed repeatedly after a period of time
         let timerId = setInterval(function () {
@@ -33,6 +37,13 @@ document.addEventListener("DOMContentLoaded", function() {
                 clearInterval(timerId);
                 // creates new timer for moving down
                 let downTimerId = setInterval(function() {
+                    // sets condition for when jumping is over
+                    if (count === 0) {
+                        // stops the jumping movement by clearing the time interval for moving down
+                        clearInterval(downTimerId);
+                        // jumping is no longer happening
+                        isJumping = false;
+                    }
                     // override css position to visually show down movement of cat
                     position -= 5;
                     count--;
