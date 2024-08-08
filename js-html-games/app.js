@@ -69,6 +69,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // obstacle generator funciton
     function generateObstacles() {
+        // creates random spawn of obstacles
+        let randomTime = Math.random() * 4000;
         // creates position for obstacle to override css postition
         let obstaclePosition = 1000;
         // creates variable and new div called obstacle
@@ -101,16 +103,12 @@ document.addEventListener("DOMContentLoaded", function() {
             obstaclePosition -= 10;
             obstacle.style.left = obstaclePosition + "px";
         }, 20);
+
+        // generating multiple obstacles at random times within 4000 milliseconds while game is not over
+        if (!isGameOver) setTimeout(generateObstacles, randomTime)
+
     }
     generateObstacles();
-        // while game is not game over, generate obstacles
-        // randomize generating
-        // override css position 
-
-        // removing obstacles when game is over
-
-
-    // alerting when game is over
 
 
     // creates event listener for if a key is pressed down, calls the control function
