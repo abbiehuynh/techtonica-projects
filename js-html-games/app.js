@@ -5,19 +5,28 @@ document.addEventListener("DOMContentLoaded", function() {
     const grid = document.querySelector(".grid");
     const alert = document.getElementById("alert");
 
-
-
-
     // control function
+    function control(e) {
         // creates connection to space bar to jump
+        if (e.code === "Space") {
+            console.log("jump");
+            jump();
+        }
 
-        // prevent user from double jumping while jumping
+    // prevent user from double jumping while jumping
+    }
 
-
+    // creates variable to override position in css
+    
     // jump function 
+    function jump() {
+
+    
         // ability to move up
+
         // ability to move back down, create jump height limit
         // override css position
+    }
 
     // obstacle generator funciton
         // while game is not game over, generate obstacles
@@ -30,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // alerting when game is over
 
 
-
+    // creates event listener for if a key is pressed down, calls the control function
+    document.addEventListener("keydown", control);
 })
 
