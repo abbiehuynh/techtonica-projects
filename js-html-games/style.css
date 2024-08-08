@@ -18,3 +18,11 @@
     position: absolute;
     bottom: 0;
 }
+
+.cat {
+    background-image: url(cat.png);
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    bottom: 0;
+}
