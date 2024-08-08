@@ -67,11 +67,20 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // obstacle generator funciton
     function generateObstacles() {
+        // creates position for obstacle to override css postition
+        let obstaclePosition = 1000;
         // creates variable and new div called obstacle
         const obstacle = document.createElement("div");
         // creates class name obstacle for new div created
         obstacle.classList.add("obstacle");
         grid.appendChild(obstacle);
+        // overrides position of obstacle by moving it 1000px
+        obstacle.style.left = obstaclePosition + "px";
+
+        let timerId = setInterval(function () {
+            obstaclePosition -= 10;
+            obstacle.style.left = obstaclePosition + "px";
+        }, 20);
     }
     generateObstacles();
         // while game is not game over, generate obstacles
