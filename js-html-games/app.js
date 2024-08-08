@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const grid = document.querySelector(".grid");
     const alert = document.getElementById("alert");
 
-    // control function
+    // control function, pressing space bar triggers jump function
     function control(e) {
         // creates connection to space bar to jump
         if (e.code === "Space") {
@@ -16,13 +16,19 @@ document.addEventListener("DOMContentLoaded", function() {
     // prevent user from double jumping while jumping
     }
 
-    // creates variable to override position in css
-    
+    // creates variable to override position of cat in css
+    let position = 0;
+
     // jump function 
     function jump() {
-
+        // schedules the function to be executed repeatedly after a period of time
+        let timerId = setInterval(function () {
+            
+            // ability to move up, incrementing the position of the cat
+            position += 30;
+            cat.style.bottom = position + "px";
+        }, 20);
     
-        // ability to move up
 
         // ability to move back down, create jump height limit
         // override css position
