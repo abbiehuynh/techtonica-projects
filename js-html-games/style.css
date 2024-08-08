@@ -1,11 +1,11 @@
 /* creates animation slideleft, 
-    creates background movement from right to left */
-@keyframes slideright {
+    creates background movement from left to right */
+@keyframes slideleft {
     from {
-        background-position: 30000%;
+        background-position: 0%;
     }
     to {
-        background-position: 0%;
+        background-position: 30000%;
     }
 }
 
@@ -17,7 +17,7 @@ body {
     background-image: url(city.PNG);
     height: 500px;
     width: 100%;
-    animation: slideright 600s infinite linear;
+    animation: slideleft 600s infinite linear;
     position: absolute;
     bottom: 0;
 }
