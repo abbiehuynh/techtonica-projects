@@ -5,6 +5,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const grid = document.querySelector(".grid");
     const alert = document.getElementById("alert");
 
+    // create variables for jump function
+    let gravity = 0.9;
+
     // control function, pressing space bar triggers jump function
     function control(e) {
         // creates connection to space bar to jump
@@ -26,6 +29,8 @@ document.addEventListener("DOMContentLoaded", function() {
             
             // ability to move up, incrementing the position of the cat
             position += 30;
+            // overrides position, multiplying by gravity to slow down jump 
+            position = position * gravity;
             cat.style.bottom = position + "px";
         }, 20);
     
