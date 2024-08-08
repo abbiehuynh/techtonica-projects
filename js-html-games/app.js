@@ -83,7 +83,13 @@ document.addEventListener("DOMContentLoaded", function() {
             if (obstaclePosition < 0) {
                 // stops the timer or movement of obstacle when hits 0
                 clearInterval(timerId);
+                // triggers the game over
                 isGameOver = true;
+                // removes all children from the grid (cat and obstacles)
+                    // while cat(firstChild) is still present, remove obstacle(lastChild)
+                while (grid.firstChild) {
+                    grid.removeChild(grid.lastChild);
+                }
             }
             
             obstaclePosition -= 10;
