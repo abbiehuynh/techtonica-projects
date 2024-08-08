@@ -1,0 +1,10 @@
+
+
+
+#city {
+    position: absolute;
+    background-image: url(city.PNG);
+    height: 500px;
+    width: 100%;
+    bottom: 0;
+}
