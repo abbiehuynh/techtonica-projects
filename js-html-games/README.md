@@ -28,7 +28,7 @@ Weekly Project for Week 4 of the Techtonica Software Engineer in Training Progra
 ## Installation: 
 **To create the whole project**
 1.  Go to your source directory in your terminal and run the command 
-``
+```
 
 ## Usage: 
 Click space bar to "jump" over obstacles in game. 
@@ -39,14 +39,17 @@ Once the page has loaded, you will see your virtual pet appear on the bottom lef
 ![Load Game](catEscape-loadGame.png)
 
 As obstacles appear (such as the trashcan), press the space bar to jump over obstacles. 
-
+![Game Over](catEscape-jump.gif)
 
 If your virtual pet hits an obstacle, this screen will appear, announcing "Game Over". 
 ![Game Over](catEscape-gameOver.png)
 
 
 ## Features: 
-- 
+- Interactive user experience
+    - jump function
+- Randomized spawn of obstacles
+    - generateObstacles function
 
 
 ## Technologies: 
