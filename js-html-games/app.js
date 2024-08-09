@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // creates random spawn of obstacles
         let randomTime = Math.random() * 4000;
         // creates position for obstacle to override css postition
-        let obstaclePosition = 1000;
+        let obstaclePosition = 2000;
         // creates variable and new div called obstacle
         const obstacle = document.createElement("div");
         // creates class name obstacle for new div created
@@ -115,6 +115,9 @@ document.addEventListener("DOMContentLoaded", function() {
     generateObstacles();
 
 
+    // create start game loading screen
+        // add event listener, keydown, for start game
+    
     // creates variable for score and score label
     let score = 0;
     let scoreLabel;
@@ -127,6 +130,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // call on generateObstacles()
 
     // reset game after game over
+        // load play again screen
 
 
 });
