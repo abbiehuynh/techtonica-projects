@@ -42,13 +42,13 @@ $ git clone https://github.com/abbiehuynh/techtonica-projects.git NameNewDirecto
 
 ## Demonstration:
 
-Once the page has loaded, you will see your virtual pet appear on the bottom left side of the screen. 
+Once the page has loaded, you will see a cat appear on the bottom left side of the screen. 
 ![Load Game](catEscape-loadGame.png)
 
 As obstacles appear (such as the trashcan), press the space bar to jump over obstacles. 
 ![Game Over](catEscape-jump.gif)
 
-If your virtual pet hits an obstacle, this screen will appear, announcing "Game Over". 
+If your cat hits an obstacle, this screen will appear, announcing "Game Over". 
 ![Game Over](catEscape-gameOver.png)
 
 
