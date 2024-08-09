@@ -6,9 +6,11 @@ An everyday city cat making his way through the city night. He must jump past ob
 ---
 
 **Table of Contents**
+
 [Introduction](#introduction)
 [Installation](#installation)
 [Usage](#usage)
+[Demonstation](#demonstration)
 [Features](#features)
 [Technologies Used](#technologies-used)
 [Acknowledgments](#acknowledgments)
@@ -30,7 +32,7 @@ Weekly Project for Week 4 of the Techtonica Software Engineer in Training Progra
 1.  Go to your source directory in your terminal and clone the repository by running the command:
 
 ```
-git clone https://github.com/abbiehuynh/techtonica-projects.git NameNewDirectory
+$ git clone https://github.com/abbiehuynh/techtonica-projects.git NameNewDirectory
 ```
 2. Open using the live server extenstion to play the game (if using VSCode).
 
