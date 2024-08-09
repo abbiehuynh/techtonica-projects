@@ -10,10 +10,7 @@ An everyday city cat making his way through the city night. He must jump past ob
 [Installation](#installation)
 [Usage](#usage)
 [Features](#features)
-[Screenshots](#screenshots)
 [Technologies Used](#technologies-used)
-[Contributing](#contributing)
-[License](#license)
 [Acknowledgments](#acknowledgments)
 [Contact](#contact)
 ---
@@ -29,24 +26,34 @@ Weekly Project for Week 4 of the Techtonica Software Engineer in Training Progra
     - Pro-tip: CSS is not a requirement of this project, so it's smart to do the basics and focus on other curriculum unless you have extra time to practice design
 
 ## Installation: 
-Provides step-by-step instructions to clone and navigate the project.
-1.  Clone the repo
-
+**To create the whole project**
+1.  Go to your source directory in your terminal and run the command 
+``
 
 ## Usage: 
-Explains how to interact with the virtual pet game.
+Click space bar to "jump" over obstacles in game. 
+
+## Demonstration:
+
+Once the page has loaded, you will see your virtual pet appear on the bottom left side of the screen. 
+![Load Game](catEscape-loadGame.png)
+
+As obstacles appear (such as the trashcan), press the space bar to jump over obstacles. 
+
+
+If your virtual pet hits an obstacle, this screen will appear, announcing "Game Over". 
+![Game Over](catEscape-gameOver.png)
+
 
 ## Features: 
-Lists the main features of the virtual pet game.
-
-## Screenshots:
+- 
 
 
 ## Technologies: 
-Lists the technologies used in the project.
-
-## License: 
-Details the licensing information for the project.
+- JS       
+- HTML
+- CSS
+- Git
 
 ## Acknowledgments:
 Specials thanks to Techtonica Program & Staff and the H2 2024 Cohort. Thank you for your continuous love and support for growth through this tech journey. 
