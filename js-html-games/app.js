@@ -115,13 +115,18 @@ document.addEventListener("DOMContentLoaded", function() {
     generateObstacles();
 
 
-    // create score 
-        // earn points per each obstacle cleared
+    // creates variable for score and score label
+    let score = 0;
+    let scoreLabel;
+
+    // earn points per each obstacle cleared
 
     // create levels?
         // higher the level, the more obstacles
+        // speed increases
         // call on generateObstacles()
 
+    // reset game after game over
 
 
 });
