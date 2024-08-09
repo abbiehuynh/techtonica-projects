@@ -27,11 +27,16 @@ Weekly Project for Week 4 of the Techtonica Software Engineer in Training Progra
 
 ## Installation: 
 **To create the whole project**
-1.  Go to your source directory in your terminal and run the command 
+1.  Go to your source directory in your terminal and clone the repository by running the command:
+
 ```
+git clone https://github.com/abbiehuynh/techtonica-projects.git NameNewDirectory
+```
+2. Open using the live server extenstion to play the game (if using VSCode).
 
 ## Usage: 
-Click space bar to "jump" over obstacles in game. 
+- Click space bar to "jump" over obstacles in game. 
+- Refresh to restart game.
 
 ## Demonstration:
 
@@ -46,8 +51,8 @@ If your virtual pet hits an obstacle, this screen will appear, announcing "Game 
 
 
 ## Features: 
-- Interactive user experience
-    - jump function
+- Interactive user experience through keyboard keys
+    - jump function - space bar
 - Randomized spawn of obstacles
     - generateObstacles function
 
