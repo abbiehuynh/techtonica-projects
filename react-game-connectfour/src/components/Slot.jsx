@@ -1,6 +1,9 @@
 const Slot = () => {
     return (
-        <div></div>
+        <div>
+            <h3>Slot</h3>
+
+        </div>
     )
 }
 

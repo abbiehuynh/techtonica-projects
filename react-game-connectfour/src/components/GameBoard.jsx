@@ -1,6 +1,11 @@
+import Slot from "./Slot";
+
 const GameBoard = () => {
     return (
-        <div></div>
+        <div>
+            <h2>Game Board</h2>
+            <Slot />
+        </div>
     )
 }
 
