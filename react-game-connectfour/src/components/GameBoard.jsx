@@ -2,8 +2,7 @@ import Slot from "./Slot";
 import { useState } from "react";
 
 const GameBoard = () => {
-    {/* creates state to track board */}
-    {/* creates gameboard */}
+    {/* creates state to track board, creates gameboard */}
     const [gameBoard, setGameBoard] = useState([
         ['','','','','','',''],
         ['','','','','','',''],
