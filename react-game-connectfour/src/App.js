@@ -1,5 +1,7 @@
 
 import './App.css';
+import GameBoard from './components/GameBoard';
+import Slot from './components/Slot';
 
 function App() {
   return (
