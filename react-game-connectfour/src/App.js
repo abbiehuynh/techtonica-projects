@@ -7,8 +7,12 @@ function App() {
   return (
     
     <div> 
+      {/* game header */}
       <h2 id="gameHeader">Connect Four</h2>
+
+      {/* game board component */}
       <GameBoard /> 
+
       </div>
   );
 }
