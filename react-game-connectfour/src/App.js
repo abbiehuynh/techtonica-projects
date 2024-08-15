@@ -7,7 +7,7 @@ function App() {
   return (
     
     <div> 
-      <h2 id="gameHeader">Conenct Four</h2>
+      <h2 id="gameHeader">Connect Four</h2>
       <GameBoard /> 
       </div>
   );

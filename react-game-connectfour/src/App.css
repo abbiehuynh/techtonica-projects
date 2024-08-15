@@ -1,8 +1,8 @@
 /*
 -- colors --
 vanilla #f1e8dd
-tan #
-copper #
+tan #dab9a1
+copper #a75f37
 
 mint #b9e1da
 green #7a9590
@@ -33,4 +33,10 @@ sniglet
   border-right: 50px solid #a75f37;
   border-left: 50px solid #a75f37;
   background: #dab9a1;
+}
+
+.slot {
+  width: 100px;
+  height: 100px;
+  background: #f1e8dd;
 }
