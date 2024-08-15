@@ -32,6 +32,7 @@ const GameBoard = () => {
         <>
             {/* creates id for gameboard to access in css */}
             <div id="gameBoard">
+                {/* copy board using map, of each row and column */}
 
             </div>
         </>
