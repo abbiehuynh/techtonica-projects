@@ -22,13 +22,15 @@ sniglet
 }
 
 #gameBoard {
+  width: 770px;
+  height: 660px;
+  gap: 10px;
+  
   margin: auto;
-  padding: 0px;
+  padding: 20px;
+  
   display: flex;
   flex-wrap: wrap;
-
-  width: 700px;
-  height: 600px;
 
   border-right: 50px solid #a75f37;
   border-left: 50px solid #a75f37;
@@ -38,6 +40,11 @@ sniglet
 .slot {
   width: 100px;
   height: 100px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
   background: #f1e8dd;
   border-radius: 100px;
 }

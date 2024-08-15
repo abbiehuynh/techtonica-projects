@@ -28,7 +28,7 @@ const GameBoard = () => {
         <>
             {/* creates id for gameboard to access in css */}
             <div id="gameBoard">
-                {/* copy board using map, of each row and column */}
+                {/* copy board using map, giving coordinates of each row and column */}
                 {gameBoard.map((row, i) => {
                     return row.map((ch, j) => {
                         return <Slot ch={ch} y={i} x={j} />
