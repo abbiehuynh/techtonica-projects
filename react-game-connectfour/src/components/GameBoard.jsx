@@ -2,10 +2,12 @@ import Slot from "./Slot";
 
 const GameBoard = () => {
     return (
-        <div>
-            <h2>Game Board</h2>
-            <Slot />
-        </div>
+        <>
+            {/* creates id for gameboard to access in css */}
+            <div id="gameBoard">
+
+            </div>
+        </>
     )
 }
 
