@@ -3,13 +3,19 @@ import Cell from "./Cell"
 
 const App = () => {
   // creates div for each square on the game board
-  const [cells, setCells] = useState(["1", "2", "3", "4","5","6","7","8","9"])
+  const [cells, setCells] = useState(["", "", "", "","","","","",""])
   return (
     <div className="app">
       <div className="gameboard">
-        {cells.map((cell, index) => <Cell key={index} id={index} cell={cell}/>)}
+        {cells.map((cell, index) => 
+          <Cell 
+            key={index} 
+            id={index} 
+            cell={cell}
+          />)}
 
       </div>
+      <p></p>
     </div>
   )
 }
