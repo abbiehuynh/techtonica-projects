@@ -65,6 +65,7 @@ body {
   display: flex;
   flex-wrap: wrap;
 
+  border-radius: 30px;
   border-right: 50px solid #a75f37;
   border-left: 50px solid #a75f37;
   background: #dab9a1;
