@@ -2,6 +2,7 @@
 import './App.css';
 import GameBoard from './components/GameBoard';
 import Slot from './components/Slot';
+import PlayerInformation from './components/PlayerInformation';
 
 function App() {
   return (
@@ -12,6 +13,9 @@ function App() {
 
       {/* game board component */}
       <GameBoard /> 
+
+      {/* player information */}
+
 
       </div>
   );
