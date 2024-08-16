@@ -30,7 +30,7 @@ const GameBoard = () => {
         try {
             if (gameBoard[row + 1][column] === ch) {
                 if (gameBoard[row + 2][column] === ch) {
-                    if (gameBoard[row + 3][column + 3] === ch) {
+                    if (gameBoard[row + 3][column] === ch) {
                         return true;
                     }
                 }
@@ -142,7 +142,7 @@ const GameBoard = () => {
         <>
             {/* declares winner */}
             {gameOver && (
-                <h1>{oppPlayer === "X" ? "Cosmo" : "Wanda"} Wins!</h1>
+                <h1 id ="winner">{oppPlayer === "X" ? "Cosmo" : "Wanda"} Wins!</h1>
             )}
             
             {/* creates header to show current player's turn */}

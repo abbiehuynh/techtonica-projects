@@ -14,7 +14,9 @@ sniglet
 
 */
 
-
+body {
+  background-color: #e9c0efc7;
+}
 
 #gameHeader {
   text-align: center;
@@ -23,6 +25,22 @@ sniglet
 
 #showPlayer {
   text-align: center;
+}
+
+#winner {
+  margin: auto;
+  width: 300px;
+
+  text-align: center;
+
+  border-radius: 30px;
+  background-color: #f1e8dd;
+
+}
+
+#winner:hover {
+  color: #f1e8dd;
+  background-color:#a75f37;
 }
 
 #gameBoard {

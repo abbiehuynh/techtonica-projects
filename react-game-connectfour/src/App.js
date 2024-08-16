@@ -8,7 +8,7 @@ function App() {
     
     <div> 
       {/* game header */}
-      <h2 id="gameHeader">Connect Four</h2>
+      <h2 id="gameHeader">Fairly Four</h2>
 
       {/* game board component */}
       <GameBoard /> 
