@@ -24,14 +24,22 @@ const GameBoard = () => {
     const [gameOver, setGameOver] = useState(false);
 
 
+
     return (
         <>
-            {/* creates id for player to access in css */}
+            {/* declares winner */}
+            {gameOver && (
+                <h1>{oppPlayer === "X" ? "Cosmo" : "Wanda"} Wins!</h1>
+            )}
+            
             {/* creates header to show current player's turn */}
             <h2 id="showPlayer">{currPlayer === "X" ? "Cosmo's" : "Wanda's"} Move</h2>
 
-            {/* creates id for gameboard to access in css */}
-            <div id="gameBoard">
+            {/* gameBoard */}
+            <div 
+                id="gameBoard"
+            >
+
                 {/* copy board using map, giving coordinates of each row and column */}
                 {gameBoard.map((row, i) => {
                     return row.map((ch, j) => {
