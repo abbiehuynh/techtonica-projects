@@ -182,7 +182,11 @@ export default GameBoard;
     // if slot === " "
 
 // create component to hold player information below the game board
-    // playerInformation {player, tokenUrl} , shows player name and image of token
+    // playerInformation {player, wins, tokenUrl} , shows player name and image of token
+        // counts wins, player: 1
+
+// counter of wins?
+    // saves wins and adds a count to playerInformation
 
 // win screen
     // image of summon parent!
