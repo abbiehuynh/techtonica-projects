@@ -23,7 +23,20 @@ const GameBoard = () => {
     {/* create state for Game Over, boolean !isGameOver */ }
     const [gameOver, setGameOver] = useState(false);
 
+    {/* creates event listener for board components */}
+    const handleClick = event => {
+        const column = event.target.getAttribute("x");
 
+        {/* find which row in the column the token needs to appear */}
+        const row = gameBoard.findIndex((rowArr, index) => {
+            {/* return true if the space is occuppied (not empty) and if it is the bottom most slot (in the row) in the column */}
+            return (rowArr[column] !== "" || (index === gameBoard.length - 1));
+        });
+        {/* if the row is not the bottom most row, decrement the row by 1 */}
+        if (row !== gameBoard.length - 1) row -= 1;
+        {/* if the slot is not occupied, decrememt the row by 1  */}
+        if (gameBoard[row][column] !== "") row -= 1;
+    };
 
     return (
         <>
@@ -38,6 +51,7 @@ const GameBoard = () => {
             {/* gameBoard */}
             <div 
                 id="gameBoard"
+                onClick={gameOver ? null : handleClick}
             >
 
                 {/* copy board using map, giving coordinates of each row and column */}
