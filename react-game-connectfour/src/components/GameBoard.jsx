@@ -165,3 +165,23 @@ const GameBoard = () => {
     );
 };
 export default GameBoard;
+
+
+// bugs to fix:
+    // win algorithm is not complete, does not always count wins
+    // iterate through array to check each slot
+        // can check for empty?
+
+
+// other features to work on:
+// create start page when dom content is loaded
+    // create start button component
+    // onclick, start game, load board 
+
+// if slot is empty, hover: highlight cell in different color to show available cells
+    // if slot === " "
+
+// create component to hold player information below the game board
+    // playerInformation {player, tokenUrl} , shows player name and image of token
+
+// create component with reset button to reset game
