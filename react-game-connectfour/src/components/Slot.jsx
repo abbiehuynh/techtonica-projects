@@ -1,5 +1,5 @@
-import greenToken from '../assests/green-token.png';
-import pinkToken from '../assests/pink-token.png';
+import greenToken from '../assests/green-token.svg';
+import pinkToken from '../assests/pink-token.svg';
 
 // create props to track player tokens (ch) and positions (y, x) inside of game board
     // player tokens (X, O) - greenToken = X, pinkToken = O
