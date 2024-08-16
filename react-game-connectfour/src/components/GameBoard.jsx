@@ -184,4 +184,7 @@ export default GameBoard;
 // create component to hold player information below the game board
     // playerInformation {player, tokenUrl} , shows player name and image of token
 
+// win screen
+    // image of summon parent!
 // create component with reset button to reset game
+

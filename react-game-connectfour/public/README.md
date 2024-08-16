@@ -54,7 +54,6 @@ If you click on the slot you would like to insert your token, a token will appea
 If you click on another slot, the next token inserted will be the token of the opposing player. Continue taking turns to continue the game until someone "Connects Four!"
 ![Tokens]()
 
-
 ## Features: 
 - Interactive user experience through mouse click
     - click slot to insert token to bottom most available slot
