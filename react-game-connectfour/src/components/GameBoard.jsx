@@ -186,5 +186,8 @@ export default GameBoard;
 
 // win screen
     // image of summon parent!
+    // clear "move" if don't do win screen
+        // remove child
+
 // create component with reset button to reset game
 
