@@ -5,7 +5,7 @@ import pinkToken from '../assests/pink-token.png';
     // player tokens (X, O) - greenToken = X, pinkToken = O
 const Slot = ({ch, y, x}) => {
     return (
-        <div className="slot">
+        <div className="slot" x={x} y={y}>
             {/* checks if slot is occupied, if ch is defined */}
             {/* if ch is X, show green token, else show pink token*/}
             {ch && (
