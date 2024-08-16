@@ -18,13 +18,23 @@ body {
   background-color: #e9c0efc7;
 }
 
+.font-link {
+  font-family: "Sniglet", system-ui;
+  font-family: "Poppins", sans-serif;
+}
+
 #gameHeader {
   text-align: center;
-  font-family: 
+  font-family: "Sniglet", system-ui;
+  font-size: 3em;
 }
 
 #showPlayer {
   text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 2em;
 }
 
 #winner {
@@ -49,6 +59,7 @@ body {
   gap: 10px;
 
   margin: auto;
+  margin-bottom: 50px;
   padding: 20px;
   
   display: flex;
