@@ -46,13 +46,16 @@ $ git clone https://github.com/abbiehuynh/techtonica-projects.git NameNewDirecto
 ## Demonstration:
 
 Once the page has loaded, you will see a Connect Four game board in the middle of the screen.
-![Load Game]()
+![Load Game](readme-images/fairlyFour-loadGame.png)
 
 If you click on the slot you would like to insert your token, a token will appear at the bottom most row of that column.  
-![First Token]()
+![First Token](readme-images/fairlyFour-firstToken.png)
 
-If you click on another slot, the next token inserted will be the token of the opposing player. Continue taking turns to continue the game until someone "Connects Four!"
-![Tokens]()
+If you click on another slot, the next token inserted will be the token of the opposing player. 
+![Tokens](readme-images/fairlyFour-tokens.png)
+
+Continue taking turns to continue the game until someone "Connects Four!" The game will anounce the winner!
+![Win Game](readme-images/fairlyFour-winGame.png)
 
 ## Features: 
 - Interactive user experience through mouse click
