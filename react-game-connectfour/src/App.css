@@ -21,11 +21,15 @@ sniglet
   font-family: 
 }
 
+#showPlayer {
+  text-align: center;
+}
+
 #gameBoard {
   width: 770px;
   height: 660px;
   gap: 10px;
-  
+
   margin: auto;
   padding: 20px;
   

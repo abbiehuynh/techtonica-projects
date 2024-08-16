@@ -26,6 +26,10 @@ const GameBoard = () => {
 
     return (
         <>
+            {/* creates id for player to access in css */}
+            {/* creates header to show current player's turn */}
+            <h2 id="showPlayer">{currPlayer === "X" ? "Cosmo's" : "Wanda's"} Move</h2>
+
             {/* creates id for gameboard to access in css */}
             <div id="gameBoard">
                 {/* copy board using map, giving coordinates of each row and column */}
