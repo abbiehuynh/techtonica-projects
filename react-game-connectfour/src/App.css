@@ -1,0 +1,84 @@
+/*
+-- colors --
+vanilla #f1e8dd
+tan #dab9a1
+copper #a75f37
+
+mint #b9e1da
+green #7a9590
+blush #f2d5ce
+pink #ca8f82
+
+-- font ---
+sniglet 
+
+*/
+
+body {
+  background-image: linear-gradient(#e5b5ecc7, #c153cfe5);
+}
+
+.font-link {
+  font-family: "Sniglet", system-ui;
+  font-family: "Poppins", sans-serif;
+}
+
+#gameHeader {
+  text-align: center;
+  font-family: "Sniglet", system-ui;
+  font-size: 3em;
+}
+
+#showPlayer {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 2em;
+}
+
+#winner {
+  margin: auto;
+  width: 300px;
+
+  text-align: center;
+
+  border-radius: 30px;
+  background-color: #f1e8dd;
+
+}
+
+#winner:hover {
+  color: #f1e8dd;
+  background-color:#a75f37;
+}
+
+#gameBoard {
+  width: 770px;
+  height: 660px;
+  gap: 10px;
+
+  margin: auto;
+  margin-bottom: 50px;
+  padding: 20px;
+  
+  display: flex;
+  flex-wrap: wrap;
+
+  border-radius: 30px;
+  border-right: 50px solid #a75f37;
+  border-left: 50px solid #a75f37;
+  background: #dab9a1;
+}
+
+.slot {
+  width: 100px;
+  height: 100px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f1e8dd;
+  border-radius: 100px;
+}
