@@ -77,17 +77,23 @@ const pokemon = [
 }
 ]
 
-// data of all pokemon
+// create get route to get all pokemon data
 router.get("/", (req, res) => {
     console.log(pokemon);
 
     res.send(pokemon);
 })
 
+// create post route to add pokemon data to database
 router.post("/", (req, res) => {
-    console.log("POST ROUTE REACHED");
+    // console.log("POST ROUTE REACHED");
 
-    res.send("POST ROUTE REACHED");
+
+    // access and add pokemon data (no. 13) from postman to database
+    const pokemonInPostman = req.body;
+    pokemon.push(pokemonInPostman);
+
+    res.send("pokemon with info");
 });
 
 export default router;
