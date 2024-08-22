@@ -84,6 +84,10 @@ router.get("/", (req, res) => {
     res.send(pokemon);
 })
 
+router.post("/", (req, res) => {
+    console.log("POST ROUTE REACHED");
 
+    res.send("POST ROUTE REACHED");
+});
 
 export default router;
