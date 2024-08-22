@@ -1,0 +1,18 @@
+{
+    "order": 0001,
+    "name": "Bulbasaur",
+    "type": "Grass and Poison",
+    "evolution stage": "Basic"
+},
+{
+    "order": 0002,
+    "name": "Ivysaur",
+    "type": "Grass and Poison",
+    "evolution stage": "Stage 1"
+},
+{
+    "order": 0003,
+    "name": "Venusaur",
+    "type": "Grass and Poison",
+    "evolution stage": "Stage 2"
+}
