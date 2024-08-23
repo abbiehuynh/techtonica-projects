@@ -88,10 +88,14 @@ router.get("/", (req, res) => {
 router.post("/", (req, res) => {
     // console.log("POST ROUTE REACHED");
 
-
     // access and add pokemon data (no. 13) from postman to database
     const pokemonInPostman = req.body;
-    pokemon.push(pokemonInPostman);
+
+     // create an id for each pokemon
+     const pokemonId = uuidv4();
+     const pokemonWithId = { ...pokemon, id: pokemonId 
+
+    pokemon.push(pokemonWithId);
 
     res.send("pokemon with info");
 });
