@@ -18,3 +18,10 @@ export const createPokemon = (req, res) => {
     res.send(`Pokemon with the order no. ${newPokemon.order} and name ${newPokemon.name} added to the database! Gotta Catch em' all!`);
 };
 
+// create get route to access pokemon by Id
+export const getPokemonId = (req, res) => {
+    const { id } = req.params;
+ 
+    const findPokemon = pokemon.find((newPokemon) => newPokemon.id === id);
+     res.send(findPokemon);
+ };

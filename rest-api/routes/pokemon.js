@@ -1,6 +1,6 @@
 import express from "express";
 
-import { getPokemon, createPokemon } from "../controllers/pokemon.js";
+import { getPokemon, createPokemon, getPokemonId } from "../controllers/pokemon.js";
 
 const router = express.Router();
 
@@ -13,12 +13,7 @@ router.get("/", getPokemon);
 router.post("/", createPokemon);
 
 // create get route to access pokemon by Id
-router.get('/:id', (req, res) => {
-   const { id } = req.params;
-
-   const findPokemon = pokemon.find((newPokemon) => newPokemon.id === id);
-    res.send(findPokemon);
-})
+router.get('/:id', getPokemonId);
 
 // create delete route to delete pokemon data from database
 router.delete('/:id', (req, res) => {
