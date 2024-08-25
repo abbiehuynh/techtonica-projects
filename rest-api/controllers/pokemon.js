@@ -36,4 +36,20 @@ export const deletePokemon = (req, res) => {
     res.send(`Pokemon with the id ${id} deleted from the database. Until next time, bye bye!`);
 }; 
 
+// put route - changes the entire 
+// patch route - changes an attribute 
 
+// create patch route to update pokemon data
+export const updatePokemon = (req, res) => {
+    const { id } = req.params;
+    const { order, name, type, evolutionStage } = req.body;
+    
+    const newPokemon = pokemon.find((newPokemon) => newPokemon.id === id);
+
+    if (order) newPokemon.order = order;
+    if (name) newPokemon.name = name;
+    if (type) newPokemon.type = type;
+    if (evolutionStage) newPokemon.evolutionStage = evolutionStage;
+
+    res.send(`Pokemon with the id ${id} and order no. ${newPokemon.order} has been updated!`);
+};
