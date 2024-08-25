@@ -4,8 +4,6 @@ import { getPokemon, createPokemon, getPokemonId, deletePokemon, updatePokemon }
 
 const router = express.Router();
 
-let pokemon = [];
-
 // create get route to get all pokemon data
 router.get("/", getPokemon);
 
