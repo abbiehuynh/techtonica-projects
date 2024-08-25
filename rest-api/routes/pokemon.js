@@ -13,6 +13,9 @@ router.post("/", createPokemon);
 // create get route to access pokemon by Unique Id
 router.get('/:id', getPokemonUniqueId);
 
+// create get route to access pokemon by Order no
+// router.get('/:order', getPokemonOrder);
+
 // create delete route to delete pokemon data from database
 router.delete('/:id', deletePokemon);
 
