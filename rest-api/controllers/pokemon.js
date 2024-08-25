@@ -1,5 +1,8 @@
 
-
+// create get route to access Pokemon from database
+export const getPokemon = (req, res) => {
+    res.send(pokemon);
+};
 
 // create post route to add pokemon data to database
 export const createPokemon = (req, res) => {
