@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from "uuid";
+
 
 // create get route to access Pokemon from database
 export const getPokemon = (req, res) => {
@@ -15,3 +17,4 @@ export const createPokemon = (req, res) => {
 
     res.send(`Pokemon with the order no. ${newPokemon.order} and name ${newPokemon.name} added to the database! Gotta Catch em' all!`);
 };
+

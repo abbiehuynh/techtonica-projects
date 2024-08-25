@@ -1,5 +1,4 @@
 import express from "express";
-import { v4 as uuidv4 } from "uuid";
 
 import { getPokemon, createPokemon } from "../controllers/pokemon.js";
 
@@ -12,8 +11,6 @@ router.get("/", getPokemon);
 
 // create post route to add pokemon data to database
 router.post("/", createPokemon);
-
-    
 
 // create get route to access pokemon by Id
 router.get('/:id', (req, res) => {
