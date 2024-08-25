@@ -1,3 +1,5 @@
+// hardcode data, static array of pokemon 
+
 const POKEMON = [
     {
         "order": 1,

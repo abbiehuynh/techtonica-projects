@@ -23,10 +23,3 @@ router.delete('/:id', deletePokemon);
 router.patch('/:id', updatePokemon);
 
 export default router;
-
-// {
-//     "order": 13,
-//     "name": "Weedle",
-//     "type": "Bug and Poison",
-//     "evolutionStage": "Basic"
-// }

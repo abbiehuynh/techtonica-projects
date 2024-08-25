@@ -137,3 +137,12 @@ export const updatePokemon = (req, res) => {
 
     res.send(`Pokemon with the id ${id} and order no. ${newPokemon.order} has been updated!`);
 };
+
+
+// for testing
+// {
+//     "order": 13,
+//     "name": "Weedle",
+//     "type": "Bug and Poison",
+//     "evolutionStage": "Basic"
+// }
