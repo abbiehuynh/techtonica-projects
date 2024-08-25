@@ -96,7 +96,7 @@ export const createPokemon = (req, res) => {
 };
 
 // create get route to access pokemon by Id
-export const getPokemonId = (req, res) => {
+export const getPokemonUniqueId = (req, res) => {
     const { id } = req.params;
  
     const findPokemon = pokemon.find((newPokemon) => newPokemon.id === id);

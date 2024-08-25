@@ -71,6 +71,12 @@ const POKEMON = [
         "name": "Butterfree",
         "type": "Bug and Flying",
         "evolution stage": "Stage 2"
+    }, 
+    {
+        "order": 13,
+        "name": "Weedle",
+        "type": "Bug and Posion",
+        "evolution stage": "Basic"
     }
 ];
 
