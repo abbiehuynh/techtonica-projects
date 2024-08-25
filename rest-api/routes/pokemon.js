@@ -26,14 +26,23 @@ router.post("/", (req, res) => {
     res.send(`Pokemon with the order no. ${newPokemon.order} and name ${newPokemon.name} added to the database! Gotta Catch em' all!`);
 });
 
-// create route to access pokemon by Id
+// create get route to access pokemon by Id
 router.get('/:id', (req, res) => {
-    console.log(req.params);
-    res.send(req.params);
+   const { id } = req.params;
+
+   const findPokemon = pokemon.find((newPokemon) => newPokemon.id === id);
+    res.send(findPokemon);
 })
 
 // create delete route to delete pokemon data from database
+router.delete('/:id', (req, res) => {
+    const { id } = req.params;
 
+    // deletes if false => id === id; if true keeps id
+    pokemon = pokemon.filter((newPokemon) => newPokemon.id !=== id);
+
+    res.send(`Pokemon with the id ${id} deleted from the database. Until next time, bye bye!`);
+}); 
 
 
 // create route 
