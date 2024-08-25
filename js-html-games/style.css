@@ -1,0 +1,49 @@
+/* creates animation slideleft, 
+    creates background movement from left to right */
+@keyframes slideleft {
+    from {
+        background-position: 0%;
+    }
+    to {
+        background-position: 30000%;
+    }
+}
+
+body {
+    background-color: #624bae;
+}
+
+#city {
+    background-image: url(city.PNG);
+    height: 500px;
+    width: 100%;
+    animation: slideleft 600s infinite linear;
+    position: absolute;
+    bottom: 0;
+}
+
+.cat {
+    background-image: url(cat.png);
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    bottom: 0;
+}
+
+.obstacle {
+    background-image: url("trashcan.png");
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    bottom: 0;
+}
+
+#alert {
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 4em;
+    text-shadow: 5px 5px #9690b4;
+
+    text-align: center;
+    color: #dabc40;
+    
+}
