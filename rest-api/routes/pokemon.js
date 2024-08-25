@@ -26,6 +26,12 @@ router.post("/", (req, res) => {
     res.send(`Pokemon with the order no. ${newPokemon.order} and name ${newPokemon.name} added to the database! Gotta Catch em' all!`);
 });
 
+// create route to access pokemon by Id
+router.get('/:id', (req, res) => {
+    console.log(req.params);
+    res.send(req.params);
+})
+
 // create delete route to delete pokemon data from database
 
 
