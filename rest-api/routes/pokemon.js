@@ -1,30 +1,19 @@
 import express from "express";
 import { v4 as uuidv4 } from "uuid";
 
+import { createPokemon } from "../controllers/pokemon.js";
+
 const router = express.Router();
 
 let pokemon = [];
 
 // create get route to get all pokemon data
-router.get("/", (req, res) => {
-    console.log(pokemon);
-
-    res.send(pokemon);
-})
+router.get("/", getPokemon);
 
 // create post route to add pokemon data to database
-router.post("/", (req, res) => {
-    // console.log("POST ROUTE REACHED");
+router.post("/", createPokemon);
 
-    // access and add pokemon data (no. 13) from postman to database
-    const newPokemon = req.body;
-
-    // create an id for each pokemon
-    const pokemonId = { ...newPokemon, id: uuidv4() }
-    pokemon.push(pokemonId);
-
-    res.send(`Pokemon with the order no. ${newPokemon.order} and name ${newPokemon.name} added to the database! Gotta Catch em' all!`);
-});
+    
 
 // create get route to access pokemon by Id
 router.get('/:id', (req, res) => {
