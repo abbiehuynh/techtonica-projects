@@ -59,7 +59,7 @@ router.patch('/:id', (req, res) => {
     if (type) newPokemon.type = type;
     if (evolutionStage) newPokemon.evolutionStage = evolutionStage;
 
-    res.send(`Pokemon with the id ${id} and order no. ${order} has been updated!`);
+    res.send(`Pokemon with the id ${id} and order no. ${newPokemon.order} has been updated!`);
 
 });
 
