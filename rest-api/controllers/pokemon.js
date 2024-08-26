@@ -11,16 +11,6 @@ export const getPokemon = (req, res) => {
 // create get route to access Pokemon from database postgres
 // const db = require('/Users/tpl622_3/techtonica/techtonica-projects/rest-api/db.js');
 
-// export const getPokemon = (req, res) => {
-//     try {
-//         const result = db.query('SELECT * FROM pokemon');
-//         res.json(result.rows);
-//     } catch (err) {
-//         console.error(err);
-//         res.status(500).send("Internal Server Error");
-//     }
-// };
-
 
 // create post route to add pokemon data to database
 export const createPokemon = (req, res) => {

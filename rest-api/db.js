@@ -1,13 +1,13 @@
-// import pg from "pg";
+// import dotenv from 'dotenv';
 
-// // corrects error for "require is undefined"
+// // // corrects error for "require is undefined"
 // import { createRequire } from "module";
 // const require = createRequire(import.meta.url);
 
-// // configures database connection
+// // // configures database connection
 // const { Pool } = require('pg');
 
-// const pool = new pg.Pool({
+// const pool = new Pool({
 //     user: process.env.DB_USER,
 //     password: process.env.DB_PASSWORD,
 //     host: process.env.DB_HOST,
@@ -15,4 +15,6 @@
 //     database: process.env.DB_NAME,
 // });
 
-// export default db;
+// module.exports = {
+//     query: (text, params) => pool.query(text, params)
+// };
