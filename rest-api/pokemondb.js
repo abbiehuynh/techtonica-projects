@@ -1,6 +1,6 @@
 // hardcode data, static array of pokemon 
 
-const POKEMON = [
+const pokemon = [
     {
         "order": 1,
         "name": "Bulbasaur",
@@ -82,4 +82,4 @@ const POKEMON = [
     }
 ];
 
- export default POKEMON;
+ export default pokemon;
