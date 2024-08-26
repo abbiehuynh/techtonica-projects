@@ -1,10 +1,26 @@
 import { v4 as uuidv4 } from "uuid";
+
+// imports hardcoded data of pokemon
 import pokemon from "/Users/tpl622_3/techtonica/techtonica-projects/rest-api/pokemondb.js";
 
-// create get route to access Pokemon from database
+// create get route to access Pokemon from hardcoded database
 export const getPokemon = (req, res) => {
     res.json(pokemon);
-};
+}
+
+// create get route to access Pokemon from database postgres
+// const db = require('/Users/tpl622_3/techtonica/techtonica-projects/rest-api/db.js');
+
+// export const getPokemon = (req, res) => {
+//     try {
+//         const result = db.query('SELECT * FROM pokemon');
+//         res.json(result.rows);
+//     } catch (err) {
+//         console.error(err);
+//         res.status(500).send("Internal Server Error");
+//     }
+// };
+
 
 // create post route to add pokemon data to database
 export const createPokemon = (req, res) => {
@@ -28,7 +44,7 @@ export const getPokemonUniqueId = (req, res) => {
 
 // create get route to access pokemon by Order No
 // export const getPokemonOrder = (req, res) => {
-//     const { order } = req.params;
+//     const { order } = req.params.order;
 //     const findPokemonOrder = pokemon.find((newPokemon) => newPokemon.order === order);
 //     res.send(findPokemonOrder);
 // }
