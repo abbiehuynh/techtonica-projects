@@ -1,6 +1,12 @@
 import express from "express";
 import bodyParser from "body-parser";
 import pokemonRoutes from "./routes/pokemon.js";
+
+// import pkg from "pg";
+// import dotenv from "dotenv";
+
+// dotenv.config();
+
 // import db from "./db.js";
 
 const app = express();
