@@ -8,6 +8,9 @@ import { useState } from 'react';
     // humidity
     // wind speed
 
+    // or instead of states, can i pass these as key value pairs in an object? in one state
+
+
 const MESSAGE = () => {
     const [message, setMessage] = useState('');
     const [city, setCity] = useState('');
