@@ -1,23 +1,27 @@
 import express from "express";
 import bodyParser from 'body-parser';
 
+
 const app = express()
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5050;
 
 app.use(bodyParser.json());
 
 // api key
-const apiKey = '75be0a69455443f745330dd9cb44f7ae';
+const apiKey = process.env.API_KEY;
 
 // route for homepage
 app.get('/', (req, res) => {
-    res.send("Welcome to Abbie's Weather App");
+    res.send({message: "What the Weather is like in..."});
 });
 
 // get route to retrieve data from Weather API
-// app.get('/weather', async (req, res) => {
+// app.get('/api', fetchWeather)
+
+
+
+// app.get('/api', async (req, res) => {
 //     try {
-//         const apiKey = '75be0a69455443f745330dd9cb44f7ae';
 //         const city = 'city';
 //         const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
 
