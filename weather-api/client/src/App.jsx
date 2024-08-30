@@ -1,8 +1,10 @@
-import { useState, useEffect } from 'react'
-import './App.css'
+import { useState, useEffect } from 'react';
+import FORM from "./components/FORM";
+import MESSAGE from "./components/MESSAGE";
+import './App.css';
 
 function App() {
-  const [message, setMessage] = useState('')
+  const [introduction, setIntroduction] = useState('')
   useEffect(() => {
     fetch('/')
     .then((res) => res.text())
@@ -12,7 +14,9 @@ function App() {
 
   return (
     <div>
-      <h1>{message}</h1>
+      { introduction }
+      <FORM/>
+      <MESSAGE/>
     </div>
   )
 }

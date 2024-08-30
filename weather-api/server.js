@@ -12,7 +12,7 @@ const apiKey = process.env.API_KEY;
 
 // route for homepage
 app.get('/', (req, res) => {
-    res.send({message: "What the Weather is like in..."});
+    res.send({introduction: "What the Weather is like in..."});
 });
 
 // get route to retrieve data from Weather API
