@@ -10,6 +10,12 @@ import { useState } from 'react';
 
 const MESSAGE = () => {
     const [message, setMessage] = useState('');
+    const [city, setCity] = useState('');
+    const [icon, setIcon] = useState('');
+    const [temp, setTemp] = useState('');
+    const [humidity, setHumidity] = useState('');
+    const [windSpeed, setWindSpeed] = useState('');
 }
+
 
 export default MESSAGE;
