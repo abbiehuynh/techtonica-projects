@@ -4,7 +4,7 @@ import { useState } from 'react';
 // will include:
     // text: "What the Weather is like in..."
     // input (placeholder: enter city name)
-    // button (to submit form)
+    // button (to submit form), submit
 
 const FORM = () => {
     const [submit, setSubmit] = useState('');
