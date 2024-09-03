@@ -21,7 +21,7 @@
 **Project: Build a Minimal APP Connecting Backend & Frontend:**
 Weekly Project for Week 7 of the Techtonica Software Engineer in Training Program
 
-**Primary Learning Goals**
+**Primary Learning Goals:**
 This assignment will check for proficiency in: NodeJS, ExpressJS, and how connect your backend with the frontend, as well as the following:
 - Connect to 3rd party API
 - Showing data from an API call
@@ -52,9 +52,9 @@ This assignment will check for proficiency in: NodeJS, ExpressJS, and how connec
 ```
 $ git clone https://github.com/abbiehuynh/techtonica-projects/weather-api.git <NameNewDirectory>
 ```
-2. npm install
+2. `npm install` in terminal in server (techtonica-projects/weather-api) and client (/weather-api/client).
 
-3. `npm start` on server side (techtonica-projects/weather-api), and `npm run dev` on client side (/weather-api/client) to run weather app.
+3. `npm start` on server side and `npm run dev` on client side to run weather app.
 
 4. Visit `http://localhost:5050` for server site (ExpressJS, NodeJS) and `http://localhost:5173` for client site (React + Vite).
 
