@@ -68,14 +68,11 @@ $ git clone https://github.com/abbiehuynh/techtonica-projects/weather-api.git <N
 Once the page has loaded, you will see weather information for the city of Birmingham.
 ![Load Page](images/loadingpage-weatherapp.png)
 
-You can input the city name that you would like to check the weather for.  
-![User Input]()
-
-Once you have typed the city name, you can click on the "Get Weather" button to submit the city value. 
-![Click Button]()
+You can input the city name that you would like to check the weather for. Once you have typed the city name, you can click on the "Get Weather" button to submit the city value.
+![User Input](images/userinput-weatherapp.gif)
 
 The weather data for that city input will then load on the page. 
-![Get Weather]()
+![Get Weather](images/getWeather-weatherapp.png)
 
 ## Features: 
 - Interactive user experience through mouse click
