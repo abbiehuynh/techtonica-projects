@@ -20,7 +20,10 @@ function App() {
           console.error("Error fetching data:", error);
      }
   }
-   
+  
+// create function to validate city name
+
+
 // create useEffect to fetch weather data for default city
 useEffect(() => {
   fetchWeather();
