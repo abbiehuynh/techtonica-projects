@@ -37,7 +37,7 @@ useEffect(() => {
     <div className="app">
       <h2>Weather App</h2>
 
-      <form onSubmit={handleSubmit}>
+      <form class="form" onSubmit={handleSubmit}>
         <input
           id="input"
           type="text"
@@ -58,6 +58,7 @@ useEffect(() => {
      
      {weatherData ? (
       <>
+      <div className="weatherData">
       <h2> {weatherData.name}</h2>
       <img 
         src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@4x.png`} 
@@ -67,6 +68,7 @@ useEffect(() => {
       <p>Humidity: {weatherData.main.humidity} %</p>
       <p>Feels Like: {weatherData.main.feels_like} &deg;F </p>
       <p>Wind Speed: {weatherData.wind.speed} mph</p>
+      </div>
       </>
 
      ) : (

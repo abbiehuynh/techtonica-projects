@@ -1,8 +1,10 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: 0;
+  margin: auto;
   text-align: center;
+}
+
+body {
+  background-color: lightblue;
 }
 
 p {
@@ -11,14 +13,21 @@ p {
 }
 
 h2 {
+  padding: 5px;
   margin: auto;
   font-size: 2em;
 }
 
 .app{
-  min-height: 100vh;
+  padding: 20px;
+  padding-top: 40px;
+  min-height: 80%;
   display: grid;
-  background: aliceblue;
+  margin: auto;
+}
+
+.form {
+  margin: auto;
 }
 
 .weather-icon {
@@ -38,4 +47,11 @@ h2 {
   padding: 10px;
   border-radius: 20px;
   font-size: 1.2em;
+}
+
+.weatherData {
+  margin: auto;
+  height: auto;
+  padding: 20px;
+  border-radius: 30px;
 }
