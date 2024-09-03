@@ -66,7 +66,7 @@ $ git clone https://github.com/abbiehuynh/techtonica-projects/weather-api.git <N
 ## Demonstration:
 
 Once the page has loaded, you will see weather information for the city of Birmingham.
-![Load Page]()
+![Load Page](images/loadingpage-weatherapp.png)
 
 You can input the city name that you would like to check the weather for.  
 ![User Input]()
