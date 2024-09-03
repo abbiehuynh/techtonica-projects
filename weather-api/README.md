@@ -100,4 +100,4 @@ Specials thanks to Techtonica Program & Staff, my mentor, and the H2 2024 Cohort
 
 email: abbiehuynhh@gmail.com
 
-[Project Link: Fairly Four](https://github.com/abbiehuynh/techtonica-projects/tree/react-game/react-game-connectfour)
+[Project Link: Weather App](https://github.com/abbiehuynh/techtonica-projects/tree/weather-api)
