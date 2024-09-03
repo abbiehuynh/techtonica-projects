@@ -2,10 +2,17 @@
   margin: 0;
   padding: 0;
   box-sizing: 0;
+  text-align: center;
 }
 
 .app{
   min-height: 100vh;
   display: grid;
   background: aliceblue;
+}
+
+.weather-icon {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; 
 }

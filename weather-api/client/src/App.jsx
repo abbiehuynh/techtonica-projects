@@ -46,7 +46,9 @@ useEffect(() => {
      {weatherData ? (
       <>
       <h2> {weatherData.name}</h2>
-      <img src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@4x.png`}/>
+      <img 
+        src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@4x.png`} 
+        class="weather-icon" />
       <p>Temperature: {weatherData.main.temp} &deg;F </p>
       <p>Description: {weatherData.weather[0].description}</p>
       <p>Humidity: {weatherData.main.humidity} %</p>
