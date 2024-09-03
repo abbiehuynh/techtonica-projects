@@ -18,18 +18,33 @@ function App() {
     .catch((err) => console.log(err));
   }, []);
 
-
+  const fetchWeather = async () => {
+    try {
+      const response = await fetch(`http://localhost:5050/weather?city=${city}`);
+      
+      const data = await response.json();
+      setWeatherData(data);
+        } catch (error) {
+          console.error("Error fetching data:", error);
+     }
+  }
+    
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    fetchWeather();
+  }
  
 
   return (
     <div className="app">
-      <h2>Weather</h2>
-      {/* <WEATHER/> */}
-      <p>City: {city.name}</p>
-      <p>Temperature: {weatherData.temp} *F </p>
-      {/* <p>Temperature: {weatherData.main.temp}</p> */}
-      {/* <p>Temperature: {weatherData.wind.speed}</p> */}
-      {/* <p>Temperature: {weatherData.main.humidity}</p> */}
+      <h2>The Weather is...</h2>
+      <form>
+        <p>City: {city.name}</p>
+        <p>Temperature: {weatherData.temp} *F </p>
+        {/* <p>Temperature: {weatherData.main.temp}</p> */}
+        {/* <p>Temperature: {weatherData.wind.speed}</p> */}
+        {/* <p>Temperature: {weatherData.main.humidity}</p> */}
+      </form>
     </div>
   )
 }
