@@ -5,18 +5,15 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
-  const [city, setCity] = useState('');
-  const [weatherData, setWeatherData] = useState('');
-  // const [data, setData] = useState('');
-  // const [temp, setTemp] = useState('');
+  const [city, setCity] = useState('Birmingham');
+  const [weatherData, setWeatherData] = useState(null);
 
-  useEffect(() => {
-    fetch('http://localhost:5050/weather')
-    .then((res) => res.json())
-    .then((data) => setCity(data))
-    .then((data) => setWeatherData(data.main))
-    .catch((err) => console.log(err));
-  }, []);
+  // useEffect(() => {
+  //   fetch('http://localhost:5050/weather')
+  //   .then((res) => res.json())
+  //   .then((data) => setWeatherData(data))
+  //   .catch((err) => console.log(err));
+  // }, []);
 
   const fetchWeather = async () => {
     try {
@@ -38,13 +35,33 @@ function App() {
   return (
     <div className="app">
       <h2>The Weather is...</h2>
-      <form>
-        <p>City: {city.name}</p>
-        <p>Temperature: {weatherData.temp} *F </p>
-        {/* <p>Temperature: {weatherData.main.temp}</p> */}
-        {/* <p>Temperature: {weatherData.wind.speed}</p> */}
-        {/* <p>Temperature: {weatherData.main.humidity}</p> */}
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Enter City Name"
+          value={city}
+          onChange={(e) => setCity(e.target.value)}
+        />
+        <button type="submit">Get Weather</button>
       </form>
+     
+     {weatherData ? (
+      <>
+      <h2>City: {weatherData.name}</h2>
+      {/* <img src={`https://openweathermap.org/img/wn/${weatherData.weather.icon}`}/> */}
+      <p>Temperature: {weatherData.main.temp} </p>
+      <p>Humidity: {weatherData.main.humidity}</p>
+      <p>Wind Speed: {weatherData.wind.speed}</p>
+
+
+
+      </>
+     ) : (
+
+      <p>Checking the Weather...</p>
+
+     )}
+        
     </div>
   )
 }
