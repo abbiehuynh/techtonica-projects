@@ -1,20 +1,23 @@
-import { useState, useEffect } from 'react';
-import FORM from "./components/FORM";
+import React, { useState, useEffect } from 'react';
+import WEATHER from "./components/WEATHER";
+import "./components/weather.css";
 import './App.css';
 
 function App() {
-  const [introduction, setIntroduction] = useState('')
-  useEffect(() => {
-    fetch('/')
-    .then((res) => res.text())
-    .then((data) => setMessage(data))
-    .catch((err) => console.log(err));
-  }, []);
+   // const [submit, setSubmit] = useState('');
+   
+  // const [introduction, setIntroduction] = useState('')
+  // useEffect(() => {
+  //   fetch('/')
+  //   .then((res) => res.text())
+  //   .then((data) => setMessage(data))
+  //   .catch((err) => console.log(err));
+  // }, []);
 
   return (
-    <div>
+    <div className="app">
       
-      <FORM/>
+      <WEATHER/>
       
     </div>
   )

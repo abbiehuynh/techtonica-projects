@@ -9,27 +9,25 @@ const PORT = process.env.PORT || 5050;
 
 app.use(bodyParser.json());
 
-// api key
-const apiKey = process.env.API_KEY;
-
-// route for homepage
+// creates get route for homepage, test 
 app.get('/', (req, res) => {
-    res.send({introduction: "What the Weather is like in..."});
+    res.json("Check the weather on /weather!");
+    console.log("Abbie's Weather App")
 });
 
-// get route to retrieve data from Weather API
-app.get('/weather', (req, res) => {
-    const city = req.query.cityName;
-    const url =`https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=${apiKey}`;
+// creates get route to retrieve data from Open Weather API
+app.get('/weather', async (req, res) => {
+    const city = "Birmingham";
+    const apiKey = process.env.API_KEY;
+    const url =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
     console.log(url);
-    fetch(url)
-        .then((res) => res.json())
-        .then((data) => {
-            res.send({ data });
-        })
-        .catch((err) => {
-            console.log(err);
-        });
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        res.json(data);
+    } catch {
+        res.status(500).json({error: "Failed to fetch data"});
+    }
 })
 
 
