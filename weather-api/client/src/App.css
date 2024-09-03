@@ -7,15 +7,26 @@ body {
   background-color: lightseagreen;
 }
 
+.font-link {
+  font-family: "Poppins", sans-serif;
+  font-family: "Space Mono", monospace;
+}
+
+
 p {
   margin: auto;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
   font-size: 1.5em;
 }
 
 h2 {
   padding: 5px;
   margin: auto;
-  font-size: 2em;
+
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 2.5em;
 }
 
 .app{
@@ -40,14 +51,28 @@ h2 {
 #input {
   padding: 10px;
   border-radius: 20px;
-  font-size: 1.5em;
+  border-color: lightgray;
+  
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-size: 1.3em;
 }
 
 #button {
   margin-top: 10px;
   padding: 10px;
+  border: 0px;
   border-radius: 20px;
+  background-color: aliceblue;
+
+  font-family: "Poppins", sans-serif;
   font-size: 1.2em;
+}
+
+#button:hover {
+  background-color: cadetblue;
+  color: aliceblue;
+  border: cadetblue;
 }
 
 .weatherData {
