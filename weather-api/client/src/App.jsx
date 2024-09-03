@@ -8,13 +8,6 @@ function App() {
   const [city, setCity] = useState('Birmingham');
   const [weatherData, setWeatherData] = useState(null);
 
-  // useEffect(() => {
-  //   fetch('http://localhost:5050/weather')
-  //   .then((res) => res.json())
-  //   .then((data) => setWeatherData(data))
-  //   .catch((err) => console.log(err));
-  // }, []);
-
   const fetchWeather = async () => {
     try {
       const response = await fetch(`http://localhost:5050/weather?city=${city}`);
@@ -25,7 +18,12 @@ function App() {
           console.error("Error fetching data:", error);
      }
   }
-    
+   
+// create useEffect to fetch weather data for default city
+useEffect(() => {
+  fetchWeather();
+  }, []);
+
   const handleSubmit = (event) => {
     event.preventDefault()
     fetchWeather();
