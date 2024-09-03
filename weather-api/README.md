@@ -1,7 +1,7 @@
 # Project Name: Weather App
 
 **Description:**
-
+Curious what the weather is like in your city? Use this Weather App to check your city's current temperature, what temperature it actually feels like, and more! Using the Open Weather Map API, you can check your city's weather in real-time!
 
 ---
 
