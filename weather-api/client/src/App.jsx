@@ -5,9 +5,11 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
+  // initiates useStates and their initial values
   const [city, setCity] = useState('Birmingham');
   const [weatherData, setWeatherData] = useState(null);
 
+  // fetches open weather api data from express server
   const fetchWeather = async () => {
     try {
       const response = await fetch(`http://localhost:5050/weather?city=${city}`);
@@ -24,6 +26,7 @@ useEffect(() => {
   fetchWeather();
   }, []);
 
+  // creates handle to respond to user input 
   const handleSubmit = (event) => {
     event.preventDefault()
     fetchWeather();
