@@ -32,7 +32,7 @@ useEffect(() => {
 
   return (
     <div className="app">
-      <h2>The Weather is...</h2>
+      <h2>Check Your City's Weather</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -45,11 +45,11 @@ useEffect(() => {
      
      {weatherData ? (
       <>
-      <h2>City: {weatherData.name}</h2>
+      <h2> {weatherData.name}</h2>
       <img src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@4x.png`}/>
-      <p>Temperature: {weatherData.main.temp} </p>
-      <p>Humidity: {weatherData.main.humidity}</p>
-      <p>Wind Speed: {weatherData.wind.speed}</p>
+      <p>Temperature: {weatherData.main.temp} &deg;F </p>
+      <p>Humidity: {weatherData.main.humidity} %</p>
+      <p>Wind Speed: {weatherData.wind.speed} mph</p>
 
 
 
