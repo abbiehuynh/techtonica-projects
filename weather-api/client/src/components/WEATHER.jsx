@@ -1,49 +1,64 @@
-import React, { useState, useEffect } from 'react';
-import "./weather.css";
+// import React, { useState, useEffect } from 'react';
+// import "./weather.css";
 // will initially appear on page
 // will include:
     // text: "What the Weather is like in..."
     // input (placeholder: enter city name)
     // button (to submit form), submit
 
-const url =`https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=${apiKey}`;
-const apiKey = process.env.API_KEY;
+// const url =`https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=${apiKey}`;
+// const apiKey = process.env.API_KEY;
 
-const WEATHER = () => {
-    <h1>Weather</h1>
-    
-   // initiate useStates
-    const [city, setCity] = useState('Birmingham');
-    // const [icon, setIcon] = useState('');
-    // const [temp, setTemp] = useState('');
-    // const [humidity, setHumidity] = useState('');
-    // const [windSpeed, setWindSpeed] = useState('');
+// const WEATHER = () => {
 
-    // useEffect(() => {
-    const fetchWeather = async () => {
-        try {
-            const result = await fetch(`/weather?city=${city}`);
+//    // initiate useStates
+//     const [city, setCity] = useState('Birmingham');
+//     const [weatherData, setWeatherData] = useState(null);
+//     // const [icon, setIcon] = useState('');
+//     // const [temp, setTemp] = useState('');
+//     // const [humidity, setHumidity] = useState('');
+//     // const [windSpeed, setWindSpeed] = useState('');
 
-            if(!response.ok) throw error
-            throw new Error (`Error: ${response.status}`)
-            
-        }
-            // const data = await response.json();
+//     // useEffect(() => {
+//     const fetchWeather = async () => {
+//         try {
+//             const result = await fetch(`/weather`);
 
-        }
+//             if(!response.ok) {
+//             throw new Error(`Error: ${response.status}`)
+//         }
+//             const data = await response.json();
 
-    const handleSubmit = (event) => {
-        event.preventDefault()
-        // fetchWeather();
-    }
+//             if (data.cod !== 200) {
+//                 throw new Error(data.message);
+//             }
+//         setWeatherData(data);
+//         setError(null);
 
-    return (
+//         } catch (error) {
+//             console.error("Error fetching data:", error);
+//             setError(error.message)
 
-        <form onSubmit={handleSubmit}>
-            <h2>Let's Check the Weather in...</h2>
+//         }
+//     }
 
-        </form>
-    )
+//     useEffect(() => {
+//         fetchWeather();
+//     }, []);
 
+//     const handleSubmit = (event) => {
+//         event.preventDefault()
+//         fetchWeather();
+//     }
 
-export default WEATHER;
+    // return (
+    //     <div>
+    //         {/* <form onSubmit={handleSubmit}>
+    //             <h2>Let's Check the Weather in...</h2>
+    //             <h3>{weatherData.name}</h3>
+    //             <p>Temperature: {weatherData.main.temp}</p>
+    //         </form> */}
+    //         <h2>Weather</h2>
+    //     </div>
+    // )
+

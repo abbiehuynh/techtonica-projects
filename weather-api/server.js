@@ -1,6 +1,8 @@
 import express from "express";
 import bodyParser from 'body-parser';
+import cors from 'cors';
 import dotenv from 'dotenv';
+import { getWeather } from './routes/weather.js'
 
 dotenv.config();
 
@@ -8,48 +10,16 @@ const app = express()
 const PORT = process.env.PORT || 5050;
 
 app.use(bodyParser.json());
+app.use(cors());
 
 // creates get route for homepage, test 
 app.get('/', (req, res) => {
-    res.json("Check the weather on /weather!");
+    res.json("Hello from Express, Check the weather on /weather!");
     console.log("Abbie's Weather App")
 });
 
 // creates get route to retrieve data from Open Weather API
-app.get('/weather', async (req, res) => {
-    const city = "Birmingham";
-    const apiKey = process.env.API_KEY;
-    const url =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
-    console.log(url);
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
-        res.json(data);
-    } catch {
-        res.status(500).json({error: "Failed to fetch data"});
-    }
-})
-
-
-
-// app.get('/api', async (req, res) => {
-//     try {
-//         const city = 'city';
-//         const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
-
-//         const response = await fetch(url, {
-//             headers: {
-//                 "Authorization:" `Bearer ${apiKey}`
-//             }
-//         });
-//         console.log(response)
-
-//         const data = await response.json();
-//         res.send(data);
-//     } catch (error) {
-//         console.error("Error fetching weather data: ", Error.message);
-//     }
-// });
+app.use('/weather', getWeather)
 
 app.listen(PORT, () => {
     console.log(`Example app listening on port ${PORT}`);
