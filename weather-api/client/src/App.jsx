@@ -32,15 +32,25 @@ useEffect(() => {
 
   return (
     <div className="app">
-      <h2>Check Your City's Weather</h2>
+      <h2>Weather App</h2>
+
       <form onSubmit={handleSubmit}>
         <input
+          id="input"
           type="text"
           placeholder="Enter City Name"
           value={city}
           onChange={(e) => setCity(e.target.value)}
         />
-        <button type="submit">Get Weather</button>
+
+        <br/>
+
+        <button 
+          id="button"
+          type="submit"
+          >Get Weather
+        </button>
+
       </form>
      
      {weatherData ? (
@@ -54,10 +64,8 @@ useEffect(() => {
       <p>Humidity: {weatherData.main.humidity} %</p>
       <p>Feels Like: {weatherData.main.feels_like} &deg;F </p>
       <p>Wind Speed: {weatherData.wind.speed} mph</p>
-
-
-
       </>
+
      ) : (
 
       <p>Checking the Weather...</p>
