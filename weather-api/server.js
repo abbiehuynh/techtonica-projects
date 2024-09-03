@@ -1,6 +1,8 @@
 import express from "express";
 import bodyParser from 'body-parser';
+import dotenv from 'dotenv';
 
+dotenv.config();
 
 const app = express()
 const PORT = process.env.PORT || 5050;
@@ -16,7 +18,19 @@ app.get('/', (req, res) => {
 });
 
 // get route to retrieve data from Weather API
-// app.get('/api', fetchWeather)
+app.get('/weather', (req, res) => {
+    const city = req.query.cityName;
+    const url =`https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=${apiKey}`;
+    console.log(url);
+    fetch(url)
+        .then((res) => res.json())
+        .then((data) => {
+            res.send({ data });
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+})
 
 
 

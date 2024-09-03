@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import FORM from "./components/FORM";
-import MESSAGE from "./components/MESSAGE";
 import './App.css';
 
 function App() {
@@ -14,9 +13,9 @@ function App() {
 
   return (
     <div>
-      { introduction }
+      
       <FORM/>
-      <MESSAGE/>
+      
     </div>
   )
 }
