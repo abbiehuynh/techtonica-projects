@@ -11,6 +11,7 @@ export const getTrivia = async (req, res) => {
         const response = await fetch(url);
         const data = await response.json();
         res.json(data);
+        // console.log(data.results[0].question)
     } catch {
         res.status(500).json({error: "Failed to fetch animal trivia data"});
     }
