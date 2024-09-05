@@ -18,6 +18,7 @@ const GAME = () => {
 
             const data = await response.json();
             setTriviaData(data);
+            // only displays url not actual data
             console.log(triviaData);
             // how to display correct and incorrect answers as options?
         
