@@ -6,6 +6,9 @@ const GAME = () => {
     
     // useState for animal trivia data 
     const [triviaData, setTriviaData] = useState('');
+    const [triviaQuestion, setTriviaQuestion] = useState('');
+    const [correctAnswer, setCorrectAnswer] = useState('');
+    const [allPossibleAnswers, setAllPossibleAnswers] = useState([]);
 
 
     // fetches trivia api data from express server
@@ -15,6 +18,8 @@ const GAME = () => {
 
             const data = await response.json();
             setTriviaData(data);
+
+            // how to display correct and incorrect answers as options?
         
         } catch (error) {
             console.error("Error fetching trivia data:", error);
