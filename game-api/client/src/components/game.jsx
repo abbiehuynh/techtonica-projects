@@ -5,23 +5,26 @@ const GAME = () => {
     // initiates useStates and their inital values
     
     // useState for animal trivia data 
-    const [triviaData, setTriviaData] = useState(null);
+    const [triviaData, setTriviaData] = useState('');
 
 
     // fetches trivia api data from express server
-    // const fetchTrivia = async () => {
-    //     try {
-    //         const response = await fetch(`http://localhost:5050/trivia-game`);
+    const fetchTriviData = async () => {
+        try {
+            const response = await fetch(`http://localhost:5050/trivia-game`);
 
-    //         const data = await response.json();
-    //         setTriviaData(data);
+            const data = await response.json();
+            setTriviaData(data);
         
-    //     } catch (error) {
-    //         console.error("Error fetching trivia data:", error);
-    //     }
-    // }
+        } catch (error) {
+            console.error("Error fetching trivia data:", error);
+        }
+    }
 
     // creates useEffect to fetch data for default?
+    useEffect(() => {
+        fetchTriviData();
+    }, []);
 
     // creates handle to user submitting answer to question?
 
@@ -31,7 +34,7 @@ const GAME = () => {
 
   return (
     <div>
-        <form class="form">
+        <form className="form">
             <label 
                 for="question" 
                 > question:
