@@ -2,6 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import { getTrivia } from './routes/game.js';
 
 dotenv.config();
 
@@ -18,7 +19,7 @@ app.get('/', (req, res) => {
 });
 
 // creates get route to retrieve data from TRIVIA API
-
+app.use('/trivia-game', getTrivia)
 
 
 app.listen(PORT, () => {
