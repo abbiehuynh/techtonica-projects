@@ -9,7 +9,17 @@ const GAME = () => {
 
 
     // fetches trivia api data from express server
-   
+    const fetchTrivia = async () => {
+        try {
+            const response = await fetch(`http://localhost:5050/trivia-game`);
+
+            const data = await response.json();
+            setTriviaData(data);
+        
+        } catch (error) {
+            console.error("Error fetching trivia data:", error);
+        }
+    }
 
     // creates useEffect to fetch data for default?
 
