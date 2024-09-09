@@ -5,7 +5,7 @@ const GAME = () => {
     // initiates useStates and their inital values
     
     // useState for animal trivia data 
-    const [triviaData, setTriviaData] = useState([{}]);
+    const [triviaData, setTriviaData] = useState('');
     const [triviaQuestion, setTriviaQuestion] = useState('');
     const [correctAnswer, setCorrectAnswer] = useState('');
     const [allPossibleAnswers, setAllPossibleAnswers] = useState([]);
@@ -18,15 +18,12 @@ const GAME = () => {
 
             const data = await response.json();
             setTriviaData(data);
-            // only displays url not actual data
-            console.log(triviaData);
-            // how to display correct and incorrect answers as options?
         
         } catch (error) {
             console.error("Error fetching trivia data:", error);
         }
     }
-
+    
     console.log(triviaData);
 
     // creates useEffect to fetch data for default?
@@ -38,14 +35,13 @@ const GAME = () => {
 
 
 
-
-
   return (
     <div>
         <form className="form">
             <label 
              
-                > question:
+                > question: 
+                
                 
             </label>
 
