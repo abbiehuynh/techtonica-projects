@@ -5,7 +5,6 @@ require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 5050;
-
 app.use(cors());
 app.use(express.json());
 
@@ -14,7 +13,7 @@ app.get('/', (req, res) => {
     res.json({ message: 'Hello, from ExpressJS with React-Vite' });
 });
 
-// configures database connection 
+// configures database connection
 const { Pool } = require('pg');
 
 const pool = new Pool({
