@@ -26,7 +26,7 @@ const pool = new Pool({
 
 pool.connect();
 
-// create the get request for event in the endpoint '/api/events'
+// creates get request for events in the endpoint '/api/events'
 app.get('/api/events', (req, response) => {
     pool.query('SELECT * FROM events', (error, results) => {
         if (error) {
@@ -36,7 +36,7 @@ app.get('/api/events', (req, response) => {
     })
 })
 
-// creates POST request
+// creates POST request to create new events
 app.post('/api/events', async (req, res) => {
     try {
         const newEvent = {
