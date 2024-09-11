@@ -36,28 +36,31 @@ app.get('/api/events', (req, response) => {
     })
 })
 
-// create the POST request
-// app.post('/api/students', async (req, res) => {
-//     try {
-//         const newStudent = {
-//             firstname: req.body.firstname,
-//             lastname: req.body.lastname,
-//             iscurrent: req.body.iscurrent
-//         };
-//         //console.log([newStudent.firstname, newStudent.lastname, newStudent.iscurrent]);
-//         const result = await db.query(
-//             'INSERT INTO students(firstname, lastname, is_current) VALUES($1, $2, $3) RETURNING *',
-//             [newStudent.firstname, newStudent.lastname, newStudent.iscurrent],
-//         );
-//         console.log(result.rows[0]);
-//         res.json(result.rows[0]);
+// creates POST request
+app.post('/api/events', async (req, res) => {
+    try {
+        const newEvent = {
+            id: req.body.id,
+            eventname: req.body.eventname,
+            category: req.body.category, 
+            eventdate: req.body.eventdate,
+            eventtime: req.body.eventtime,
+            eventlocation: req.body.eventlocation
+        };
+        //console.log([newStudent.firstname, newStudent.lastname, newStudent.iscurrent]);
+        const result = await pool.query(
+            'INSERT INTO events(id, eventName, category, eventDate, eventTime, eventLocation) VALUES($1, $2, $3, $4, $5, $6) RETURNING *',
+            [newEvent.id, newEvent.eventname, newEvent.category, newEvent.eventdate, newEvent.eventtime, newEvent.location],
+        );
+        console.log(result.rows[0]);
+        res.json(result.rows[0]);
 
-//     } catch (e) {
-//         console.log(e);
-//         return res.status(400).json({ e });
-//     }
+    } catch (e) {
+        console.log(e);
+        return res.status(400).json({ e });
+    }
 
-// });
+});
 
 // // delete request for students
 // app.delete('/api/students/:studentId', async (req, res) => {
