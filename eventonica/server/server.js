@@ -1,39 +1,31 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const cors = require('cors');
 
 require('dotenv').config();
+const db = require('./db/db-connection.js');
 
 const app = express();
 const PORT = process.env.PORT || 5050;
+
 app.use(cors());
 app.use(express.json());
+app.use(bodyParser.json());
 
 // creates an endpoint for the route "/""
 app.get('/', (req, res) => {
     res.json({ message: 'Hello, from ExpressJS with React-Vite' });
 });
 
-// configures database connection
-const { Pool } = require('pg');
-
-const pool = new Pool({
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    host: process.env.DB_HOST,
-    port: process.env.DB_PORT,
-    database: process.env.DB_NAME
-});
-
-pool.connect();
-
 // creates get request for events in the endpoint '/api/events'
-app.get('/api/events', (req, response) => {
-    pool.query('SELECT * FROM events', (error, results) => {
-        if (error) {
-            throw error
-        } 
-        response.status(200).json(results.rows)
-    })
+app.get('/api/events', async (req, res) => {
+    try {
+        const { rows: events } = await db.query('SELECT * FROM events');
+        res.send(events);
+    } catch(error) {
+        console.log(error);
+        return res.status(400).json({error});
+    }
 })
 
 // creates POST request to create new events
@@ -47,13 +39,14 @@ app.post('/api/events', async (req, res) => {
             eventtime: req.body.eventtime,
             eventlocation: req.body.eventlocation
         };
-        //console.log([newStudent.firstname, newStudent.lastname, newStudent.iscurrent]);
+        // console.log([newEvent.id, newEvent.eventname, newEvent.category, newEvent.eventdate, newEvent.eventtime, newEvent.location]);
         const result = await pool.query(
             'INSERT INTO events(id, eventName, category, eventDate, eventTime, eventLocation) VALUES($1, $2, $3, $4, $5, $6) RETURNING *',
             [newEvent.id, newEvent.eventname, newEvent.category, newEvent.eventdate, newEvent.eventtime, newEvent.location],
         );
         console.log(result.rows[0]);
         res.json(result.rows[0]);
+        res.send(`Event with id ${ newEvent.id } and ${ newEvent.eventname } added to event database.`)
 
     } catch (e) {
         console.log(e);
@@ -62,19 +55,19 @@ app.post('/api/events', async (req, res) => {
 
 });
 
-// // delete request for students
-// app.delete('/api/students/:studentId', async (req, res) => {
-//     try {
-//         const studentId = req.params.studentId;
-//         await db.query('DELETE FROM students WHERE id=$1', [studentId]);
-//         console.log("From the delete request-url", studentId);
-//         res.status(200).end();
-//     } catch (e) {
-//         console.log(e);
-//         return res.status(400).json({ e });
+// creates DELETE request to remove events by id
+app.delete('/api/events/:eventId', async (req, res) => {
+    try {
+        const eventId = req.params.id;
+        await pool.query('DELETE FROM events WHERE id=$1', [id]);
+        console.log("From the delete request-url", eventId);
+        res.status(200).end();
+    } catch (e) {
+        console.log(e);
+        return res.status(400).json({ e });
 
-//     }
-// });
+    }
+});
 
 // //A put request - Update a student 
 // app.put('/api/students/:studentId', async (req, res) =>{
