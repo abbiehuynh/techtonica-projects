@@ -28,6 +28,22 @@ app.get('/api/events', async (req, res) => {
     }
 })
 
+// creates a GET request for event by id
+app.get('/api/events/:eventId', async (req, res) => {
+    try {
+        const eventId = req.params.eventId;
+        const result = await db.query('SELECT * FROM events WHERE id=$1', [eventId]);
+        console.log("Access to Event Id:", eventId);
+        
+        console.log(result.rows[0]);
+        res.json(result.rows[0]);
+
+    } catch(error) {
+        console.log(error);
+        return res.status(400).json({ error });
+    }
+});
+
 // creates POST request to create new events
 app.post('/api/events', async (req, res) => {
     try {
@@ -83,7 +99,8 @@ app.put('/api/events/:eventId', async (req, res) =>{
 
     console.log("In the server from the url - the event id", eventId);
     console.log("In the server, from the react - the event to be edited", updatedEvent);
-    // UPDATE students SET lastname = "something" WHERE id="16";
+    
+    // updates events WHERE id, eventname, catgory, eventdate, eventtime, and eventlocation are set to "something"
     const query = `UPDATE events SET id=$1, eventname=$2, category=$3, eventdate=$4, eventtime=$5, eventlocation=$6 WHERE id=${eventId} RETURNING *`;
     const values = [
         updatedEvent.id, 
