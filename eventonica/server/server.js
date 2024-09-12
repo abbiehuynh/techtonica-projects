@@ -71,6 +71,7 @@ app.delete('/api/events/:eventId', async (req, res) => {
 // creates a PUT request to update events by id
 app.put('/api/events/:eventId', async (req, res) =>{
     //console.log(req.params);
+    const eventId = req.params.eventId;
     const updatedEvent = { 
         id: req.body.id,
         eventname: req.body.eventname,
@@ -78,13 +79,21 @@ app.put('/api/events/:eventId', async (req, res) =>{
         eventdate: req.body.eventdate,
         eventtime: req.body.eventtime,
         eventlocation: req.body.eventlocation
-    }
+    };
 
     console.log("In the server from the url - the event id", eventId);
-    console.log("In the server, from the react - the event to be edited", updatedevent);
+    console.log("In the server, from the react - the event to be edited", updatedEvent);
     // UPDATE students SET lastname = "something" WHERE id="16";
     const query = `UPDATE events SET id=$1, eventname=$2, category=$3, eventdate=$4, eventtime=$5, eventlocation=$6 WHERE id=${eventId} RETURNING *`;
-    const values = [updatedEvent.id, updatedEvent.eventname, updatedEvent.category, updatedEvent.eventdate, updatedEvent.eventtime, updatedEvent.eventlocation];
+    const values = [
+        updatedEvent.id, 
+        updatedEvent.eventname, 
+        updatedEvent.category, 
+        updatedEvent.eventdate, 
+        updatedEvent.eventtime, 
+        updatedEvent.eventlocation
+    ];
+    
     try {
       const updated = await db.query(query, values);
       console.log(updated.rows[0]);
