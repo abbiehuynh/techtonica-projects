@@ -1,7 +1,7 @@
 # Project Name: Eventonica
 
 **Description:**
-
+Have some free time and looking for an activity to do? Well, look no further! This Eventonica app includes a database full of events that you can search through depending on what you're feeling up to! Want to improve your coding skills? Search through the Education category to find your next Coding Challenge! Need a break from all that coding? Take a look through the Celebration events and take a moment to share those small wins! The Eventonica app is sure to fill your free time with what you've been looking for!
 
 ---
 
@@ -18,17 +18,28 @@
 ---
 
 ## Introduction: 
-**Project: :**
+**Project: Creating a full-stack web app with React and a database to manage events**
 Weekly Project for Week 9 of the Techtonica Software Engineer in Training Program.
 
 **Primary Learning Goals:**
-
+1. For the first time connect to a DB and pass that data all the way up to React
+2. Getting comfortable creating Express routes for CRUD operations
+3. Learn about and use the UseReducer hook
+4. By the end of the project, show comfort when:
+    - implementing the useState hook
+    - creating forms in React
+    - parsing and displaying data from a DB in React
+5. Stretch goal: Implement favoriting and unfavoriting events (PUT request)
 
 
 **Project Requirements**
-- 15+ commits
-- 1+ PR
-- README with a visual of the project (i.e. gif, images, deployed version) and setup instructions
+1. Use the Techtonica Template created with Vite as the foundation of your project
+2. Implement GET, POST, and DELETE requests (PUT for editing is a stretch goal, not required)
+3. At least 15 commits and 1 PR (every time you make a working change to the code, commit + push at least daily)
+4. Obviously customize the look of your page with CSS techniques
+5. Implement some basic tests
+6. Create a README
+7. Implement the useReducer hook
 
 
 ## Installation: 
@@ -45,7 +56,7 @@ $ git clone https://github.com/abbiehuynh/techtonica-projects/eventonica.git <Na
 4. Visit `http://localhost:5050` for server site (ExpressJS, NodeJS) and `http://localhost:5173` for client site (React + Vite).
 
 ## Usage: 
-
+- 
 
 ## Demonstration:
 
@@ -59,7 +70,7 @@ You can
 ![]()
 
 ## Features: 
-
+- 
 
 
 ## Technologies: 
