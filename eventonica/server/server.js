@@ -40,17 +40,17 @@ app.post('/api/events', async (req, res) => {
             eventlocation: req.body.eventlocation
         };
         // console.log([newEvent.id, newEvent.eventname, newEvent.category, newEvent.eventdate, newEvent.eventtime, newEvent.location]);
-        const result = await pool.query(
+        const result = await db.query(
             'INSERT INTO events(id, eventName, category, eventDate, eventTime, eventLocation) VALUES($1, $2, $3, $4, $5, $6) RETURNING *',
             [newEvent.id, newEvent.eventname, newEvent.category, newEvent.eventdate, newEvent.eventtime, newEvent.location],
         );
         console.log(result.rows[0]);
         res.json(result.rows[0]);
-        res.send(`Event with id ${ newEvent.id } and ${ newEvent.eventname } added to event database.`)
+        // res.send(`Event with id ${ newEvent.id } and ${ newEvent.eventname } added to event database.`)
 
-    } catch (e) {
-        console.log(e);
-        return res.status(400).json({ e });
+    } catch(error) {
+        console.log(error);
+        return res.status(400).json({ error });
     }
 
 });
@@ -58,14 +58,13 @@ app.post('/api/events', async (req, res) => {
 // creates DELETE request to remove events by id
 app.delete('/api/events/:eventId', async (req, res) => {
     try {
-        const eventId = req.params.id;
-        await pool.query('DELETE FROM events WHERE id=$1', [id]);
+        const eventId = req.params.eventId;
+        await db.query('DELETE FROM events WHERE id=$1', [eventId]);
         console.log("From the delete request-url", eventId);
         res.status(200).end();
-    } catch (e) {
-        console.log(e);
-        return res.status(400).json({ e });
-
+    } catch(error) {
+        console.log(error);
+        return res.status(400).json({ error });
     }
 });
 
