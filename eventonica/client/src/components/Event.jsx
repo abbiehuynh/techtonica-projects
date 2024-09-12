@@ -1,5 +1,4 @@
 import { useState, useEffect }, React from 'react';
-import EventCard from "./event";
 import CardGroup from 'react-bootstrap/CardGroup';
 
 function EVENT() {
@@ -21,7 +20,7 @@ function EVENT() {
     <div>
     <CardGroup className="Events">
             {events.map(event =>
-            <EventCard key={event.id} title={event.title} location={event.location} time={event.eventtime}/>
+            <EventCard key={event.id} title={event.eventname} location={event.eventlocation} time={event.eventtime}/>
             )}
     </CardGroup>
     </div>

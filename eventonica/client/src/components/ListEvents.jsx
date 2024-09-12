@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import * as ioicons from 'react-icons/io5'
-import Form from './Form.jsx';
-import Student from './Student';
+import myForm from './Form.jsx';
+import Event from './EventCard.jsx';
 
 const ListEvents = () => {
 
@@ -64,9 +64,9 @@ const ListEvents = () => {
         <div className="list-events">
             <h2>Events </h2>
             <ul>
-                {/* {events.map((event) => {
-                    return <li key={event.id}> <Event event={event} toDelete={onDelete} toUpdate={onUpdate} /></li>
-                })} */}
+                {events.map((event) => {
+                    return <li key={event.id}> <Event event={event} /></li>
+                })}
             </ul>
         </div>
         {/* <myForm key={editingEvent ? editingEvent.id : null} onSaveEvent={onSaveEvent} editingEvent={editingEvent} onUpdateEvent={updateEvent} /> */}
@@ -74,5 +74,6 @@ const ListEvents = () => {
     );
 }
 
+{/*toDelete={onDelete} toUpdate={onUpdate} */}
 
 export default ListEvents;
