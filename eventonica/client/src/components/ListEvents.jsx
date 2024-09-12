@@ -64,15 +64,15 @@ const ListEvents = () => {
         <div className="list-events">
             <h2>Events </h2>
             <ul>
-                {events.map((event) => {
+                {/* {events.map((event) => {
                     return <li key={event.id}> <Event event={event} toDelete={onDelete} toUpdate={onUpdate} /></li>
-                })}
+                })} */}
             </ul>
         </div>
-        <Form key={editingEvent ? editingEvent.id : null} onSaveEvent={onSaveEvent} editingEvent={editingEvent} onUpdateEvent={updateEvent} />
+        {/* <myForm key={editingEvent ? editingEvent.id : null} onSaveEvent={onSaveEvent} editingEvent={editingEvent} onUpdateEvent={updateEvent} /> */}
         </div>
     );
 }
 
 
-export default ListEvents
+export default ListEvents;

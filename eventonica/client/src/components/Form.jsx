@@ -1,35 +1,38 @@
 import React, { useState, useEffect } from 'react'
 import { Button, Form } from "react-bootstrap"
 
-const Form = ({ onSaveStudent, editingStudent, onUpdateStudent }) => {
+const myForm = ({ onSaveEvent, editingEvent, onUpdateEvent }) => {
 
-    // This is the original State with not initial student 
-    const [student, setStudent] = useState(editingStudent || {
-        firstname: "",
-        lastname: "",
-        is_current: false
+    // This is the original State with not initial event
+    const [event, setEvent] = useState(editingEvent || {
+        id: 0,
+        eventname: "",
+        category: "", 
+        eventdate: null,
+        eventtime: null,
+        eventlocation: ""
     });
 
     //create functions that handle the event of the user typing into the form
-    const handleNameChange = (event) => {
-        const firstname = event.target.value;
-        setStudent((student) => ({ ...student, firstname }));
+    const handleEventChange = (event) => {
+        const eventname = event.target.value;
+        setEvent((event) => ({ ...event, eventname }));
 
     };
 
-    const handleLastnameChange = (event) => {
-        const lastname = event.target.value;
-        setStudent((student) => ({ ...student, lastname }));
-    };
+    // const handleLastnameChange = (event) => {
+    //     const lastname = event.target.value;
+    //     setStudent((student) => ({ ...student, lastname }));
+    // };
 
-    const handleCheckChange = (event) => {
-        const is_current = event.target.checked;
-        //console.log(iscurrent);
-        setStudent((student) => ({ ...student, is_current }));
-    };
+    // const handleCheckChange = (event) => {
+    //     const is_current = event.target.checked;
+    //     //console.log(iscurrent);
+    //     setStudent((student) => ({ ...student, is_current }));
+    // };
 
     const clearForm = () => {
-        setStudent({ firstname: "", lastname: "", is_current: false })
+        setEvent({ eventname: "" })
     }
 
     //A function to handle the post request
@@ -80,19 +83,19 @@ const Form = ({ onSaveStudent, editingStudent, onUpdateStudent }) => {
     };
 
     return (
-        <Form className='form-students' onSubmit={handleSubmit}>
+        <Form className='form-events' onSubmit={handleSubmit}>
             <Form.Group>
-                <Form.Label>First Name</Form.Label>
+                <Form.Label>Event Name</Form.Label>
                 <input
                     type="text"
-                    id="add-user-name"
-                    placeholder="First Name"
+                    id="add-event-name"
+                    placeholder="Event Name"
                     required
-                    value={student.firstname}
+                    value={event.eventname}
                     onChange={handleNameChange}
                 />
             </Form.Group>
-            <Form.Group>
+            {/* <Form.Group>
                 <Form.Label>Last Name</Form.Label>
                 <input
                     type="text"
@@ -109,7 +112,7 @@ const Form = ({ onSaveStudent, editingStudent, onUpdateStudent }) => {
                 checked={student.is_current}
                 onChange={handleCheckChange}
                 label={`Are they in the current program?`}
-            />
+            /> */}
             <Form.Group>
             <Button type="submit" variant="outline-success">{student.id ? "Edit Student" : "Add Student"}</Button>
             {student.id ? <Button type="button" variant="outline-warning" onClick={clearForm}>Cancel</Button> : null}
@@ -119,4 +122,4 @@ const Form = ({ onSaveStudent, editingStudent, onUpdateStudent }) => {
 };
 
 
-export default Form;
+export default myForm;
