@@ -69,13 +69,13 @@ document.addEventListener("DOMContentLoaded", function() {
     
     }
 
-    // obstacle generator funciton
+    // obstacle generator function
     function generateObstacles() {
         // while game is not over, do all of this!
         if (!isGameOver) {
         // creates random spawn of obstacles
         let randomTime = Math.random() * 4000;
-        // creates position for obstacle to override css postition
+        // creates position for obstacle to override css position
         let obstaclePosition = 2000;
         // creates variable and new div called obstacle
         const obstacle = document.createElement("div");

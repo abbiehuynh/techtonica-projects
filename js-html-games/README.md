@@ -10,7 +10,7 @@ An everyday city cat making his way through the city night. He must jump past ob
 [Introduction](#introduction)
 [Installation](#installation)
 [Usage](#usage)
-[Demonstation](#demonstration)
+[Demonstration](#demonstration)
 [Features](#features)
 [Technologies Used](#technologies-used)
 [Acknowledgments](#acknowledgments)
@@ -34,7 +34,7 @@ Weekly Project for Week 4 of the Techtonica Software Engineer in Training Progra
 ```
 $ git clone https://github.com/abbiehuynh/techtonica-projects.git NameNewDirectory
 ```
-2. Open using the live server extenstion to play the game (if using VSCode).
+2. Open using the live server extension to play the game (if using VSCode).
 
 ## Usage: 
 - Click space bar to "jump" over obstacles in game. 
