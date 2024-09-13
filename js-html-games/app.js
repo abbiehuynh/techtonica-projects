@@ -75,6 +75,10 @@ document.addEventListener("DOMContentLoaded", function() {
         if (!isGameOver) {
         // creates random spawn of obstacles
         let randomTime = Math.random() * 4000;
+        //Ensures time between obstacles stays between 0.8 seconds and 4000 to give cat chance to land
+        if (randomTime < 800) {
+            randomTime = 800;
+        }
         // creates position for obstacle to override css position
         let obstaclePosition = 2000;
         // creates variable and new div called obstacle
@@ -108,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function() {
             obstacle.style.left = obstaclePosition + "px";
         }, 20);
 
-        // generating multiple obstacles at random times within 4000 milliseconds
+        // generating multiple obstacles at random times within 1000-4000 milliseconds
         setTimeout(generateObstacles, randomTime)
         }
     }
