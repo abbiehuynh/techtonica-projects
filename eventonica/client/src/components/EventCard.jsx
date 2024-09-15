@@ -31,8 +31,9 @@ const Event = ({event, toUpdate, toDelete}) => {
                         <td>{event.eventdate}</td>
                         <td>{event.category}</td>
                         <td>{event.eventlocation}</td>
-                        <td><Button variant="outline-danger" onClick={()=>{onDelete(event)}} style={{padding: '0.6em', marginRight:'0.9em'}}><ioicons.IoTrash/></Button></td>
                         <td><Button variant="outline-info" onClick={()=>{onUpdate(event)}} style={{padding: '0.6em'}}> <ioicons.IoSync/></Button></td>
+                        <td><Button variant="outline-danger" onClick={()=>{onDelete(event)}} style={{padding: '0.6em', marginRight:'0.9em'}}><ioicons.IoTrash/></Button></td>
+                
                     </tr>
 
                 </table>
