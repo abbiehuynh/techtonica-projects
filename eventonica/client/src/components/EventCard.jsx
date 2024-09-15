@@ -2,6 +2,7 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import * as ioicons from 'react-icons/io5'
+import '../App.css';
 
 const Event = ({event, toUpdate, toDelete}) => {
 
@@ -16,7 +17,19 @@ const Event = ({event, toUpdate, toDelete}) => {
     return (
         <Card>
             <Card.Body>
-            <Card.Title>{event.eventname} {event.eventdate}</Card.Title>
+                <table>
+                    <tr>
+                        <th>Event Name</th>
+                        <th>Category</th>
+                        <th>Location</th>
+                    </tr>
+                    <tr>
+                        <td>{event.eventname}</td>
+                        <td>{event.category}</td>
+                        <td>{event.eventlocation}</td>
+                    </tr>
+
+                </table>
             <Button variant="outline-danger" onClick={()=>{onDelete(event)}} style={{padding: '0.6em', marginRight:'0.9em'}}><ioicons.IoTrash/></Button>
             <Button variant="outline-info" onClick={()=>{onUpdate(event)}} style={{padding: '0.6em'}}> <ioicons.IoSync/></Button>
             </Card.Body>
