@@ -19,19 +19,24 @@ const Event = ({event, toUpdate, toDelete}) => {
             <Card.Body>
                 <table>
                     <tr>
-                        <th>Event Name</th>
+                        <th>Name</th>
+                        <th>Date</th>
                         <th>Category</th>
                         <th>Location</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
                     </tr>
                     <tr>
                         <td>{event.eventname}</td>
+                        <td>{event.eventdate}</td>
                         <td>{event.category}</td>
                         <td>{event.eventlocation}</td>
+                        <td><Button variant="outline-danger" onClick={()=>{onDelete(event)}} style={{padding: '0.6em', marginRight:'0.9em'}}><ioicons.IoTrash/></Button></td>
+                        <td><Button variant="outline-info" onClick={()=>{onUpdate(event)}} style={{padding: '0.6em'}}> <ioicons.IoSync/></Button></td>
                     </tr>
 
                 </table>
-            <Button variant="outline-danger" onClick={()=>{onDelete(event)}} style={{padding: '0.6em', marginRight:'0.9em'}}><ioicons.IoTrash/></Button>
-            <Button variant="outline-info" onClick={()=>{onUpdate(event)}} style={{padding: '0.6em'}}> <ioicons.IoSync/></Button>
+
             </Card.Body>
         </Card>
     )
