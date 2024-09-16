@@ -28,7 +28,7 @@ const ListEvents = () => {
 
     const onSaveEvent = (newEvent) => {
         //console.log(newEvent, "From the parent - List of Events");
-        setEvents((Events) => [...Events, newEvent]);
+        setEvents((events) => [...events, newEvent]);
     }
 
 
@@ -67,15 +67,13 @@ const ListEvents = () => {
             <ul>
             <TableHead />
                 {events.map((event) => {
-                    return <li key={event.id}> <Event event={event} /></li>
+                    return <li key={event.id}> <Event event={event} toDelete={onDelete} toUpdate={onUpdate} /></li>
                 })}
             </ul>
         </div>
-        <myForm key={editingEvent ? editingEvent.id : null} onSaveEvent={onSaveEvent} editingEvent={editingEvent} onUpdateEvent={updateEvent} onDeleteEvent={onDelete} />
+        <myForm key={editingEvent ? editingEvent.id : null} onSaveEvent={onSaveEvent} editingEvent={editingEvent} onUpdateEvent={updateEvent} />
         </div>
     );
 }
-
-{/*toDelete={onDelete} toUpdate={onUpdate} */}
 
 export default ListEvents;
