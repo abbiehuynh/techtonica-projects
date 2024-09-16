@@ -17,7 +17,7 @@ function App() {
       <SearchBar />
       <ListEvents />
       <button className="form-btn" onClick={() => setUploadForm(true)}>
-      Add
+      Add Event
       </button>
       {uploadForm && <MyForm closeForm={() => {setUploadForm(false)}}/>}
       {/* <MyForm /> */}

@@ -1,7 +1,9 @@
+
 .App {
   min-height: 100vh;
-  background-color: rgb(238, 232, 232);
+  background-color: oldlace;
   margin: 5px;
+  padding: 0px 0px 10px 0px;
 }
 
 .mybody {
@@ -100,9 +102,22 @@ th {
   margin-left: 50px;
 }
 
-
-
-
 #submit-btn {
   margin-top: 10px;
+}
+
+.form-btn {
+  display: block;
+  margin: auto;
+  margin-bottom: 20px;
+  padding: 5px;
+  border-radius: 10px;
+  width: 25%;
+  border: none;
+  background-color: #98d0f1;
+}
+
+.form-btn:hover {
+  background-color: #b4d9ee;
+  transform: scale(1.1);
 }
