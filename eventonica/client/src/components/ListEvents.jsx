@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import * as ioicons from 'react-icons/io5';
-import myForm from './Form.jsx';
+import MyForm from './Form.jsx';
 import Event from './EventCard.jsx';
 import TableHead from './TableHead.jsx';
 import '../App.css';
@@ -72,7 +72,7 @@ const ListEvents = () => {
                 })}
             </ul>
         </div>
-        <myForm key={editingEvent ? editingEvent.id : null} onSaveEvent={onSaveEvent} editingEvent={editingEvent} onUpdateEvent={updateEvent} />
+        {/* <MyForm key={editingEvent ? editingEvent.id : null} onSaveEvent={onSaveEvent} editingEvent={editingEvent} onUpdateEvent={updateEvent} /> */}
         </div>
     );
 }

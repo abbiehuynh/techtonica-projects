@@ -9,7 +9,7 @@ import SearchBar from './components/SearchBar';
 
 function App() {
   const [uploadForm, setUploadForm] = useState(false);
-
+  
 
   return (
     <div className="App">
@@ -20,7 +20,6 @@ function App() {
       Add Event
       </button>
       {uploadForm && <MyForm closeForm={() => {setUploadForm(false)}}/>}
-      {/* <MyForm /> */}
     </div>
   )
 }

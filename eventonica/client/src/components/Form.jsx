@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Button, Form } from "react-bootstrap"
 import './Form.css'
 
-const myForm = ({ onSaveEvent, editingEvent, onUpdateEvent, closeForm }) => {
+const MyForm = ({ onSaveEvent, editingEvent, onUpdateEvent, closeForm }) => {
 
     // This is the original State with not initial event
     const [event, setEvent] = useState(editingEvent || {
@@ -11,7 +11,7 @@ const myForm = ({ onSaveEvent, editingEvent, onUpdateEvent, closeForm }) => {
         category: "", 
         eventdate: null,
         eventtime: null,
-        eventlocation: ""
+        eventlocation: "",
     });
 
     //create functions that handle the event of the user typing into the form
@@ -152,4 +152,4 @@ const myForm = ({ onSaveEvent, editingEvent, onUpdateEvent, closeForm }) => {
 };
 
 
-export default myForm;
+export default MyForm;
