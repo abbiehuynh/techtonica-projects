@@ -34,7 +34,6 @@ const ListEvents = () => {
 
     //A function to control the update in the parent (student component)
     const updateEvent = (savedEvent) => {
-        // console.log("Line 29 savedEvent", savedEvent);
         // This function should update the whole list of events - 
         loadEvents();
     }
@@ -72,7 +71,7 @@ const ListEvents = () => {
                 })}
             </ul>
         </div>
-        <myForm key={editingEvent ? editingEvent.id : null} onSaveEvent={onSaveEvent} editingEvent={editingEvent} onUpdateEvent={updateEvent} />
+        <myForm key={editingEvent ? editingEvent.id : null} onSaveEvent={onSaveEvent} editingEvent={editingEvent} onUpdateEvent={updateEvent} onDeleteEvent={onDelete} />
         </div>
     );
 }

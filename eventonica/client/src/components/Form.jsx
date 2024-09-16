@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Button, Form } from "react-bootstrap"
+import './Form.css'
 
 const myForm = ({ onSaveEvent, editingEvent, onUpdateEvent }) => {
 
@@ -86,59 +87,61 @@ const myForm = ({ onSaveEvent, editingEvent, onUpdateEvent }) => {
     };
 
     return (
-        <div className="form">
-        <Form className='form-events' onSubmit={handleSubmit}>
-            <p>Form</p>
-            <Form.Group>
-                <Form.Label>Event Name</Form.Label>
-                <input
-                    type="text"
-                    id="add-event-name"
-                    placeholder="Event Name"
-                    required
-                    value={event.eventname}
-                    onChange={handleEventChange}
-                />
-            </Form.Group>
-            <Form.Group>
-                <Form.Label>Date</Form.Label>
-                <input
-                    type="text"
-                    id="add-date"
-                    placeholder="YYYY-DD-MM"
-                    required
-                    value={event.date}
-                    onChange={handleDateChange}
-                />
-            </Form.Group>
-            <Form.Group>
-                <Form.Label>Category</Form.Label>
-                <input
-                    type="text"
-                    id="add-category"
-                    placeholder="Category"
-                    required
-                    value={event.category}
-                    onChange={handleCategoryChange}
-                />
-            </Form.Group>
-            <Form.Group>
-                <Form.Label>Location</Form.Label>
-                <input
-                    type="text"
-                    id="add-location"
-                    placeholder="Location"
-                    required
-                    value={event.eventlocation}
-                    onChange={handleLocationChange}
-                />
-            </Form.Group>
+        <div className='form-container'>
+            <div className='form-page'>
+                <Form className='form-events' onSubmit={handleSubmit}>
+                    <h2 id="add-event-header">Add New Event</h2>
+                    <Form.Group>
+                        <label className="form-label">Name</label>
+                        <input
+                            type="text"
+                            id="add-event-name"
+                            placeholder="Event Name"
+                            required
+                            value={event.eventname}
+                            onChange={handleEventChange}
+                        />
+                    </Form.Group>
+                    <Form.Group>
+                        <label className="form-label">Date</label>
+                        <input
+                            type="text"
+                            id="add-date"
+                            placeholder="YYYY-DD-MM"
+                            required
+                            value={event.date}
+                            onChange={handleDateChange}
+                        />
+                    </Form.Group>
+                    <Form.Group>
+                        <label className="form-label">Category</label>
+                        <input
+                            type="text"
+                            id="add-category"
+                            placeholder="Category"
+                            required
+                            value={event.category}
+                            onChange={handleCategoryChange}
+                        />
+                    </Form.Group>
+                    <Form.Group>
+                        <label className="form-label">Location</label>
+                        <input
+                            type="text"
+                            id="add-location"
+                            placeholder="Location"
+                            required
+                            value={event.eventlocation}
+                            onChange={handleLocationChange}
+                        />
+                    </Form.Group>
 
-            <Form.Group>
-            <Button id="submit-btn" type="submit" variant="outline-success">{event.id ? "Edit Event" : "Add Event"}</Button>
-            {event.id ? <Button type="button" variant="outline-warning" onClick={clearForm}>Cancel</Button> : null}
-            </Form.Group>
-        </Form>
+                    <Form.Group>
+                    <Button id="submit-btn" type="submit" variant="outline-success">{event.id ? "Edit Event" : "Add Event"}</Button>
+                    {event.id ? <Button type="button" variant="outline-warning" onClick={clearForm}>Cancel</Button> : null}
+                    </Form.Group>
+                </Form>
+            </div>
         </div>
     );
 };

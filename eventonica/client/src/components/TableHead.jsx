@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const TableHead = () => {
+ 
+
+
   return (
     <div>
         <table id="table-head">
             <tr>
-                <th>Name</th>
+                <th>
+  
+                  Name
+                 
+                </th>
                 <th>Date</th>
                 <th>Category</th>
                 <th>Location</th>
