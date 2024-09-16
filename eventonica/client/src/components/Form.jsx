@@ -37,7 +37,11 @@ const myForm = ({ onSaveEvent, editingEvent, onUpdateEvent, closeForm }) => {
     };
 
     const clearForm = () => {
-        setEvent({ eventname: "" })
+        setEvent({ 
+            eventname: "", 
+            category: "", 
+            eventdate: null,
+            eventlocation: "" })
     }
 
     //A function to handle the post request
@@ -138,7 +142,7 @@ const myForm = ({ onSaveEvent, editingEvent, onUpdateEvent, closeForm }) => {
                     </Form.Group>
 
                     <Form.Group>
-                    <Button id="submit-btn" type="submit" variant="outline-success">{event.id ? "Edit Event" : "Add Event"}</Button>
+                    <Button id="submit-btn" type="submit" variant="outline-success" >{event.id ? "Edit Event" : "Add Event"} </Button>
                     {event.id ? <Button type="button" variant="outline-warning" onClick={clearForm}>Cancel</Button> : null}
                     </Form.Group>
                 </Form>
