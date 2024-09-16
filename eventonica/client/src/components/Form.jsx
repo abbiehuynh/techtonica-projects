@@ -20,10 +20,10 @@ const myForm = ({ onSaveEvent, editingEvent, onUpdateEvent }) => {
 
     };
 
-    // const handleLastnameChange = (event) => {
-    //     const lastname = event.target.value;
-    //     setStudent((student) => ({ ...student, lastname }));
-    // };
+    const handleCategoryChange = (event) => {
+        const category = event.target.value;
+        setEvent((event) => ({ ...event, category }));
+    };
 
     // const handleCheckChange = (event) => {
     //     const is_current = event.target.checked;
@@ -93,21 +93,21 @@ const myForm = ({ onSaveEvent, editingEvent, onUpdateEvent }) => {
                     placeholder="Event Name"
                     required
                     value={event.eventname}
-                    // onChange={handleNameChange}
+                    onChange={handleEventChange}
                 />
             </Form.Group>
-            {/* <Form.Group>
-                <Form.Label>Last Name</Form.Label>
+            <Form.Group>
+                <Form.Label>Category</Form.Label>
                 <input
                     type="text"
-                    id="add-user-lastname"
-                    placeholder="Last Name"
+                    id="add-category"
+                    placeholder="Category"
                     required
-                    value={student.lastname}
-                    onChange={handleLastnameChange}
+                    value={event.catrgory}
+                    onChange={handleCategoryChange}
                 />
             </Form.Group>
-            <Form.Check
+           {/* <Form.Check
                 type={'checkbox'}
                 id={`isCurrent`}
                 checked={student.is_current}
