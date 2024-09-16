@@ -10,7 +10,7 @@ const TableHead = () => {
                 <th>Category</th>
                 <th>Location</th>
                 <th className="td-button-head">Edit</th>
-                <th className="td-button-head">Delete</th>
+                <th id="delete-btn" className="td-button-head">Delete</th>
             </tr>
         </table>
     </div>

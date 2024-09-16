@@ -82,7 +82,7 @@ const myForm = ({ onSaveEvent, editingEvent, onUpdateEvent }) => {
     };
 
     return (
-        <div>
+        <div className="form">
         <Form className='form-events' onSubmit={handleSubmit}>
             <p>Form</p>
             <Form.Group>

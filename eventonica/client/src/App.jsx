@@ -11,10 +11,8 @@ function App() {
   return (
     <div className="App">
       <MyNavBar />
-      <SearchBar />
-      <ListEvents />
       <MyForm />
-      
+      <ListEvents />
     </div>
   )
 }

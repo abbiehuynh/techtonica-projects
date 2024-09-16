@@ -19,10 +19,10 @@ a.navbar-brand {
   margin-left: 5em;
 }
 
-.list-students {
+.list-events {
   text-align: center;
   margin-top: 25px;
-  flex: 1
+  flex: 1;
 }
 
 ul {
@@ -92,10 +92,20 @@ th {
   width: 150px;
 }
 
-#card {
-  width: 100%;
+#delete-btn {
+  text-align: left;
 }
 
 #table-head {
   margin-left: 50px;
+}
+
+.form{
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+label {
+  padding-bottom: 10px;
 }
