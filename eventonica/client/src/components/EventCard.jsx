@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import TableHead from './TableHead';
 import * as ioicons from 'react-icons/io5'
 import '../App.css';
 
@@ -14,32 +15,28 @@ const Event = ({event, toUpdate, toDelete}) => {
         toDelete(toDeleteEvent)
     }
 
+    
+
     return (
-        <Card>
-            <Card.Body>
-                <table>
-                    <tr>
-                        <th>Name</th>
-                        <th>Date</th>
-                        <th>Category</th>
-                        <th>Location</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
-                    </tr>
-                    <tr>
-                        <td>{event.eventname}</td>
-                        <td>{event.eventdate}</td>
-                        <td>{event.category}</td>
-                        <td>{event.eventlocation}</td>
-                        <td><Button variant="outline-info" onClick={()=>{onUpdate(event)}} style={{padding: '0.6em'}}> <ioicons.IoSync/></Button></td>
-                        <td><Button variant="outline-danger" onClick={()=>{onDelete(event)}} style={{padding: '0.6em', marginRight:'0.9em'}}><ioicons.IoTrash/></Button></td>
-                
-                    </tr>
+        <div>
+            <Card id="card">
+                <Card.Body >
+                    <table>
+                        <tr>
+                            <td>{event.eventname}</td>
+                            <td>{event.eventdate}</td>
+                            <td>{event.category}</td>
+                            <td>{event.eventlocation}</td>
+                            <td className="td-button"><Button variant="outline-info" onClick={()=>{onUpdate(event)}} style={{padding: '0.6em'}}> <ioicons.IoSync/></Button></td>
+                            <td className="td-button"><Button variant="outline-danger" onClick={()=>{onDelete(event)}} style={{padding: '0.6em', marginRight:'0.9em'}}><ioicons.IoTrash/></Button></td>
+                    
+                        </tr>
 
-                </table>
+                    </table>
 
-            </Card.Body>
-        </Card>
+                </Card.Body>
+            </Card>
+        </div>
     )
 
 }
