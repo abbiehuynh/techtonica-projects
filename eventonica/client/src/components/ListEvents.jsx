@@ -26,38 +26,38 @@ const ListEvents = () => {
         loadEvents();
     }, [events]);
 
-    // const onSaveEvent = (newEvent) => {
-    //     //console.log(newEvent, "From the parent - List of Events");
-    //     setEvents((Events) => [...Events, newEvent]);
-    // }
+    const onSaveEvent = (newEvent) => {
+        //console.log(newEvent, "From the parent - List of Events");
+        setEvents((Events) => [...Events, newEvent]);
+    }
 
 
-    // //A function to control the update in the parent (student component)
-    // const updateEvent = (savedEvent) => {
-    //     // console.log("Line 29 savedEvent", savedEvent);
-    //     // This function should update the whole list of events - 
-    //     loadEvents();
-    // }
+    //A function to control the update in the parent (student component)
+    const updateEvent = (savedEvent) => {
+        // console.log("Line 29 savedEvent", savedEvent);
+        // This function should update the whole list of events - 
+        loadEvents();
+    }
 
-    // //A function to handle the Delete funtionality
-    // const onDelete = (event) => {
-    //     //console.log(event, "delete method")
-    //     return fetch(`http://localhost:5050/api/events/${event.id}`, {
-    //         method: "DELETE"
-    //     }).then((response) => {
-    //         //console.log(response);
-    //         if (response.ok) {
-    //             loadEvents();
-    //         }
-    //     })
-    // }
+    //A function to handle the Delete funtionality
+    const onDelete = (event) => {
+        //console.log(event, "delete method")
+        return fetch(`http://localhost:5050/api/events/${event.id}`, {
+            method: "DELETE"
+        }).then((response) => {
+            //console.log(response);
+            if (response.ok) {
+                loadEvents();
+            }
+        })
+    }
 
-    // //A function to handle the Update functionality
-    // const onUpdate = (toUpdateEvent) => {
-    //     //console.log(toUpdateStudent);
-    //     setEditingEvent(toUpdateEvent);
+    //A function to handle the Update functionality
+    const onUpdate = (toUpdateEvent) => {
+        //console.log(toUpdateStudent);
+        setEditingEvent(toUpdateEvent);
 
-    // }
+    }
 
 
 
@@ -72,7 +72,7 @@ const ListEvents = () => {
                 })}
             </ul>
         </div>
-        {/* <myForm key={editingEvent ? editingEvent.id : null} onSaveEvent={onSaveEvent} editingEvent={editingEvent} onUpdateEvent={updateEvent} /> */}
+        <myForm key={editingEvent ? editingEvent.id : null} onSaveEvent={onSaveEvent} editingEvent={editingEvent} onUpdateEvent={updateEvent} />
         </div>
     );
 }

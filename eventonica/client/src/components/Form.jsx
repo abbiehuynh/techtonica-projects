@@ -35,12 +35,6 @@ const myForm = ({ onSaveEvent, editingEvent, onUpdateEvent }) => {
         setEvent((event) => ({ ...event, eventlocation }));
     };
 
-    // const handleCheckChange = (event) => {
-    //     const is_current = event.target.checked;
-    //     //console.log(iscurrent);
-    //     setStudent((student) => ({ ...student, is_current }));
-    // };
-
     const clearForm = () => {
         setEvent({ eventname: "" })
     }
@@ -106,7 +100,7 @@ const myForm = ({ onSaveEvent, editingEvent, onUpdateEvent }) => {
                     onChange={handleEventChange}
                 />
             </Form.Group>
-            {/* <Form.Group>
+            <Form.Group>
                 <Form.Label>Date</Form.Label>
                 <input
                     type="text"
@@ -116,7 +110,7 @@ const myForm = ({ onSaveEvent, editingEvent, onUpdateEvent }) => {
                     value={event.date}
                     onChange={handleDateChange}
                 />
-            </Form.Group> */}
+            </Form.Group>
             <Form.Group>
                 <Form.Label>Category</Form.Label>
                 <input
@@ -139,7 +133,7 @@ const myForm = ({ onSaveEvent, editingEvent, onUpdateEvent }) => {
                     onChange={handleLocationChange}
                 />
             </Form.Group>
-            
+
             <Form.Group>
             <Button id="submit-btn" type="submit" variant="outline-success">{event.id ? "Edit Event" : "Add Event"}</Button>
             {event.id ? <Button type="button" variant="outline-warning" onClick={clearForm}>Cancel</Button> : null}
