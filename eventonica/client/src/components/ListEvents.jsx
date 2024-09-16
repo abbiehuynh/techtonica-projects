@@ -16,7 +16,7 @@ const ListEvents = () => {
 
     const loadEvents = () => {
         // A function to fetch the list of events that will be load anytime that list change
-        fetch("http://localhost:5050/api/events")
+        fetch("http://localhost:3001/api/events")
             .then((response) => response.json())
             .then((events) => {
                 setEvents(events);
@@ -42,7 +42,7 @@ const ListEvents = () => {
     //A function to handle the Delete funtionality
     const onDelete = (event) => {
         //console.log(event, "delete method")
-        return fetch(`http://localhost:5050/api/events/${event.id}`, {
+        return fetch(`http://localhost:3001/api/events/${event.id}`, {
             method: "DELETE"
         }).then((response) => {
             //console.log(response);

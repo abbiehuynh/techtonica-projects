@@ -46,7 +46,7 @@ const myForm = ({ onSaveEvent, editingEvent, onUpdateEvent, closeForm }) => {
 
     //A function to handle the post request
     const postEvent = (newEvent) => {
-        return fetch("http://localhost:5050/api/events", {
+        return fetch("http://localhost:3001/api/events", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(newEvent),
@@ -64,7 +64,7 @@ const myForm = ({ onSaveEvent, editingEvent, onUpdateEvent, closeForm }) => {
 
     //A function to handle the post request
     const putEvent = (toEditEvent) => {
-        return fetch(`http://localhost:5050/api/events/${toEditEvent.id}`, {
+        return fetch(`http://localhost:3001/api/events/${toEditEvent.id}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(toEditEvent),

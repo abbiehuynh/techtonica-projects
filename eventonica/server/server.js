@@ -3,10 +3,10 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 require('dotenv').config();
-const db = require('./db/db-connection.js');
+const db = require('/Users/tpl622_3/techtonica/techtonica-projects/eventonica/server/db/db-connection.js');
 
 const app = express();
-const PORT = process.env.PORT || 5050;
+const PORT = process.env.PORT || 3001;
 
 app.use(cors());
 app.use(express.json());

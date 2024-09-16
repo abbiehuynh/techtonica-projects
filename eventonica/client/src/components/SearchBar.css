@@ -1,0 +1,17 @@
+.search-container input {
+    display: block;
+    align-items: center;
+    
+    padding: 5px;
+    border-radius: 10px;
+    margin: auto;
+    width: 75%;
+}
+
+#search {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    margin: auto;
+}
