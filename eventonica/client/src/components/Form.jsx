@@ -36,36 +36,35 @@ const myForm = ({ onSaveEvent, editingEvent, onUpdateEvent }) => {
     }
 
     //A function to handle the post request
-    const postStudent = (newStudent) => {
-        return fetch("http://localhost:8080/api/students", {
+    const postEvent = (newEvent) => {
+        return fetch("http://localhost:5050/api/events", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(newStudent),
+            body: JSON.stringify(newEvent),
         })
             .then((response) => {
                 return response.json();
             })
             .then((data) => {
                 //console.log("From the post ", data);
-                //I'm sending data to the List of Students (the parent) for updating the list
-                onSaveStudent(data);
-                //this line just for cleaning the form
+                onSaveEvent(data);
+                // clears the form
                 clearForm();
             });
     };
 
     //A function to handle the post request
-    const putStudent = (toEditStudent) => {
-        return fetch(`http://localhost:8080/api/students/${toEditStudent.id}`, {
+    const putEvent = (toEditEvent) => {
+        return fetch(`http://localhost:5050/api/events/${toEditEvent.id}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(toEditStudent),
+            body: JSON.stringify(toEditEvent),
         })
             .then((response) => {
                 return response.json();
             })
             .then((data) => {
-                onUpdateStudent(data);
+                onUpdateEvent(data);
                 //this line just for cleaning the form
                 clearForm();
             });
@@ -75,15 +74,17 @@ const myForm = ({ onSaveEvent, editingEvent, onUpdateEvent }) => {
     //A function to handle the submit in both cases - Post and Put request!
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (student.id) {
-            putStudent(student);
+        if (event.id) {
+            putEvent(event);
         } else {
-            postStudent(student);
+            postEvent(event);
         }
     };
 
     return (
+        <div>
         <Form className='form-events' onSubmit={handleSubmit}>
+            <p>Form</p>
             <Form.Group>
                 <Form.Label>Event Name</Form.Label>
                 <input
@@ -92,7 +93,7 @@ const myForm = ({ onSaveEvent, editingEvent, onUpdateEvent }) => {
                     placeholder="Event Name"
                     required
                     value={event.eventname}
-                    onChange={handleNameChange}
+                    // onChange={handleNameChange}
                 />
             </Form.Group>
             {/* <Form.Group>
@@ -113,11 +114,12 @@ const myForm = ({ onSaveEvent, editingEvent, onUpdateEvent }) => {
                 onChange={handleCheckChange}
                 label={`Are they in the current program?`}
             /> */}
-            <Form.Group>
-            <Button type="submit" variant="outline-success">{student.id ? "Edit Student" : "Add Student"}</Button>
-            {student.id ? <Button type="button" variant="outline-warning" onClick={clearForm}>Cancel</Button> : null}
-            </Form.Group>
+            {/* <Form.Group>
+            <Button type="submit" variant="outline-success">{event.id ? "Edit Event" : "Add Event"}</Button>
+            {event.id ? <Button type="button" variant="outline-warning" onClick={clearForm}>Cancel</Button> : null}
+            </Form.Group> */}
         </Form>
+        </div>
     );
 };
 
