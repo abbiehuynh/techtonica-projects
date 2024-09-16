@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Button, Form } from "react-bootstrap"
 import './Form.css'
 
-const myForm = ({ onSaveEvent, editingEvent, onUpdateEvent }) => {
+const myForm = ({ onSaveEvent, editingEvent, onUpdateEvent, closeForm }) => {
 
     // This is the original State with not initial event
     const [event, setEvent] = useState(editingEvent || {
@@ -84,6 +84,7 @@ const myForm = ({ onSaveEvent, editingEvent, onUpdateEvent }) => {
         } else {
             postEvent(event);
         }
+        closeForm();
     };
 
     return (
@@ -102,7 +103,7 @@ const myForm = ({ onSaveEvent, editingEvent, onUpdateEvent }) => {
                             onChange={handleEventChange}
                         />
                     </Form.Group>
-                    <Form.Group>
+                    {/* <Form.Group>
                         <label className="form-label">Date</label>
                         <input
                             type="text"
@@ -112,7 +113,7 @@ const myForm = ({ onSaveEvent, editingEvent, onUpdateEvent }) => {
                             value={event.date}
                             onChange={handleDateChange}
                         />
-                    </Form.Group>
+                    </Form.Group> */}
                     <Form.Group>
                         <label className="form-label">Category</label>
                         <input

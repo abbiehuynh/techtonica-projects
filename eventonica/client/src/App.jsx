@@ -19,7 +19,7 @@ function App() {
       <button className="form-btn" onClick={() => setUploadForm(true)}>
       Add
       </button>
-      {uploadForm && <MyForm />}
+      {uploadForm && <MyForm closeForm={() => {setUploadForm(false)}}/>}
       {/* <MyForm /> */}
     </div>
   )
