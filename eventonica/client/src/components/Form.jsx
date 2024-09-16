@@ -20,9 +20,19 @@ const myForm = ({ onSaveEvent, editingEvent, onUpdateEvent }) => {
 
     };
 
+    const handleDateChange = (event) => {
+        const date = event.target.value;
+        setEvent((event) => ({ ...event, eventdate }));
+    };
+
     const handleCategoryChange = (event) => {
         const category = event.target.value;
         setEvent((event) => ({ ...event, category }));
+    };
+
+    const handleLocationChange = (event) => {
+        const eventlocation = event.target.value;
+        setEvent((event) => ({ ...event, eventlocation }));
     };
 
     // const handleCheckChange = (event) => {
@@ -96,6 +106,17 @@ const myForm = ({ onSaveEvent, editingEvent, onUpdateEvent }) => {
                     onChange={handleEventChange}
                 />
             </Form.Group>
+            {/* <Form.Group>
+                <Form.Label>Date</Form.Label>
+                <input
+                    type="text"
+                    id="add-date"
+                    placeholder="YYYY-DD-MM"
+                    required
+                    value={event.date}
+                    onChange={handleDateChange}
+                />
+            </Form.Group> */}
             <Form.Group>
                 <Form.Label>Category</Form.Label>
                 <input
@@ -103,17 +124,22 @@ const myForm = ({ onSaveEvent, editingEvent, onUpdateEvent }) => {
                     id="add-category"
                     placeholder="Category"
                     required
-                    value={event.catrgory}
+                    value={event.category}
                     onChange={handleCategoryChange}
                 />
             </Form.Group>
-           {/* <Form.Check
-                type={'checkbox'}
-                id={`isCurrent`}
-                checked={student.is_current}
-                onChange={handleCheckChange}
-                label={`Are they in the current program?`}
-            /> */}
+            <Form.Group>
+                <Form.Label>Location</Form.Label>
+                <input
+                    type="text"
+                    id="add-location"
+                    placeholder="Location"
+                    required
+                    value={event.eventlocation}
+                    onChange={handleLocationChange}
+                />
+            </Form.Group>
+            
             <Form.Group>
             <Button id="submit-btn" type="submit" variant="outline-success">{event.id ? "Edit Event" : "Add Event"}</Button>
             {event.id ? <Button type="button" variant="outline-warning" onClick={clearForm}>Cancel</Button> : null}
