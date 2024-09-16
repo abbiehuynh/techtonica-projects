@@ -109,3 +109,7 @@ th {
 label {
   padding-bottom: 10px;
 }
+
+#submit-btn {
+  margin-top: 10px;
+}

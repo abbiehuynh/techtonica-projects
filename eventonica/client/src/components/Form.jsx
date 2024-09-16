@@ -114,10 +114,10 @@ const myForm = ({ onSaveEvent, editingEvent, onUpdateEvent }) => {
                 onChange={handleCheckChange}
                 label={`Are they in the current program?`}
             /> */}
-            {/* <Form.Group>
-            <Button type="submit" variant="outline-success">{event.id ? "Edit Event" : "Add Event"}</Button>
+            <Form.Group>
+            <Button id="submit-btn" type="submit" variant="outline-success">{event.id ? "Edit Event" : "Add Event"}</Button>
             {event.id ? <Button type="button" variant="outline-warning" onClick={clearForm}>Cancel</Button> : null}
-            </Form.Group> */}
+            </Form.Group>
         </Form>
         </div>
     );
