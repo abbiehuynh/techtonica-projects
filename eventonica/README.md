@@ -53,7 +53,7 @@ $ git clone https://github.com/abbiehuynh/techtonica-projects/eventonica.git <Na
 
 3. `npm start` on server side and `npm run dev` on client side to run Eventonica app.
 
-4. Visit `http://localhost:5050` for server site (ExpressJS, NodeJS) and `http://localhost:5173` for client site (React + Vite).
+4. Visit `http://localhost:3001` for server site (ExpressJS, NodeJS) and `http://localhost:5173` for client site (React + Vite).
 
 ## Usage: 
 - Allows users add new events through a form, and to search and remove exisiting events.
