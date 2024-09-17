@@ -56,21 +56,28 @@ $ git clone https://github.com/abbiehuynh/techtonica-projects/eventonica.git <Na
 4. Visit `http://localhost:5050` for server site (ExpressJS, NodeJS) and `http://localhost:5173` for client site (React + Vite).
 
 ## Usage: 
-- 
+- Allows users add new events through a form, and to search and remove exisiting events.
+- Provides a method to keep track and organize exisitng events. 
 
 ## Demonstration:
 
-Once the page has loaded, you will see 
-![Load Page]()
+Once the page has loaded, you will see a search bar with a table of listed events below. 
+![Load Page](./readme-images/loading-page-eventonica.png)
 
-You can 
-![User Input]()
+If you scroll to the bottom of the list, you will find an "Add Event" Button that will load a pop-up form for creating a new event. 
+![User Input](./readme-images/add-event-btn-eventonica.png)
 
+The pop-up form will appear as shown below. 
+![Add Event Form](./readme-images/add-event-page-eventonica.png)
 
-![]()
+Once the information is filled out, click "Add Event" to add an event to the table. 
+
+If the event is canceled, users also have the option of deleting existing events in the table by clicking the trash icon to the right of every event. 
+![Delete Event](./readme-images/delete-event-eventonica.png)
 
 ## Features: 
-- 
+- Allows users to create and add new events.
+- Allows users to remove or delete existing events. 
 
 
 ## Technologies: 
@@ -85,5 +92,6 @@ You can
 Specials thanks to Techtonica Program & Staff, my mentor, and the H2 2024 Cohort. Thank you for your continuous love and support for growth through this tech journey. 
 
 ## Contact: 
-[Github](https://github.com/abbiehuynh)
+- [Github](https://github.com/abbiehuynh)
+- Email: abbiehuynhh@gmail.com
 
