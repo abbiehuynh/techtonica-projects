@@ -43,7 +43,7 @@ app.get('/individuals', async (req, res) => {
 // create the get request for sightings in the endpoint '/sightings'
 app.get('/sightings', async (req, res) => {
     try {
-        const { rows: sightings } = await db.query('SELECT * FROM individuals');
+        const { rows: sightings } = await db.query('SELECT * FROM sightings');
         res.send(sightings);
     } catch (e) {
         console.log(error);
