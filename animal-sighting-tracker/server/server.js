@@ -51,6 +51,17 @@ app.get('/sightings', async (req, res) => {
     }
 });
 
+// create the get request for sightings in the endpoint '/sightings'
+app.get('/sightingsandnickname', async (req, res) => {
+    try {
+        const { rows: sightingsandnickname } = await db.query('SELECT * FROM sightings INNER JOIN individuals ON individual_seen = nickname;');
+        res.send(sightingsandnickname);
+    } catch (e) {
+        console.log(error);
+        return res.status(400).json({ e });
+    }
+});
+
 // // create the POST request
 // app.post('/api/students', async (req, res) => {
 //     try {
