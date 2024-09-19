@@ -62,8 +62,8 @@ const ListSightings = () => {
     return (
         <div className="sightings-container">
         <div className="list-sightings">
-            <h2> Sightings </h2>
-            <ul>
+            <h2 id="sightings-tracking-header"> Sightings </h2>
+            <ul style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', alignItems: 'center', gap: '20px', paddingTop: '20px'}}>
                 {sightings.map((sightings) => {
                     return <li key={sightings.id}> <Sightings sightings={sightings} /></li>
                 })}

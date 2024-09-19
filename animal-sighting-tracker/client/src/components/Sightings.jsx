@@ -19,12 +19,13 @@ const Sightings = ({sightings, toUpdate, toDelete}) => {
             <Card.Body>
                 {/* <Card.Img src={species.image_url} style={{ borderRadius: '20px', padding: '10px'}} /> */}
                 <Card.Title>{sightings.individual_seen}</Card.Title>
-                <Card.Subtitle>{sightings.individual_seen}</Card.Subtitle>
-                <Card.Text>Population Count: {sightings.individual_seen}</Card.Text>
-                <Card.Text>CSC: {sightings.individual_seen}</Card.Text>
-                <Card.Text>Record Creation Timestamp: {sightings.individual_seen}</Card.Text>
-            {/* <Button variant="outline-danger" onClick={()=>{onDelete(student)}} style={{padding: '0.6em', marginRight:'0.9em'}}><ioicons.IoTrash/></Button>
-            <Button variant="outline-info" onClick={()=>{onUpdate(student)}} style={{padding: '0.6em'}}> <ioicons.IoSync/></Button> */}
+                <Card.Subtitle>{sightings.species}</Card.Subtitle>
+                {/* <Card.Text>Healthy?: {sightings.is_healthy}</Card.Text> */}
+                <Card.Text>Date: {sightings.date_of_sighting}</Card.Text>
+                <Card.Text>Location: {sightings.location_of_sighting}</Card.Text>
+                <Card.Text>Scout Email: {sightings.email}</Card.Text>
+            {/* <Button variant="outline-danger" onClick={()=>{onDelete(student)}} style={{padding: '0.6em', marginRight:'0.9em'}}><ioicons.IoTrash/></Button> */}
+            {/* <Button variant="outline-info" onClick={()=>{onUpdate(student)}} style={{padding: '0.6em'}}> <ioicons.IoSync/></Button> */}
             </Card.Body>
         </Card>
     )
