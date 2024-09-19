@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import * as ioicons from 'react-icons/io5'
 import MyForm from './Form';
-import Student from './Species';
+import Sightings from './Sightings';
 
 const ListSightings = () => {
 
@@ -13,7 +13,7 @@ const ListSightings = () => {
 
     const loadSightings = () => {
         // A function to fetch the list of students that will be load anytime that list change
-        fetch("http://localhost:3001/species/tracker")
+        fetch("http://localhost:3001/species/sightings")
             .then((response) => response.json())
             .then((sightings) => {
                 setSightings(sightings);
@@ -64,8 +64,8 @@ const ListSightings = () => {
         <div className="list-sightings">
             <h2> Sightings </h2>
             <ul>
-                {tracker.map((tracker) => {
-                    return <li key={tracker.id}> <Sighting tracker={tracker} /></li>
+                {sightings.map((sightings) => {
+                    return <li key={sightings.id}> <Sightings sightings={sightings} /></li>
                 })}
                 {/* toDelete={onDelete} toUpdate={onUpdate} */}
             </ul>
