@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import * as ioicons from 'react-icons/io5'
 import MyForm from './Form';
 import Species from './Species';
+import './Species.css';
 
 const ListSpecies = () => {
 
@@ -62,7 +63,7 @@ const ListSpecies = () => {
     return (
         <div className="species-container">
         <div className="list-species">
-            <h2> Species Tracking </h2>
+            <h2 id="species-tracking-header"> Species Tracking </h2>
             <ul style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', alignItems: 'center', gap: '20px', paddingTop: '20px'}}>
                 {species.map((species) => {
                     return <li key={species.id}> <Species species={species} /></li>
