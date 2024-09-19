@@ -16,7 +16,7 @@ const Species = ({species, toUpdate, toDelete}) => {
     return (
         <Card style={{width: '30rem'}}>
             <Card.Body>
-                <img className="speices-img"/>
+                <Card.Img src={species.image_url} style={{ borderRadius: '20px', padding: '10px'}} />
                 <Card.Title>{species.common_name}</Card.Title>
                 <Card.Subtitle>{species.scientific_name}</Card.Subtitle>
                 <Card.Text>Population Count: {species.population_count}</Card.Text>
