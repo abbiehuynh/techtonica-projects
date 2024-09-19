@@ -30,7 +30,7 @@ app.get('/species', async (req, res) => {
 });
 
 // create the get request for individuals in the endpoint '/individuals'
-app.get('/individuals', async (req, res) => {
+app.get('/species/individuals', async (req, res) => {
     try {
         const { rows: individuals } = await db.query('SELECT * FROM individuals');
         res.send(individuals);
@@ -41,7 +41,7 @@ app.get('/individuals', async (req, res) => {
 });
 
 // create the get request for sightings in the endpoint '/sightings'
-app.get('/sightings', async (req, res) => {
+app.get('/species/sightings', async (req, res) => {
     try {
         const { rows: sightings } = await db.query('SELECT * FROM sightings');
         res.send(sightings);
@@ -51,36 +51,65 @@ app.get('/sightings', async (req, res) => {
     }
 });
 
+// using join to fetch data from 2 tables - individuals and sightings
 // create the get request for sightings in the endpoint '/sightings'
-app.get('/sightingsandnickname', async (req, res) => {
+app.get('/species/tracker', async (req, res) => {
     try {
-        const { rows: sightingsandnickname } = await db.query('SELECT * FROM sightings INNER JOIN individuals ON individual_seen = nickname;');
-        res.send(sightingsandnickname);
+        const { rows: tracker } = await db.query('SELECT * FROM sightings INNER JOIN individuals ON individual_seen = nickname;');
+        res.send(tracker);
     } catch (e) {
         console.log(error);
         return res.status(400).json({ e });
     }
 });
 
-// // create the POST request
-// app.post('/api/students', async (req, res) => {
+// // create POST request for animal tracker
+// app.post('/species/tracker', async (req, res) => {
 //     try {
-//         const newStudent = {
-//             firstname: req.body.firstname,
-//             lastname: req.body.lastname,
-//             iscurrent: req.body.iscurrent
-//         };
-//         //console.log([newStudent.firstname, newStudent.lastname, newStudent.iscurrent]);
-//         const result = await db.query(
-//             'INSERT INTO students(firstname, lastname, is_current) VALUES($1, $2, $3) RETURNING *',
-//             [newStudent.firstname, newStudent.lastname, newStudent.iscurrent],
+
+//         // Insert into individual table
+//         const individualResult = await db.query(
+//             `INSERT INTO individual (species, record_creation_timestamp)
+//              VALUES($1, $2) RETURNING id`,
+//             [req.body.species, req.body.record_creation_timestamp]
 //         );
+
+//         const individualId = individualResult.rows[0].id;
+//         console.log(individualId);
+
+//         // prepares data for sightings table
+//         const tracker = {
+//             date_of_sighting: req.body.date_of_sighting,
+//             individual_seen: req.body.individual_seen,
+//             location_of_sighting: req.body.location_of_sighting,
+//             is_healthy: req.body.is_healthy,
+//             email: req.body.email,
+//             individualId
+//         };
+
+//         // insert into sightings table
+//         const result = await db.query(
+//             `INSERT INTO 
+//                 sightings(id, date_of_sighting, individual_seen, location_of_sighting, is_healthy, email) 
+//             VALUES($1, $2, $3, $4, $5, $6) RETURNING *`,
+//             [
+//                 tracker.date_of_sighting, 
+//                 tracker.individual_seen,
+//                 tracker.individualId, 
+//                 tracker.speciesName, 
+//                 tracker.location_of_sighting, 
+//                 tracker.is_healthy, 
+//                 tracker.email
+//             ]
+//         );
+
 //         console.log(result.rows[0]);
 //         res.json(result.rows[0]);
 
-//     } catch (e) {
-//         console.log(e);
-//         return res.status(400).json({ e });
+//     } catch (error) {
+//         console.log(error);
+//         return res.status(400).json({ error: 'An error occurred while processing your request.' });
+
 //     }
 
 // });
