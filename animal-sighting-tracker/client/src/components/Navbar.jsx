@@ -14,14 +14,15 @@ function MyNavBar(props) {
               // src={Logo}
               height="30"
               className="d-lg-inline-block"
-              alt="React Bootstrap logo"
+              // alt="React Bootstrap logo"
             />
         </Navbar.Brand>
-        <Nav.Link >Your Link</Nav.Link>
+        <Nav.Link href="/species">Species</Nav.Link>
+        <Nav.Link href="/species/tracker">Sightings</Nav.Link>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>
-            Signed in as: <a href="#login">Cristina Rodriguez</a>
+            Signed in as: <a href="#login">Abbie Huynh</a>
           </Navbar.Text>
         </Navbar.Collapse>
       </Container>
