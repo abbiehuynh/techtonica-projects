@@ -56,7 +56,7 @@ app.get('/species/sighting', async (req, res) => {
 app.get('/species/sightings', async (req, res) => {
     try {
         const { rows: sightings } = await db.query(
-            `SELECT sightings.id, sightings.date_of_sighting, sightings.individual_seen, individuals.species, sightings.location_of_sighting, sightings.is_healthy, sightings.email
+            `SELECT sightings.id, sightings.date_of_sighting, sightings.individual_seen, individuals.species, sightings.location_of_sighting, sightings.is_healthy, sightings.email, sightings.image_url
             FROM sightings 
             INNER JOIN individuals ON sightings.individual_seen = individuals.nickname
             INNER JOIN species ON individuals.species = species.scientific_name;`);
