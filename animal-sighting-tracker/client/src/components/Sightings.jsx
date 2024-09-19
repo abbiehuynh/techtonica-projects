@@ -15,6 +15,7 @@ const Sightings = ({sightings, toUpdate, toDelete}) => {
     }
 
     return (
+        <>
         <Card style={{width: '30rem'}}>
             <Card.Body>
                 <Card.Img src={sightings.image_url} style={{ borderRadius: '20px', padding: '10px'}} />
@@ -28,6 +29,7 @@ const Sightings = ({sightings, toUpdate, toDelete}) => {
             {/* <Button variant="outline-info" onClick={()=>{onUpdate(student)}} style={{padding: '0.6em'}}> <ioicons.IoSync/></Button> */}
             </Card.Body>
         </Card>
+        </>
     )
 
 }

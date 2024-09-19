@@ -12,6 +12,26 @@
     background-color: olivedrab;
 }
 
+body {
+    background-color: rgb(244, 240, 197);
+}
+
+#add-sighting-btn {
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 15px 20px;
+    border-radius: 40px;
+    border: none;
+    background-color: rgb(176, 205, 119);
+    color: white;
+    font-size: 2rem;
+}
+
+#add-sighting-btn:hover {
+    background-color: olivedrab;
+}
+
 
 /* style added to sightings.jsx */
 .card {

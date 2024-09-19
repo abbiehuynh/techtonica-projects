@@ -70,6 +70,7 @@ const ListSightings = () => {
                 {/* toDelete={onDelete} toUpdate={onUpdate} */}
             </ul>
         </div>
+        <button id="add-sighting-btn">Add Sighting</button>
         {/* <MyForm key={editingStudent ? editingStudent.id : null} onSaveStudent={onSaveStudent} editingStudent={editingStudent} onUpdateStudent={updateStudent} /> */}
         </div>
     );
