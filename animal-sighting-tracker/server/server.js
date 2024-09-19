@@ -51,15 +51,19 @@ app.get('/species/sightings', async (req, res) => {
     }
 });
 
-// using join to fetch data from 2 tables - individuals and sightings
-// create the get request for sightings in the endpoint '/sightings'
+// using join to fetch data from 3 tables - species, individuals, and sightings
+// create the get request for tracker in the endpoint '/tracker'
 app.get('/species/tracker', async (req, res) => {
     try {
-        const { rows: tracker } = await db.query('SELECT * FROM sightings INNER JOIN individuals ON individual_seen = nickname;');
+        const { rows: tracker } = await db.query(
+            `SELECT sightings.id, sightings.date_of_sighting, sightings.individual_seen, individuals.species, sightings.location_of_sighting, sightings.is_healthy, sightings.email
+            FROM sightings 
+            INNER JOIN individuals ON sightings.individual_seen = individuals.nickname
+            INNER JOIN species ON individuals.species = species.scientific_name;`);
         res.send(tracker);
-    } catch (e) {
+    } catch (error) {
         console.log(error);
-        return res.status(400).json({ e });
+        return res.status(400).json({ error });
     }
 });
 
