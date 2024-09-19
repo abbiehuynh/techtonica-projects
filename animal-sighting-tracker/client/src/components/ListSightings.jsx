@@ -65,8 +65,9 @@ const ListSightings = () => {
             <h2> Sightings </h2>
             <ul>
                 {tracker.map((tracker) => {
-                    return <li key={tracker.id}> <Sighting student={student} toDelete={onDelete} toUpdate={onUpdate} /></li>
+                    return <li key={tracker.id}> <Sighting tracker={tracker} /></li>
                 })}
+                {/* toDelete={onDelete} toUpdate={onUpdate} */}
             </ul>
         </div>
         {/* <MyForm key={editingStudent ? editingStudent.id : null} onSaveStudent={onSaveStudent} editingStudent={editingStudent} onUpdateStudent={updateStudent} /> */}
