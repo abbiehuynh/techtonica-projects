@@ -1,7 +1,7 @@
 # Project Name: Animal Sighting Tracker
 
 **Description:**
-
+Just spotted the species you've been tracking and need a way to organize each species information? Better yet, need a way to track that specific individual you've been following along? Will look no further! This Animal Sighting Tracker can do just the job! Make tracking your favorite animal a breeze with this full-stack web app.
 
 ---
 
@@ -9,7 +9,6 @@
 
 [Introduction](#introduction)
 [Installation](#installation)
-[Usage](#usage)
 [Demonstation](#demonstration)
 [Features](#features)
 [Technologies Used](#technologies-used)
@@ -21,13 +20,16 @@
 **Project: Full-Stack PERN Project**
 Weekly Project for Week 10 of the Techtonica Software Engineer in Training Program.
 
-**Primary Learning Goals:**
-
-
-
 **Project Requirements**
-
-
+- Show a list of all sightings, including the nickname of the individual sighted at each one (using a JOIN query).
+- Form to add a new sighting record
+- the other data can be manually added to the DB (just make sure it's in db.sql)
+- this also means you only need GET API routes for the other resources
+- Include a top-level README.md that says how to run your app locally including all steps after cloning the repo
+- Use pg_dump or another method to create a file called db.sql that allows someone else to recreate your DB
+    - Use SQL to add some initial data to your database. Add at least 3 animal species, 2 individuals of each species, and at least 5 animal sightings.
+- PR must be clean and only include files related to this project
+    - Include an appropriate .gitignore (don't commit node_modules!)
 
 ## Installation: 
 **To create the whole project**
@@ -42,22 +44,20 @@ $ git clone https://github.com/abbiehuynh/techtonica-projects/animal-sightingtra
 
 4. Visit `http://localhost:3001` for server site (ExpressJS, NodeJS) and `http://localhost:5173` for client site (React + Vite).
 
-## Usage: 
-- 
 
 ## Demonstration:
 
 Once the page has loaded, you will see the homepage with cards of animals species. This can also be re-accessed through the "Species Tracking" Link. 
 ![Load Species Page](./client/src/assets/loadpage-animalsightingtracker.png)
 
-You can 
-![Load Sightings Page]()
+Clicking on "Sightings Tracker" will redirect you to page with cards of individual sightings. 
+![Load Sightings Page](./client/src/assets/sightings-animal-sightings-tracker.png)
 
-
-![]()
-
+Scroll to the bottom to find the "Add Sighting" button which will redirect you to the form to add a new sighting!
+![Form](./client/src/assets/form-animal-sighting-tracker.png)
 ## Features: 
-- 
+- Interactive links to see the current species being tracked as well as the current individuals being tracked. 
+- Form validation and submission of new sightings of individuals. 
 
 
 ## Technologies: 
