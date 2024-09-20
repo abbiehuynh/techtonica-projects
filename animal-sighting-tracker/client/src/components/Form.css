@@ -42,7 +42,14 @@
     padding: 5px;
 }
 
-#add-sighting-header {
+#add-sighting-header, #form-text {
     text-align: center;
     padding-bottom: 10px;
 }
+
+/* #form-text {
+    background-color: cadetblue;
+    color:aliceblue; 
+    padding: 10px;
+    border-radius: 30px;
+} */

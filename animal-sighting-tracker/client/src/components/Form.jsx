@@ -6,37 +6,62 @@ const MyForm = ({ onSaveSighting, editingSighting, onUpdateSighting }) => {
 
     // creates initial state of sighting
     const [sighting, setSighting] = useState(editingSighting || {
-        id: 0,
         individual_seen: "",
         species: "",
         date_of_sighting: "",
         location_of_sighting: "",
-        is_healthy: true,
+        is_healthy: false,
         email: "",
         image_url: ""
     });
 
     //create functions that handle the event of the user typing into the form
+    // individual name
     const handleIndividualChange = (event) => {
         const individual_seen = event.target.value;
         setSighting((sighting) => ({ ...sighting, individual_seen }));
 
     };
 
-    // const handleLastnameChange = (event) => {
-    //     const lastname = event.target.value;
-    //     setStudent((student) => ({ ...student, lastname }));
-    // };
+    // spcecies name
+    const handleSpeciesChange = (event) => {
+        const species = event.target.value;
+        setSighting((sighting) => ({ ...sighting, species }));
+    };
 
-    // const handleCheckChange = (event) => {
-    //     const is_current = event.target.checked;
-    //     //console.log(iscurrent);
-    //     setStudent((student) => ({ ...student, is_current }));
-    // };
+    // date of sighting
+    const handleDateChange = (event) => {
+        const date_of_sighting = event.target.value;
+        setSighting((sighting) => ({ ...sighting, date_of_sighting }));
+    };
+
+    // location of sighting
+    const handleLocationChange = (event) => {
+        const location_of_sighting = event.target.value;
+        setSighting((sighting) => ({ ...sighting, location_of_sighting }));
+    };
+
+    // is healthy
+    const handleHealthyChange = (event) => {
+        const is_healthy = event.target.checked;
+        //console.log(iscurrent);
+        setSighting((sighting) => ({ ...sighting, is_healthy }));
+    };
+
+    // email 
+    const handleEmailChange = (event) => {
+        const email = event.target.value;
+        setSighting((sighting) => ({ ...sighting, email }));
+    };
+
+     // image url
+     const handleImageChange = (event) => {
+        const image_url = event.target.value;
+        setSighting((sighting) => ({ ...sighting, image_url }));
+    };
 
     const clearForm = () => {
         setSighting({ 
-            id: 0,
             individual_seen: "",
             species: "",
             date_of_sighting: "",
@@ -99,6 +124,7 @@ const MyForm = ({ onSaveSighting, editingSighting, onUpdateSighting }) => {
             <div className="form-page">
                 <Form className='form-sighting' onSubmit={handleSubmit}>
                     <h2 id="add-sighting-header">Add New Sighting</h2>
+                    <p id="form-text">Please fill out the following information <br/> to record your sighting!</p>
                     <Form.Group>
                         <label className="form-label">Individual Seen</label>
                         <input
@@ -110,26 +136,70 @@ const MyForm = ({ onSaveSighting, editingSighting, onUpdateSighting }) => {
                             onChange={handleIndividualChange}
                         />
                     </Form.Group>
-                    {/* <Form.Group>
-                        <Form.Label>Last Name</Form.Label>
+                    <Form.Group>
+                        <label className="form-label">Species of Individual</label>
                         <input
                             type="text"
-                            id="add-user-lastname"
-                            placeholder="Last Name"
+                            id="add-species"
+                            placeholder="Species Name"
                             required
-                            value={student.lastname}
-                            onChange={handleLastnameChange}
+                            value={sighting.species}
+                            onChange={handleSpeciesChange}
+                        />
+                    </Form.Group>
+                    <Form.Group>
+                        <label className="form-label">Date of Sighting</label>
+                        <input
+                            type="text"
+                            id="add-date-of-sighting"
+                            placeholder="MM/DD/YYYY"
+                            required
+                            value={sighting.date_of_sighting}
+                            onChange={handleDateChange}
+                        />
+                    </Form.Group>
+                    <Form.Group>
+                        <label className="form-label">Location of Sighting</label>
+                        <input
+                            type="text"
+                            id="add-location-of-sighting"
+                            placeholder="Location"
+                            required
+                            value={sighting.location_of_sighting}
+                            onChange={handleLocationChange}
+                        />
+                    </Form.Group>
+                    <Form.Group>
+                        <label className="form-label">Image of Individual</label>
+                        <input
+                            type="text"
+                            id="add-image"
+                            placeholder="Image URL"
+                            required
+                            value={sighting.image_url}
+                            onChange={handleImageChange}
                         />
                     </Form.Group>
                     <Form.Check
                         type={'checkbox'}
-                        id={`isCurrent`}
-                        checked={student.is_current}
-                        onChange={handleCheckChange}
-                        label={`Are they in the current program?`}
-                    /> */}
+                        id={`isHealthy`}
+                        checked={sighting.is_healthy}
+                        onChange={handleHealthyChange}
+                        label={`Is the Individual Healthy?`}
+                    />
                     <Form.Group>
-                    <Button type="submit" variant="outline-success">{sighting.id ? "Edit Sighting" : "Add Sighting"}</Button>
+                    <Form.Group>
+                        <label className="form-label">Ranger Contact Information</label>
+                        <input
+                            type="text"
+                            id="add-email"
+                            placeholder="Email"
+                            required
+                            value={sighting.email}
+                            onChange={handleEmailChange}
+                        />
+                    </Form.Group>
+                    <Button id="submit-btn" type="submit" variant="outline-success">{sighting.id ? "Edit Sighting" : "Add Sighting"}</Button>
                     {sighting.id ? <Button type="button" variant="outline-warning" onClick={clearForm}>Cancel</Button> : null}
                     </Form.Group>
                 </Form>
