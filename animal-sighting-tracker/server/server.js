@@ -115,19 +115,19 @@ app.post('/species/sightings', async (req, res) => {
     }
 });
 
-// // delete request for students
-// app.delete('/api/students/:studentId', async (req, res) => {
-//     try {
-//         const studentId = req.params.studentId;
-//         await db.query('DELETE FROM students WHERE id=$1', [studentId]);
-//         console.log("From the delete request-url", studentId);
-//         res.status(200).end();
-//     } catch (e) {
-//         console.log(e);
-//         return res.status(400).json({ e });
+// delete request for sightings
+app.delete('/species/sightings/:sightingId', async (req, res) => {
+    try {
+        const sightingId = req.params.sightingId;
+        await db.query('DELETE FROM sightings WHERE id=$1', [sightingId]);
+        console.log("From the delete request-url", sightingId);
+        res.status(200).end();
+    } catch (error) {
+        console.log(error);
+        return res.status(400).json({ error: 'An error occured while processing your request to delete sighting' });
 
-//     }
-// });
+    }
+});
 
 // //A put request - Update a student 
 // app.put('/api/students/:studentId', async (req, res) =>{
