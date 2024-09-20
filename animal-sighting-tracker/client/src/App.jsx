@@ -1,16 +1,15 @@
+import React from 'react';
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import MyNavBar from './components/Navbar'
-import ListStudents from './components/ListStudents'
+import NavigationBar from './components/NavigationBar';
 
 
 function App() {
 
   return (
     <div className="App">
-      <MyNavBar />
-      <ListStudents />
-
+      <NavigationBar />
+      
     </div>
   )
 }
