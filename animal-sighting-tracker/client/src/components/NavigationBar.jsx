@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import './NavigationBar.css';
 import ListSpecies from './ListSpecies';
 import ListSightings from './ListSightings';
+import MyForm from './Form';
 
 
 const NavigationBar = () => {
@@ -15,7 +16,7 @@ const NavigationBar = () => {
         <nav>
           <ul className="navbar-links">
             <li>
-              {/* <Link to="/">Home</Link> */}
+              <Link to="/form">Add Sighting</Link>
             </li>
             <li>
                 <Link to="/species">Species Tracking</Link>
@@ -27,8 +28,10 @@ const NavigationBar = () => {
         </nav>
         <Routes>
             {/* <Route path="/" /> */}
+            <Route path="/form" element={<MyForm />} />
             <Route path="/species" element={<ListSpecies />} />
             <Route path="/species/sightings" element={<ListSightings />} />
+  
         </Routes>
 
       </Router>
