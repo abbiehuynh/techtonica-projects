@@ -10,7 +10,7 @@ const ListSightings = () => {
     const [sightings, setSightings] = useState([]);
 
     //this is the state needed for the UpdateRequest
-    const [editingSightings, setEditingSightings] = useState(null)
+    const [editingSighting, setEditingSighting] = useState(null)
 
     const loadSightings = () => {
         // A function to fetch the list of students that will be load anytime that list change
@@ -25,10 +25,10 @@ const ListSightings = () => {
         loadSightings();
     }, [sightings]);
 
-    // const onSaveStudent = (newStudent) => {
-    //     //console.log(newStudent, "From the parent - List of Students");
-    //     setStudents((students) => [...students, newStudent]);
-    // }
+    const onSaveSighting = (newSighting) => {
+        //console.log(newSighting, "From the parent - List of Sightings");
+        setSightings((sightings) => [...sightings, newSighting]);
+    }
 
 
     // //A function to control the update in the parent (student component)
@@ -58,7 +58,7 @@ const ListSightings = () => {
 
     // }
 
-
+    const [uploadForm, setUploadForm] = useState(false);
 
     return (
         <div className="sightings-container">
@@ -71,8 +71,14 @@ const ListSightings = () => {
                 {/* toDelete={onDelete} toUpdate={onUpdate} */}
             </ul>
         </div>
-        <button id="add-sighting-btn">Add Sighting</button>
-        {/* <MyForm key={editingStudent ? editingStudent.id : null} onSaveStudent={onSaveStudent} editingStudent={editingStudent} onUpdateStudent={updateStudent} /> */}
+        <button id="add-sighting-btn" onClick={() => setUploadForm(true)}
+        >Add Sighting</button>
+        {uploadForm && <MyForm 
+            key={editingSighting ? editingSighting.id : null} 
+            onSaveSighting={onSaveSighting} 
+            closeForm ={() => {setUploadForm(false)}}
+        />}
+        {/* editingSighting={editingSighting} onUpdateSighting={updateSighting} */}
         </div>
     );
 }

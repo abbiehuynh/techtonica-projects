@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Button, Form } from "react-bootstrap"
 import './Form.css';
 
-const MyForm = ({ onSaveSighting, editingSighting, onUpdateSighting }) => {
+const MyForm = ({ onSaveSighting, editingSighting, onUpdateSighting, closeForm}) => {
 
     // creates initial state of sighting
     const [sighting, setSighting] = useState(editingSighting || {
@@ -31,7 +31,7 @@ const MyForm = ({ onSaveSighting, editingSighting, onUpdateSighting }) => {
 
     // date of sighting
     const handleDateChange = (event) => {
-        const date_of_sighting = event.target.value;
+        const date_of_sighting = new Date().toISOString();
         setSighting((sighting) => ({ ...sighting, date_of_sighting }));
     };
 
@@ -72,24 +72,24 @@ const MyForm = ({ onSaveSighting, editingSighting, onUpdateSighting }) => {
         })
     }
 
-    // //A function to handle the post request
-    // const postStudent = (newStudent) => {
-    //     return fetch("http://localhost:8080/api/students", {
-    //         method: "POST",
-    //         headers: { "Content-Type": "application/json" },
-    //         body: JSON.stringify(newStudent),
-    //     })
-    //         .then((response) => {
-    //             return response.json();
-    //         })
-    //         .then((data) => {
-    //             //console.log("From the post ", data);
-    //             //I'm sending data to the List of Students (the parent) for updating the list
-    //             onSaveStudent(data);
-    //             //this line just for cleaning the form
-    //             clearForm();
-    //         });
-    // };
+    //A function to handle the post request
+    const postSighting = (newSighting) => {
+        return fetch("http://localhost:3001/species/sightings", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(newSighting),
+        })
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                //console.log("From the post ", data);
+                //I'm sending data to the List of Students (the parent) for updating the list
+                onSaveSighting(data);
+                //this line just for cleaning the form
+                clearForm();
+            });
+    };
 
     // //A function to handle the post request
     // const putStudent = (toEditStudent) => {
@@ -117,6 +117,7 @@ const MyForm = ({ onSaveSighting, editingSighting, onUpdateSighting }) => {
         } else {
             postSighting(sighting);
         }
+        closeForm();
     };
 
     return (
