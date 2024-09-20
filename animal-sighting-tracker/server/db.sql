@@ -50,7 +50,6 @@ CREATE TABLE public.individuals (
     nickname VARCHAR(255),
     species VARCHAR(255),
     record_creation_timestamp DATE, 
-    is_healthy BOOLEAN NOT NULL
 );
 
 INSERT INTO individuals(id, nickname, species, record_creation_timestamp, is_healthy) 
@@ -67,7 +66,8 @@ CREATE TABLE public.sightings (
     individual_seen VARCHAR(255),
     location_of_sighting VARCHAR(255),
     is_healthy BOOLEAN NOT NULL,
-    email VARCHAR(255)
+    email VARCHAR(255),
+    image_url VARCHAR(255)
 );
 
 INSERT INTO sightings(id, date_of_sighting, individual_seen, location_of_sighting, is_healthy, email) 

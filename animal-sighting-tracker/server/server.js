@@ -52,7 +52,7 @@ app.get('/species/sighting', async (req, res) => {
 });
 
 // using join to fetch data from 3 tables - species, individuals, and sightings
-// create the get request for tracker in the endpoint '/tracker'
+// create the get request for sightings in the endpoint 'species/sightings'
 app.get('/species/sightings', async (req, res) => {
     try {
         const { rows: sightings } = await db.query(
@@ -67,56 +67,57 @@ app.get('/species/sightings', async (req, res) => {
     }
 });
 
-// // create POST request for animal tracker
-// app.post('/species/tracker', async (req, res) => {
-//     try {
+// create POST request for animal sightings 
+app.post('/species/sightings', async (req, res) => {
+    try {
+        const newSighting = {
+            id: req.body.id,
+            individual_seen: req.body.individual_seen,
+            species: req.body.species,
+            date_of_sighting: req.body.date_of_sighting,
+            location_of_sighting: req.body.location_of_sighting,
+            is_healthy: req.body.is_healthy,
+            email: req.body.email,
+            image_url: req.body.image_url
+        };
+        // console.log(newSighting)
+        // insert into individuals table
+        const individualResult = await db.query(
+            `INSERT INTO individuals(species) VALUES($1) RETURNING id`,
+            [newSighting.species]
+        );
+        console.log(individualResult)
+        let sightingsId = individualResult.rows[0].id;
+        console.log("sightingsId: ", sightingsId) 
 
-//         // Insert into individual table
-//         const individualResult = await db.query(
-//             `INSERT INTO individual (species, record_creation_timestamp)
-//              VALUES($1, $2) RETURNING id`,
-//             [req.body.species, req.body.record_creation_timestamp]
-//         );
+        console.log(newSighting.is_healthy);
 
-//         const individualId = individualResult.rows[0].id;
-//         console.log(individualId);
+        // insert into sightings table
+        const sightingResult = await db.query(
+            `INSERT INTO 
+                sightings(id, individual_seen, date_of_sighting, location_of_sighting, is_healthy, email, image_url) 
+            VALUES($1, $2, $3, $4, $5, $6, $7) RETURNING *`,
+            [
+                sightingsId,
+                newSighting.individual_seen,
+                newSighting.date_of_sighting, 
+                newSighting.location_of_sighting, 
+                newSighting.is_healthy, 
+                newSighting.email,
+                newSighting.image_url
+            ]
+        );
 
-//         // prepares data for sightings table
-//         const tracker = {
-//             date_of_sighting: req.body.date_of_sighting,
-//             individual_seen: req.body.individual_seen,
-//             location_of_sighting: req.body.location_of_sighting,
-//             is_healthy: req.body.is_healthy,
-//             email: req.body.email,
-//             individualId
-//         };
+        console.log("New Sighting Uploaded: ", sightingResult.rows[0]);
+        res.json(sightingResult.rows[0]);
 
-//         // insert into sightings table
-//         const result = await db.query(
-//             `INSERT INTO 
-//                 sightings(id, date_of_sighting, individual_seen, location_of_sighting, is_healthy, email) 
-//             VALUES($1, $2, $3, $4, $5, $6) RETURNING *`,
-//             [
-//                 tracker.date_of_sighting, 
-//                 tracker.individual_seen,
-//                 tracker.individualId, 
-//                 tracker.speciesName, 
-//                 tracker.location_of_sighting, 
-//                 tracker.is_healthy, 
-//                 tracker.email
-//             ]
-//         );
+    } catch (error) {
+        console.log("Error Uploading New Sighting: ", error);
+        return res.status(400).json({ error: 'An error occurred while processing your request.' });
 
-//         console.log(result.rows[0]);
-//         res.json(result.rows[0]);
+    }
 
-//     } catch (error) {
-//         console.log(error);
-//         return res.status(400).json({ error: 'An error occurred while processing your request.' });
-
-//     }
-
-// });
+});
 
 // // delete request for students
 // app.delete('/api/students/:studentId', async (req, res) => {
