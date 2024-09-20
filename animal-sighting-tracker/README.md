@@ -55,6 +55,8 @@ Clicking on "Sightings Tracker" will redirect you to page with cards of individu
 
 Scroll to the bottom to find the "Add Sighting" button which will redirect you to the form to add a new sighting!
 ![Form](./client/src/assets/form-animal-sighting-tracker.png)
+
+
 ## Features: 
 - Interactive links to see the current species being tracked as well as the current individuals being tracked. 
 - Form validation and submission of new sightings of individuals. 
