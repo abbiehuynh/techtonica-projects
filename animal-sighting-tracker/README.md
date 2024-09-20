@@ -47,11 +47,11 @@ $ git clone https://github.com/abbiehuynh/techtonica-projects/animal-sightingtra
 
 ## Demonstration:
 
-Once the page has loaded, you will see the homepage with cards of animals sightings. 
-![Load Page]()
+Once the page has loaded, you will see the homepage with cards of animals species. This can also be re-accessed through the "Species Tracking" Link. 
+![Load Species Page](./client/src/assets/loadpage-animalsightingtracker.png)
 
 You can 
-![User Input]()
+![Load Sightings Page]()
 
 
 ![]()
@@ -67,6 +67,7 @@ You can
 - HTML, CSS
 - Git
 - Fetch
+- BootStrap
 
 ## Acknowledgments:
 Specials thanks to Techtonica Program & Staff, my mentor, and the H2 2024 Cohort. Thank you for your continuous love and support for growth through this tech journey. 
