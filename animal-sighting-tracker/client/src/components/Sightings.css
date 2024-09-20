@@ -12,10 +12,6 @@
     background-color: olivedrab;
 }
 
-body {
-    background-color: rgb(244, 240, 197);
-}
-
 #add-sighting-btn {
     display: block;
     margin: auto;
@@ -23,13 +19,19 @@ body {
     padding: 15px 20px;
     border-radius: 40px;
     border: none;
-    background-color: rgb(176, 205, 119);
-    color: white;
+    /* background-color: rgb(176, 205, 119); */
+    background-color: #ffe6e6;
+    color: #d9534f;
     font-size: 2rem;
 }
 
 #add-sighting-btn:hover {
+    color:rgb(232, 243, 211);
     background-color: olivedrab;
+}
+
+.sightings-container {
+    margin-top: 50px;
 }
 
 
@@ -41,5 +43,5 @@ body {
 }
 
 .card:hover {
-    background-color: honeydew;
+    background-color: #ffe6e6;
 }

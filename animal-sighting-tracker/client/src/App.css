@@ -1,7 +1,11 @@
+body {
+  background-image: url(./assets/jungle-background.jpg);
+  background-size: auto;
+}
+
 .App {
   min-height: 100vh;
-  background-color: rgb(238, 232, 232);
-  margin: 5px;
+  /* background-color: rgb(238, 232, 232); */
 }
 
 .mybody {

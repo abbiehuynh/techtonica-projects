@@ -1,11 +1,13 @@
 /* src/Navbar.css */
 .navbar {
-    background-color: #ffe6e6;
-    padding: 1rem;
+    /* position fixes from scolling.. but does stick to top */
+    /* position: fixed; */
+    
+    width: 100%;
+    padding: 20px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     height: 100px;
+    background-color: #ffe6e6;
   }
   
   .navbar-title {
