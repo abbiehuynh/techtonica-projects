@@ -26,11 +26,11 @@ SET default_table_access_method = heap;
 
 CREATE TABLE public.species (
     id integer NOT NULL,
-    common_name varchar(255),
-    scientific_name varchar(255),
+    common_name VARCHAR(255),
+    scientific_name VARCHAR(255),
     population_count INT,
-    conservation_status_code varchar(255),
-    record_creation_timestamp timestamp(0) with time zone NOT NULL, 
+    conservation_status_code VARCHAR(255),
+    record_creation_timestamp TIMESTAMP(0) with time zone NOT NULL, 
 );
 
 INSERT INTO species(id, common_name, scientific_name, population_count, conservation_status_code, 
