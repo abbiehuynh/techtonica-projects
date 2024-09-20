@@ -28,7 +28,7 @@ CREATE TABLE public.species (
     id integer NOT NULL,
     common_name varchar(255),
     scientific_name varchar(255),
-    population_count varchar(255),
+    population_count INT,
     conservation_status_code varchar(255),
     record_creation_timestamp timestamp(0) with time zone NOT NULL, 
 );
@@ -49,7 +49,7 @@ CREATE TABLE public.individuals (
     id INT NOT NULL,
     nickname VARCHAR(255),
     species VARCHAR(255),
-    record_creation_timestamp DATE, 
+    record_creation_timestamp TIMESTAMP, 
 );
 
 INSERT INTO individuals(id, nickname, species, record_creation_timestamp, is_healthy) 
@@ -106,29 +106,7 @@ ALTER SEQUENCE public.species_id_seq OWNED BY public.species.id;
 ALTER TABLE ONLY public.species ALTER COLUMN id SET DEFAULT nextval('public.species_id_seq'::regclass);
 
 
---
--- Data for Name: species; Type: TABLE DATA; Schema: public; Owner: -
---
-
-COPY public.species (id, firstname, lastname, is_current) FROM stdin;
-\.
-
-
---
--- Name: students_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
---
-
-SELECT pg_catalog.setval('public.students_id_seq', 1, false);
-
-
---
--- Name: students students_pkey; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.students
-    ADD CONSTRAINT students_pkey PRIMARY KEY (id);
-
-
+-- repeat sequence set up for ids with individuals and sightings
 --
 -- PostgreSQL database dump complete
 --

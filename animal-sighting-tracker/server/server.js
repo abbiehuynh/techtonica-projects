@@ -70,6 +70,7 @@ app.get('/species/sightings', async (req, res) => {
 // create POST request for animal sightings 
 app.post('/species/sightings', async (req, res) => {
     try {
+        // creates new sighting
         const newSighting = {
             id: req.body.id,
             individual_seen: req.body.individual_seen,
@@ -80,17 +81,14 @@ app.post('/species/sightings', async (req, res) => {
             email: req.body.email,
             image_url: req.body.image_url
         };
-        // console.log(newSighting)
+        
         // insert into individuals table
         const individualResult = await db.query(
             `INSERT INTO individuals(species) VALUES($1) RETURNING id`,
             [newSighting.species]
         );
-        console.log(individualResult)
+        // creates new id
         let sightingsId = individualResult.rows[0].id;
-        console.log("sightingsId: ", sightingsId) 
-
-        console.log(newSighting.is_healthy);
 
         // insert into sightings table
         const sightingResult = await db.query(
@@ -114,9 +112,7 @@ app.post('/species/sightings', async (req, res) => {
     } catch (error) {
         console.log("Error Uploading New Sighting: ", error);
         return res.status(400).json({ error: 'An error occurred while processing your request.' });
-
     }
-
 });
 
 // // delete request for students
