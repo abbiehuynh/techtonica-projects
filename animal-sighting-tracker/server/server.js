@@ -142,12 +142,12 @@ app.put('/species/sightings/:studentId', async (req, res) =>{
                     WHERE id=${sightingsId} RETURNING *`;
     const values = [
         sightingsId,
-        newSighting.individual_seen,
-        newSighting.date_of_sighting, 
-        newSighting.location_of_sighting, 
-        newSighting.is_healthy, 
-        newSighting.email,
-        newSighting.image_url
+        updatedSighting.individual_seen,
+        updatedSighting.date_of_sighting, 
+        updatedSighting.location_of_sighting, 
+        updatedSighting.is_healthy, 
+        updatedSighting.email,
+        updatedSighting.image_url
     ];
     
     try {

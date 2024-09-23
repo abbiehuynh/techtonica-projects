@@ -97,7 +97,7 @@ describe('POST /species/sightings', () => {
             image_url: '/src/benny-sighting3.jpg'
         });
     });
-})
+});
 
 // test delete request 
 describe('DELETE /species/sightings/:sightingId', () => {
@@ -107,8 +107,42 @@ describe('DELETE /species/sightings/:sightingId', () => {
         // mocks the database deletion response
         db.query.mockResolvedValue();
 
-        const response = await request(app).delete('/species/sightings/${sightingId}');
+        const response = await request(app).delete(`/species/sightings/${sightingId}`);
 
         expect(response.status).toBe(200);
+    });
+});
+
+// test put request
+describe('PUT /species/sightings/:sightingId', () => {
+    it('updates a sighting and responds with the updated sighting data', async () => {
+        const sightingId = 1;
+        const updatedSighting = {
+            individual_seen: 'Benny',
+            species: 'panthera tigris tigris',
+            date_of_sighting: '2023-09-24',
+            location_of_sighting: 'China',
+            is_healthy: false,
+            email: 'adamsmith@gmail.com',
+            image_url: '/src/benny-sighting3.jpg'
+        };
+
+        // mocks the database update response
+        db.query.mockResolvedValueOnce({
+            rows: [{
+                id: sightingId,
+                ...updatedSighting,
+            }],
+        });
+
+        const response = await request(app)
+            .put(`/species/sightings/${sightingId}`)
+            .send(updatedSighting);
+
+        expect(response.status).toBe(200);
+        expect(response.body).toEqual({
+            id: sightingId,
+            ...updatedSighting,
+        });
     });
 });
