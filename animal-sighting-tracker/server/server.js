@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(bodyParser.json());
 
 // creates an endpoint for the route "/""
-app.get('/', (req, res) => {
+app.get('/test', (req, res) => {
     res.json({ message: 'Hello, from ExpressJS with React-Vite' });
 });
 
@@ -142,12 +142,12 @@ app.put('/species/sightings/:studentId', async (req, res) =>{
                     WHERE id=${sightingsId} RETURNING *`;
     const values = [
         sightingsId,
-        newSighting.individual_seen,
-        newSighting.date_of_sighting, 
-        newSighting.location_of_sighting, 
-        newSighting.is_healthy, 
-        newSighting.email,
-        newSighting.image_url
+        updatedSighting.individual_seen,
+        updatedSighting.date_of_sighting, 
+        updatedSighting.location_of_sighting, 
+        updatedSighting.is_healthy, 
+        updatedSighting.email,
+        updatedSighting.image_url
     ];
     
     try {
@@ -160,6 +160,9 @@ app.put('/species/sightings/:studentId', async (req, res) =>{
       return res.status(400).json({e})
     }
   })
+
+// exports the app for testing - super
+module.exports = app;
 
 // console.log that your server is up and running
 app.listen(PORT, () => {
