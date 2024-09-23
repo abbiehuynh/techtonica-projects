@@ -16,7 +16,7 @@ const NavigationBar = () => {
         <nav>
           <ul className="navbar-links">
             <li>
-              <Link to="/form">Add Sighting</Link>
+              {/* <Link to="/form">Add Sighting</Link> */}
             </li>
             <li>
                 <Link to="/species">Species Tracking</Link>

@@ -71,7 +71,7 @@ const ListSpecies = () => {
                 })}
             </ul>
         </div>
-        {/* <MyForm key={editingStudent ? editingStudent.id : null} onSaveStudent={onSaveStudent} editingStudent={editingStudent} onUpdateStudent={updateStudent} /> */}
+        {/* <MyForm key={editingSpecies ? editingSpecies.id : null} onSaveSpecies={onSaveSpecies} editingSpecies={editingSpecies} onUpdateSpecies={updateSpecies} /> */}
         </div>
     );
 }

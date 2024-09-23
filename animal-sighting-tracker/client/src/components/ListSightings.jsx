@@ -31,32 +31,30 @@ const ListSightings = () => {
     }
 
 
-    // //A function to control the update in the parent (student component)
-    // const updateStudent = (savedStudent) => {
-    //     // console.log("Line 29 savedStudent", savedStudent);
-    //     // This function should update the whole list of students - 
-    //     loadStudents();
-    // }
+    //A function to control the update in the parent (student component)
+    const updateSighting = (savedSighting) => {
+        // This function should update the whole list of sightings - 
+        loadSightings();
+    }
 
-    // //A function to handle the Delete funtionality
-    // const onDelete = (student) => {
-    //     //console.log(student, "delete method")
-    //     return fetch(`http://localhost:8080/api/students/${student.id}`, {
-    //         method: "DELETE"
-    //     }).then((response) => {
-    //         //console.log(response);
-    //         if (response.ok) {
-    //             loadStudents();
-    //         }
-    //     })
-    // }
+    //A function to handle the Delete funtionality
+    const onDelete = (sighting) => {
+        //console.log(student, "delete method")
+        return fetch(`http://localhost:3001/species/sightings/${sightings.id}`, {
+            method: "DELETE"
+        }).then((response) => {
+            //console.log(response);
+            if (response.ok) {
+                loadSightings();
+            }
+        })
+    }
 
-    // //A function to handle the Update functionality
-    // const onUpdate = (toUpdateStudent) => {
-    //     //console.log(toUpdateStudent);
-    //     setEditingStudent(toUpdateStudent);
+    //A function to handle the Update functionality
+    const onUpdate = (toUpdateSighting) => {
+        setEditingSighting(toUpdateSighting);
 
-    // }
+    }
 
     const [uploadForm, setUploadForm] = useState(false);
 
@@ -66,7 +64,7 @@ const ListSightings = () => {
             <h2 id="sightings-tracking-header"> Sightings </h2>
             <ul style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', alignItems: 'center', gap: '20px', paddingTop: '20px'}}>
                 {sightings.map((sightings) => {
-                    return <li key={sightings.id}> <Sightings sightings={sightings} /></li>
+                    return <li key={sightings.id}> <Sightings sightings={sightings} toDelete={onDelete} toUpdate={onUpdate} /></li>
                 })}
                 {/* toDelete={onDelete} toUpdate={onUpdate} */}
             </ul>
@@ -76,9 +74,10 @@ const ListSightings = () => {
         {uploadForm && <MyForm 
             key={editingSighting ? editingSighting.id : null} 
             onSaveSighting={onSaveSighting} 
+            editingSighting={editingSighting} 
+            onUpdateSighting={updateSighting}
             closeForm ={() => {setUploadForm(false)}}
         />}
-        {/* editingSighting={editingSighting} onUpdateSighting={updateSighting} */}
         </div>
     );
 }
