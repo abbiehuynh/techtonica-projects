@@ -50,3 +50,51 @@ describe('GET /species', () => {
     //     expect(response.body).toEqual({ error: 'Database error' });
     // });
 });
+
+// test post request for the endpoint /species/sightings
+describe('POST /species/sightings', () => {
+    it('creates a new sighting and responds with sighting data', async () => {
+        // mocks the database responses
+        db.query
+            .mockResolvedValueOnce({ rows: [{ id: 1 }]})
+            .mockResolvedValueOnce({
+                rows: [{
+                    id: 145, 
+                    individual_seen: 'Benny',
+                    species: 'panthera tigris tigris',
+                    date_of_sighting: '2023-09-22',
+                    location_of_sighting: 'China',
+                    is_healthy: true,
+                    email: 'adamsmith@gmail.com',
+                    image_url: '/src/benny-sighting3.jpg'
+                }],
+            });
+            
+        const newSighting = {
+            id: 145, 
+            individual_seen: 'Benny',
+            species: 'panthera tigris tigris',
+            date_of_sighting: '2023-09-22',
+            location_of_sighting: 'China',
+            is_healthy: true,
+            email: 'adamsmith@gmail.com',
+            image_url: '/src/benny-sighting3.jpg'
+        };
+        
+        const response = await request(app)
+            .post('/species/sightings')
+            .send(newSighting);
+
+        expect(response.status).toBe(200);
+        expect(response.body).toEqual({
+            id: 145, 
+            individual_seen: 'Benny',
+            species: 'panthera tigris tigris',
+            date_of_sighting: '2023-09-22',
+            location_of_sighting: 'China',
+            is_healthy: true,
+            email: 'adamsmith@gmail.com',
+            image_url: '/src/benny-sighting3.jpg'
+        });
+    });
+})
