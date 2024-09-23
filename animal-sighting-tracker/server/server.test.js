@@ -69,7 +69,7 @@ describe('POST /species/sightings', () => {
                     image_url: '/src/benny-sighting3.jpg'
                 }],
             });
-            
+
         const newSighting = {
             id: 145, 
             individual_seen: 'Benny',
@@ -98,3 +98,17 @@ describe('POST /species/sightings', () => {
         });
     });
 })
+
+// test delete request 
+describe('DELETE /species/sightings/:sightingId', () => {
+    it('deletes a sighting and responds with status 200', async () => {
+        const sightingId = 1;
+
+        // mocks the database deletion response
+        db.query.mockResolvedValue();
+
+        const response = await request(app).delete('/species/sightings/${sightingId}');
+
+        expect(response.status).toBe(200);
+    });
+});
