@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(bodyParser.json());
 
 // creates an endpoint for the route "/""
-app.get('/', (req, res) => {
+app.get('/test', (req, res) => {
     res.json({ message: 'Hello, from ExpressJS with React-Vite' });
 });
 
@@ -160,6 +160,9 @@ app.put('/species/sightings/:studentId', async (req, res) =>{
       return res.status(400).json({e})
     }
   })
+
+// exports the app for testing - super
+module.exports = app;
 
 // console.log that your server is up and running
 app.listen(PORT, () => {
