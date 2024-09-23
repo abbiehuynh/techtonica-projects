@@ -62,6 +62,7 @@ const ListSightings = () => {
         <div className="sightings-container">
         <div className="list-sightings">
             <h2 id="sightings-tracking-header"> Sightings </h2>
+            <button id="filter-btn">filter</button>
             <ul style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', alignItems: 'center', gap: '20px', paddingTop: '20px'}}>
                 {sightings.map((sightings) => {
                     return <li key={sightings.id}> <Sightings sightings={sightings} toDelete={onDelete} toUpdate={onUpdate} /></li>

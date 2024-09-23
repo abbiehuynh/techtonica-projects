@@ -64,6 +64,7 @@ const ListSpecies = () => {
         <div className="species-container">
         <div className="list-species">
             <h2 id="species-tracking-header"> Species Tracking </h2>
+            <button id="filter-btn"> filter</button>
             <ul style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', alignItems: 'center', gap: '20px', paddingTop: '20px'}}>
                 {species.map((species) => {
                     return <li key={species.id}> <Species species={species} /></li>

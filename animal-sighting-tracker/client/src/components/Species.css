@@ -4,7 +4,7 @@
     text-align: center;
     display: block;
     margin: auto;
-    margin-top: 10px;
+    margin-top: 60px;
     width: 400px;
     padding: 20px;
     
@@ -13,6 +13,23 @@
     background-color: olivedrab;
 }
 
+#filter-btn {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    border: none;
+    border-radius: 25px;
+    width: 150px;
+    padding: 10px;
+    font-size: 20px;
+    background-color: #ffe6e6;
+    color: #d9534f;
+}
+
+#filter-btn:hover {
+    color: white;
+    background-color: olivedrab;
+}
 
 /* style added to species.jsx */
 .card {
