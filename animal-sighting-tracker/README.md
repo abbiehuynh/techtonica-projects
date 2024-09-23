@@ -70,6 +70,7 @@ Scroll to the bottom to find the "Add Sighting" button which will redirect you t
 - Git
 - Fetch
 - BootStrap
+- Jest, Babel 
 
 ## Acknowledgments:
 Specials thanks to Techtonica Program & Staff, my mentor, and the H2 2024 Cohort. Thank you for your continuous love and support for growth through this tech journey. 
