@@ -28,8 +28,8 @@ const NavigationBar = () => {
         </nav>
         <Routes>
             {/* <Route path="/" /> */}
-            {/* <Route path="/form" element={<MyForm key={editingSighting ? editingSighting.id : null} onSaveSighting={onSaveSighting}  />} /> */}
-            {/* editingSighting={editingSighting} onUpdateSighting={updateSighting} */}
+            {/* <Route path="/form" element={<MyForm key={editingSighting ? editingSighting.id : null} onSaveSighting={onSaveSighting} editingSighting={editingSighting} onUpdateSighting={updateSighting} />}  /> */}
+      
             <Route path="/species" element={<ListSpecies />} />
             <Route path="/species/sightings" element={<ListSightings />} />
   

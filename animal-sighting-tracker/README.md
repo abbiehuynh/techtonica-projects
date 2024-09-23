@@ -1,7 +1,7 @@
 # Project Name: Animal Sighting Tracker
 
 **Description:**
-Just spotted the species you've been tracking and need a way to organize each species information? Better yet, need a way to track that specific individual you've been following along? Will look no further! This Animal Sighting Tracker can do just the job! Make tracking your favorite animal a breeze with this full-stack web app.
+Just spotted the species you've been tracking and need a way to organize each species information? Better yet, need a way to track that specific individual you've been following along? Well look no further! This Animal Sighting Tracker can do just the job! Make tracking your favorite animal a breeze with this full-stack web app.
 
 ---
 
