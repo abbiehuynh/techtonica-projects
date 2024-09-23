@@ -13,7 +13,7 @@ const ListSpecies = () => {
     const [editingSpecies, setEditingSpecies] = useState(null)
 
     const loadSpecies = () => {
-        // A function to fetch the list of students that will be load anytime that list change
+        // A function to fetch the list of species that will be load anytime that list change
         fetch("http://localhost:3001/species")
             .then((response) => response.json())
             .then((species) => {
