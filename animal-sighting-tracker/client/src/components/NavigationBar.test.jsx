@@ -23,9 +23,16 @@ test('renders navigation links', () => {
 
     expect(speciesLink).toBeInTheDocument();
     expect(sightingsLink).toBeInTheDocument();
+});
+
+// test three
+test('checks if navigation links have the correct href', () => {
+    render(<NavigationBar />);
+
+    const speciesLink = screen.getByText(/Species Tracking/i);
+    const sightingsLink = screen.getByText(/sightings tracker/i);
 
     // check if the links have the correct href
     expect(speciesLink.closest('a')).toHaveAttribute('href', '/species');
     expect(sightingsLink.closest('a')).toHaveAttribute('href', '/species/sightings');
 });
-
