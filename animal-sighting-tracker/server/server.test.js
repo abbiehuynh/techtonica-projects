@@ -99,7 +99,7 @@ describe('POST /species/sightings', () => {
     });
 });
 
-// test delete request 
+// test delete request to remove sighting by id
 describe('DELETE /species/sightings/:sightingId', () => {
     it('deletes a sighting and responds with status 200', async () => {
         const sightingId = 1;
@@ -113,7 +113,7 @@ describe('DELETE /species/sightings/:sightingId', () => {
     });
 });
 
-// test put request
+// test put request to update sighting by id
 describe('PUT /species/sightings/:sightingId', () => {
     it('updates a sighting and responds with the updated sighting data', async () => {
         const sightingId = 1;
