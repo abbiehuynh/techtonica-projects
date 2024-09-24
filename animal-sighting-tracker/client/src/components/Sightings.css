@@ -1,0 +1,47 @@
+/* style added to listSightings.jsx */
+#sightings-tracking-header {
+    text-align: center;
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    width: 400px;
+    padding: 20px;
+    
+    border-radius: 40px;
+    color: white;
+    background-color: olivedrab;
+}
+
+#add-sighting-btn {
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 15px 20px;
+    border-radius: 40px;
+    border: none;
+    /* background-color: rgb(176, 205, 119); */
+    background-color: #ffe6e6;
+    color: #d9534f;
+    font-size: 2rem;
+}
+
+#add-sighting-btn:hover {
+    color:rgb(232, 243, 211);
+    background-color: olivedrab;
+}
+
+.sightings-container {
+    margin-top: 50px;
+}
+
+
+/* style added to sightings.jsx */
+.card {
+    border-radius: 40px;
+    height: 40rem;
+    box-shadow: 0px 5px 5px rgb(226, 220, 220);
+}
+
+.card:hover {
+    background-color: #ffe6e6;
+}
