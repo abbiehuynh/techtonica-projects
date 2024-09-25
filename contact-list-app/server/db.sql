@@ -26,8 +26,6 @@ SET default_table_access_method = heap;
 
 CREATE TABLE public.contacts (
     id INT NOT NULL,
-    firstname VARCHAR(255),
-    lastname VARCHAR(255),
     name VARCHAR(255),
     email VARCHAR(255), 
     phone_number VARCHAR(20),

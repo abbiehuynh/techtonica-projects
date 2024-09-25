@@ -47,10 +47,6 @@ input[type=text] {
   border: 3px solid #98d0f1
 }
 
-button.btn.btn-primary {
-  margin-top: 25px;
-}
-
 .myicon {
   stroke: rgb(243, 121, 7);
   color: rgb(243, 121, 7);
