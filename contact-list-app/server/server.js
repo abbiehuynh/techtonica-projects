@@ -1,4 +1,5 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const cors = require('cors');
 
 require('dotenv').config();
@@ -8,21 +9,24 @@ const db = require('./db/db-connection.js');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+
 app.use(cors());
 app.use(express.json());
+app.use(bodyParser.json());
 
 // creates an endpoint for the route "/""
 app.get('/', (req, res) => {
     res.json({ message: 'Hello, from ExpressJS with React-Vite' });
 });
 
-// create the get request for students in the endpoint '/api/students'
-app.get('/api/students', async (req, res) => {
+// create the get request for the contact list in the endpoint '/contact-list'
+app.get('/contact-list', async (req, res) => {
     try {
-        const { rows: students } = await db.query('SELECT * FROM students');
-        res.send(students);
-    } catch (e) {
-        return res.status(400).json({ e });
+        const { rows: contacts } = await db.query('SELECT * FROM contacts');
+        res.send(contacts);
+    } catch (error) {
+        console.log(error);
+        return res.status(400).json({ error });
     }
 });
 
