@@ -68,6 +68,7 @@ app.get('/contacts/details', async (req, res) => {
     }
 });
 
+// *** COME BACK TO FIX POST REQUEST
 // create the POST request
 app.post('/contacts/details', async (req, res) => {
     try {
@@ -121,16 +122,19 @@ app.post('/contacts/details', async (req, res) => {
     }
 });
 
-// delete request for students
-app.delete('/api/students/:studentId', async (req, res) => {
+// creates delete request for contact
+app.delete('/contacts/details/:contactId', async (req, res) => {
     try {
-        const studentId = req.params.studentId;
-        await db.query('DELETE FROM students WHERE id=$1', [studentId]);
-        console.log("From the delete request-url", studentId);
+        const contactId = req.params.contactId;
+        // const contactName = req.body.name;
+        await db.query('DELETE FROM public.contacts WHERE id=$1', [contactId]);
+        
+        res.send(`Contact with id ${contactId} has been deleted`)
+        console.log("From the delete request-url", contactId);
         res.status(200).end();
-    } catch (e) {
-        console.log(e);
-        return res.status(400).json({ e });
+    } catch (error) {
+        console.error("Error Deleting Contact: ", error);
+        return res.status(400).json({ error: 'An error has occured while processing your delete request.' });
 
     }
 });
