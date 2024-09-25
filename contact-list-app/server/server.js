@@ -69,26 +69,56 @@ app.get('/contacts/details', async (req, res) => {
 });
 
 // create the POST request
-app.post('/api/students', async (req, res) => {
+app.post('/contacts/details', async (req, res) => {
     try {
-        const newStudent = {
-            firstname: req.body.firstname,
-            lastname: req.body.lastname,
-            iscurrent: req.body.iscurrent
+        // create new contact
+        const newContact = {
+            name: req.body.id, 
+            email: req.body.email,
+            phone_number: req.body.phone_number,
+            notes: req.body.notes,
+            location: req.body.location,
+            occupation: req.body.occupation
         };
-        //console.log([newStudent.firstname, newStudent.lastname, newStudent.iscurrent]);
-        const result = await db.query(
-            'INSERT INTO students(firstname, lastname, is_current) VALUES($1, $2, $3) RETURNING *',
-            [newStudent.firstname, newStudent.lastname, newStudent.iscurrent],
+        
+        // insert into public.contacts table
+        const contactsResult = await db.query(
+            `INSERT INTO public.contacts(name, email, phone_number) 
+                VALUES($1, $2, $3) RETURNING id`,
+            [newContact.name, newContact.email, newContact.phone_number]
         );
-        console.log(result.rows[0]);
-        res.json(result.rows[0]);
 
-    } catch (e) {
-        console.log(e);
-        return res.status(400).json({ e });
+        // creates new id
+        let contactsId = contactsResult.rows[0].id;
+
+        // insert into public.personal_details table
+        const personalDetailsResult = await db.query(
+            `INSERT INTO public.personal_details(id, notes, location) 
+                VALUES($1, $2, $3) RETURNING id`,
+            [contactsId, newContact.notes, newContact.location]
+        );
+
+        // insert into public.work_details table
+        const workDetailsResult = await db.query(
+            `INSERT INTO public.work_details(id, occupation)
+                VALUES($1, $2) RETURNING id`,
+            [contactsId, newContact.occupation]
+        );
+
+        // creates response with created contact details
+        res.status(201).json({
+            contact: contactsResult.rows[0],
+            personalDetails: personalDetailsResult.rows[0],
+            workDetails: workDetailsResult.rows[0],
+        });
+
+        // console.log("New Contact Uploaded: ", contactResults.rows[0]);
+        // res.json(contactResults.rows[0]);
+
+    } catch (error) {
+        console.error("Error Uploading New Contact: ", error);
+        return res.status(400).json({ error: 'An error has occured while processing your post request.' });
     }
-
 });
 
 // delete request for students
