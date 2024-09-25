@@ -180,5 +180,5 @@ app.put('/contacts/details/:contactId', async (req, res) =>{
 
 // console.log that your server is up and running
 app.listen(PORT, () => {
-    console.log(`Hello, Server listening on ${PORT}`);
+    console.log(`Contact List App Server listening on ${PORT}`);
 });
