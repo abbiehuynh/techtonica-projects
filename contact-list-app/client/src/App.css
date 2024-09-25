@@ -1,6 +1,6 @@
 .App {
   min-height: 100vh;
-  background-color: rgb(238, 232, 232);
+  background-image: url(./assets/background-image.jpg);
   margin: 5px;
 }
 
