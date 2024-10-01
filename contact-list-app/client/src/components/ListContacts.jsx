@@ -56,10 +56,10 @@ const ListContacts = () => {
 
 
     return (
-        <div className="mybody">
-        <div className="list-contacts">
+        <div className="container">
+        <div className="box list-contacts">
             <h2 id="contacts-header">Contact List </h2>
-            <ul style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', alignItems: 'center', gap: '20px', paddingTop: '20px'}}>
+            <ul style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', alignItems: 'center', gap: '20px', paddingTop: '20px' }}>
                 {contacts.map((contact) => {
                     return <li key={contact.id}> <Contact contact={contact} toDelete={onDelete} toUpdate={onUpdate} /></li>
                 })}
