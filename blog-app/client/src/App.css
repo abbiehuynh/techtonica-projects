@@ -25,10 +25,6 @@ a.navbar-brand {
   flex: 1
 }
 
-ul {
-  list-style-type: none;
-}
-
 
 form {
   flex-direction: column;
@@ -49,13 +45,6 @@ input[type=text] {
 
 button.btn.btn-primary {
   margin-top: 25px;
-}
-
-.myicon {
-  stroke: rgb(243, 121, 7);
-  color: rgb(243, 121, 7);
-  stroke-width: 10;
-  margin-right: 0.9em;
 }
 
 .form-label {

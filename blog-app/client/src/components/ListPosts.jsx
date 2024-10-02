@@ -13,7 +13,6 @@ const ListPosts = () => {
     const [editingPost, setEditingPost] = useState(null)
 
     const loadPosts = () => {
-        // A function to fetch the list of students that will be load anytime that list change
         fetch("http://localhost:3001/posts")
             .then((response) => response.json())
             .then((posts) => {

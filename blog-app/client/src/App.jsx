@@ -5,6 +5,7 @@ import NavBar from './components/Navbar';
 import Home from './components/Home';
 import Explore from './components/Explore';
 import Profile from './components/Profile';
+import PostDetails from './components/PostDetails';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/explore" element={<Explore />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/posts/:id" element={<PostDetails />} />
         </Routes>
       </Router>
     </div>
