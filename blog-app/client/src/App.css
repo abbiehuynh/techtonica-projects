@@ -1,5 +1,5 @@
 .App {
-  /* min-height: 100vh; */
+  min-height: 100vh;
   background-image: url(./assets/pet-background.jpg);
   margin: 5px;
 }
