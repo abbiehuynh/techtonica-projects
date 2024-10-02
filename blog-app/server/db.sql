@@ -113,11 +113,11 @@ ALTER TABLE ONLY public.comments ALTER COLUMN id SET DEFAULT nextval('public.com
 
 
 -- Insert Values into comments table
-INSERT INTO public.comments_pkey(author, title, content) 
+INSERT INTO public.comments(post_id, author, content) 
  VALUES 
-    ('Mr. Whiskers','Meet the Cat of the Month, Oliver!', 'This months cat of the month is no other than, Oliver, aka known as lil liver! Oliver is 5 years old.'),
-    ('Lil Liver','How to Train Your Cat','So you need some help to teach your new fluffy friend how to behave? Well, the first rule you need to know is that you need to grab their attention. So you need to spend a minimum of a million dollars a week to do just that. If you cant buy the most premium fillet of fish, then just give up.'),
-    ('Midnight', 'How I tricked my owner into giving me more food', 'Its easy. Dont overthink it. Just be cute, cuddly, extra loving, and more! The extra cuddles can be a pain, but its worth the extra kibbles and food I get when I start meowing at the food bowl for more. If that doesnt work, just meow and follow them everywhere until they give it up!');
+    (1, 'Lil Liver', 'Thank you so much for this recognition! I could not imagine there being a better Cat of the Month than I. Muahaha.'),
+    (2, 'Mr. Whiskers', 'Excellent! Almost Brilliant Even! I must share this with my owner!'),
+    (3, 'Lil Liver', 'How come this works for you but not for me, AND we share the same owner.. hmm');
 
 --
 -- Name: users; Type: TABLE; Schema: public; Owner: -

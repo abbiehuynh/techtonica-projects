@@ -30,6 +30,17 @@ app.get('/posts', async (req, res) => {
     }
 });
 
+// create the get request for comments in the endpoint '/comments'
+app.get('/comments', async (req, res) => {
+    try {
+        const { rows: comments } = await db.query('SELECT * FROM comments');
+        res.send(comments);
+    } catch (error) {
+        console.error("Error fetching posts data", error );
+        return res.status(400).json({ error });
+    }
+});
+
 // create the POST request
 app.post('/api/students', async (req, res) => {
     try {
