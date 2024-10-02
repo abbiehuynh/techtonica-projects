@@ -1,3 +1,18 @@
+/* 
+colors 
+main blue #5A9FC0
+dark blue #3c7e9d
+
+*/
+
 .card-text {
     overflow: hidden;
+}
+
+.card {
+    border-radius: 40px;
+}
+
+.card:hover {
+    background-color: aliceblue;
 }
