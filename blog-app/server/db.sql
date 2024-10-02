@@ -29,6 +29,7 @@ CREATE TABLE public.posts (
     author VARCHAR(255) NOT NULL, 
     title VARCHAR(255) NOT NULL,
     content TEXT NOT NULL,
+    image_url VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
