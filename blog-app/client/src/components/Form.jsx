@@ -1,118 +1,126 @@
 import React, { useState, useEffect } from 'react'
 import { Button, Form } from "react-bootstrap"
+import './Form.css'
 
-const MyForm = ({ onSaveStudent, editingStudent, onUpdateStudent }) => {
+const MyForm = ({ onSavePost, editingPost, onUpdatePost }) => {
 
-    // This is the original State with not initial student 
-    const [student, setStudent] = useState(editingStudent || {
-        firstname: "",
-        lastname: "",
-        is_current: false
+    // This is the original State 
+    const [post, setPost] = useState(editingPost || {
+        author: "",
+        title: "",
+        content: ""
     });
 
     //create functions that handle the event of the user typing into the form
-    const handleNameChange = (event) => {
-        const firstname = event.target.value;
-        setStudent((student) => ({ ...student, firstname }));
-
+    const handleAuthorChange = (event) => {
+        const author = event.target.value;
+        setPost((post) => ({ ...post, author }));
     };
 
-    const handleLastnameChange = (event) => {
-        const lastname = event.target.value;
-        setStudent((student) => ({ ...student, lastname }));
+    const handleTitleChange = (event) => {
+        const title = event.target.value;
+        setPost((post) => ({ ...post, title }));
     };
 
-    const handleCheckChange = (event) => {
-        const is_current = event.target.checked;
-        //console.log(iscurrent);
-        setStudent((student) => ({ ...student, is_current }));
+    const handleContentChange = (event) => {
+        const content = event.target.value;
+        setPost((post) => ({ ...post, content }));
     };
 
+   
     const clearForm = () => {
-        setStudent({ firstname: "", lastname: "", is_current: false })
+        setPost({ author: "", title: "", content: ""})
     }
 
     //A function to handle the post request
-    const postStudent = (newStudent) => {
-        return fetch("http://localhost:8080/api/students", {
+    const postPost = (newPost) => {
+        return fetch("http://localhost:3001/posts", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(newStudent),
+            body: JSON.stringify(newPost),
         })
             .then((response) => {
                 return response.json();
             })
             .then((data) => {
                 //console.log("From the post ", data);
-                //I'm sending data to the List of Students (the parent) for updating the list
-                onSaveStudent(data);
+                onSavePost(data);
                 //this line just for cleaning the form
                 clearForm();
             });
     };
 
-    //A function to handle the post request
-    const putStudent = (toEditStudent) => {
-        return fetch(`http://localhost:8080/api/students/${toEditStudent.id}`, {
-            method: "PUT",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(toEditStudent),
-        })
-            .then((response) => {
-                return response.json();
-            })
-            .then((data) => {
-                onUpdateStudent(data);
-                //this line just for cleaning the form
-                clearForm();
-            });
-    };
+    // //A function to handle the post request
+    // const putStudent = (toEditStudent) => {
+    //     return fetch(`http://localhost:8080/api/students/${toEditStudent.id}`, {
+    //         method: "PUT",
+    //         headers: { "Content-Type": "application/json" },
+    //         body: JSON.stringify(toEditStudent),
+    //     })
+    //         .then((response) => {
+    //             return response.json();
+    //         })
+    //         .then((data) => {
+    //             onUpdateStudent(data);
+    //             //this line just for cleaning the form
+    //             clearForm();
+    //         });
+    // };
 
 
     //A function to handle the submit in both cases - Post and Put request!
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (student.id) {
-            putStudent(student);
+        if (post.id) {
+            putPost(post);
         } else {
-            postStudent(student);
+            postPost(post);
         }
     };
 
     return (
-        <Form className='form-students' onSubmit={handleSubmit}>
-            <Form.Group>
-                <Form.Label>First Name</Form.Label>
+        <Form className='form-posts' onSubmit={handleSubmit}>
+            <Form.Group className='form-group'>
+                <h2 id="create-post-header">Create a Post</h2>
+                <Form.Label className='form-label' style={{marginLeft: '10px'}}>Author</Form.Label>
                 <input
                     type="text"
-                    id="add-user-name"
-                    placeholder="First Name"
+                    id="add-author"
+                    placeholder="Your Name"
                     required
-                    value={student.firstname}
-                    onChange={handleNameChange}
+                    value={post.author}
+                    onChange={handleAuthorChange}
+                    style={{borderRadius: '20px', padding: '10px'}}
                 />
             </Form.Group>
-            <Form.Group>
-                <Form.Label>Last Name</Form.Label>
+            <Form.Group className='form-group'>
+                <Form.Label className='form-label' style={{marginLeft: '10px'}}>Title</Form.Label>
                 <input
                     type="text"
-                    id="add-user-lastname"
-                    placeholder="Last Name"
+                    id="add-title"
+                    placeholder="Title Name"
                     required
-                    value={student.lastname}
-                    onChange={handleLastnameChange}
+                    value={post.title}
+                    onChange={handleTitleChange}
+                    style={{borderRadius: '20px', padding: '10px'}}
                 />
             </Form.Group>
-            <Form.Check
-                type={'checkbox'}
-                id={`isCurrent`}
-                checked={student.is_current}
-                onChange={handleCheckChange}
-                label={`Are they in the current program?`}
-            />
+            <Form.Group className='form-group'>
+                <Form.Label className='form-label' style={{marginLeft: '10px'}}>Content</Form.Label>
+                <input
+                    type="text"
+                    id="add-content"
+                    placeholder="Content"
+                    required
+                    value={post.content}
+                    onChange={handleContentChange}
+                    style={{height: '200px', borderRadius: '20px', padding: '10px'}}
+                />
+            </Form.Group>
+            
             <Form.Group>
-            <Button type="submit" variant="outline-success">{student.id ? "Edit Student" : "Add Student"}</Button>
-            {student.id ? <Button type="button" variant="outline-warning" onClick={clearForm}>Cancel</Button> : null}
+            <Button type="submit" variant="outline-success">{post.id ? "Edit Post" : "Add Post"}</Button>
+            {post.id ? <Button type="button" variant="outline-warning" onClick={clearForm}>Cancel</Button> : null}
             </Form.Group>
         </Form>
     );
