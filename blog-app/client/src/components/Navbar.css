@@ -1,0 +1,40 @@
+/* 
+colors 
+main blue #5A9FC0
+dark blue #3c7e9d
+
+*/
+
+
+.navbar {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    height: 100px;
+    background-color: #3c7e9d;
+}
+
+.navbar-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: aliceblue;
+}
+
+.navbar-links {
+    list-style-type: none;
+    display: flex;
+  }
+
+.navbar-links li {
+    margin-left: 1.5rem;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: aliceblue;
+    font-weight: bold;
+  }
+  
+  .navbar-links a:hover {
+    color: rgb(248, 176, 43);
+  }

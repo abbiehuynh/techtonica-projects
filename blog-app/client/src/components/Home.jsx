@@ -3,9 +3,9 @@ import ListPosts from './ListPosts';
 
 const Home = () => {
   return (
-    <div>Home
-
-  <ListPosts />
+    <div>
+    
+    <ListPosts />
     </div>
   )
 }
