@@ -19,13 +19,14 @@ app.get('/', (req, res) => {
     res.json({ message: 'Hello from ExpressJS with React-Vite' });
 });
 
-// create the get request for students in the endpoint '/api/students'
-app.get('/api/students', async (req, res) => {
+// create the get request for posts in the endpoint '/posts'
+app.get('/posts', async (req, res) => {
     try {
-        const { rows: students } = await db.query('SELECT * FROM students');
-        res.send(students);
-    } catch (e) {
-        return res.status(400).json({ e });
+        const { rows: posts } = await db.query('SELECT * FROM posts');
+        res.send(posts);
+    } catch (error) {
+        console.error("Error fetching posts data", error );
+        return res.status(400).json({ error });
     }
 });
 
