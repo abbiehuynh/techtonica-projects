@@ -25,6 +25,9 @@ a.navbar-brand {
   flex: 1
 }
 
+ul {
+  list-style-type: none;
+}
 
 form {
   flex-direction: column;

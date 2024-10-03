@@ -21,7 +21,7 @@ const PostDetails = () => {
                 if (!response.ok) throw new Error('Response not okay')
                 const postDetails = await response.json();
                     setPostDetails(postDetails[0]);
-                    console.log(postDetails);
+                    console.log(postDetails); // checks what is being fetched
                 } catch (error) {
                     setError(error.message);
                 }
@@ -34,16 +34,22 @@ const PostDetails = () => {
 
   return (
     <div className="postDetails">
-        <p id="quote" style={{textAlign: "center"}}>your daily dose of pet mail</p>
+        <button className="return-btn">return home</button>
+        {/* <p id="quote" style={{textAlign: "center"}}>your daily dose of pet mail</p> */}
+        <div style={{backgroundColor:'#C4A88D'}}>
+        <img src={postDetails.image_url} style={{display:'block', height:'400px', margin:'auto'}}/>
+        </div>
         <div className="post">
+        {/* could make this into a component, or find a way to reuse post component */}
             Blog Post
             <h1>{postDetails.title}</h1>
             <h2>Written By: {postDetails.post_author}</h2>
             <p>{postDetails.post_content}</p>
         </div>
         <br/>
+        {/* in the future, make a comments component */}
         <div className="comments">
-            <h2>Comments</h2>
+            <h1>Comments</h1>
             <div>
             <h3>{postDetails.comment_author}</h3>
             <p>{postDetails.comment_content}</p>

@@ -73,6 +73,7 @@ app.get('/posts/:id', async (req, res) => {
                 p.id AS post_id,
                 p.author AS post_author,
                 p.title,
+                p.image_url,
                 p.content AS post_content,
                 c.id AS comment_id,
                 c.author AS comment_author,
