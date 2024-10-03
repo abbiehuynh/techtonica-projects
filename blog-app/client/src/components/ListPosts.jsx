@@ -13,7 +13,7 @@ const ListPosts = () => {
     const [editingPost, setEditingPost] = useState(null)
 
     const loadPosts = () => {
-        fetch("http://localhost:3001/posts")
+        fetch("http://localhost:3001/postdetails")
             .then((response) => response.json())
             .then((posts) => {
                 setPosts(posts);
@@ -56,7 +56,7 @@ const ListPosts = () => {
 
     return (
         <div className="mybody">
-        <div className="list-students">
+        <div className="list-posts">
             <h2> PetPosts </h2>
             <ul>
                 {posts.map((post) => {

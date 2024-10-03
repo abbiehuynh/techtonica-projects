@@ -41,6 +41,54 @@ app.get('/comments', async (req, res) => {
     }
 });
 
+// create the get request for postdetails in the endpoint '/postdetails' 
+app.get('/postdetails', async (req, res) => {
+    try {
+        const { rows: postdetails } = await db.query(
+            `SELECT 
+                p.id AS post_id,
+                p.author AS post_author,
+                p.title,
+                p.content AS post_content,
+                c.id AS comment_id,
+                c.author AS comment_author,
+                c.content AS comment_content
+            FROM public.posts p
+            LEFT JOIN public.comments c ON p.id = c.post_id;`
+        );
+        res.send(postdetails);
+    } catch (error) {
+        console.error("Error fetching posts data", error );
+        return res.status(400).json({ error });
+    }
+});
+
+// get request for post details by id
+app.get('/posts/:id', async (req, res) => {
+    const postId = req.params.id;
+
+    try {
+        const { rows: postDetailsById } = await db.query(
+            `SELECT 
+                p.id AS post_id,
+                p.author AS post_author,
+                p.title,
+                p.content AS post_content,
+                c.id AS comment_id,
+                c.author AS comment_author,
+                c.content AS comment_content
+            FROM public.posts p
+            LEFT JOIN public.comments c ON p.id = c.post_id
+            WHERE p.id = $1;`, [postId]
+        );
+        res.send(postDetailsById);
+    } catch (error) {
+        console.error("Error fetching posts details by id data", error );
+        return res.status(400).json({ error });
+    }
+});
+
+
 // // create the POST request
 // app.post('/api/students', async (req, res) => {
 //     try {

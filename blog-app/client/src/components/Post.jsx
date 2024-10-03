@@ -19,9 +19,9 @@ const Post = ({post, toUpdate, toDelete}) => {
         <Card>
             <Card.Body>
             <Card.Title>{post.title}</Card.Title>
-            <Card.Subtitle>{post.author}</Card.Subtitle>
-            <Card.Text style={{height: '50px'}}>{post.content}</Card.Text>
-            <Link to={`/posts/${post.id}`}>
+            <Card.Subtitle>{post.post_author}</Card.Subtitle>
+            <Card.Text style={{height: '50px'}}>{post.post_content}</Card.Text>
+            <Link to={`/posts/${post.post_id}`}>
             <Button style={{padding: '0.6em', marginRight: '0.9em', marginBottom: '1.2em'}}>Read More..</Button>
             </Link>
             <Button variant="outline-danger" onClick={()=>{onDelete(post)}} style={{padding: '0.6em', marginRight:'0.9em'}}><ioicons.IoTrash/></Button>
