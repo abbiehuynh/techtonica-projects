@@ -2,6 +2,14 @@ import React from 'react'
 import { Button, Form } from "react-bootstrap"
 
 const AddComment = () => {
+
+//create functions that handle the event of the user typing into the form
+const handleCommentNameChange = (event) => {
+    const comment_author = event.target.value;
+    setPost((post) => ({ ...post, comment_author }));
+};
+
+
   return (
     <div style={{paddingTop:'20px'}}>
         <Form className='form-comments' >
@@ -13,8 +21,8 @@ const AddComment = () => {
                     id="add-name"
                     placeholder="Your Name"
                     required
-                    // value={postDetails.comment_author}
-                    // onChange={handleCommentNameChange}
+                    // value={post.comment_author}
+                    onChange={handleCommentNameChange}
                     style={{borderRadius: '20px', padding: '10px'}}
                 />
             </Form.Group>
