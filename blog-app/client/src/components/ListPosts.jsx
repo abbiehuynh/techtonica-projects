@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import * as ioicons from 'react-icons/io5'
-import MyForm from './Form';
-import './Form.css';
 import Post from './Post';
+import MyForm from './Form';
+import './Post.css';
+import './Form.css';
 
 const ListPosts = () => {
 
@@ -55,11 +56,20 @@ const ListPosts = () => {
 
     }
 
+    const searchPosts = posts.filter(post => 
+        post.title.toLowerCase().includes(searchQuery.toLowerCase())
+    )
 
     return (
         <div className="mybody">
         <div className="list-posts">
             <h2> PetPosts </h2>
+            <input
+                id="search-bar"
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+            />
             <ul>
                 {posts.map((post) => {
                     return <li key={post.id}> <Post post={post} toDelete={onDelete} toUpdate={onUpdate} /></li>
