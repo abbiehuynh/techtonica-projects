@@ -34,7 +34,7 @@ const MyForm = ({ onSavePost, editingPost, onUpdatePost }) => {
 
     //A function to handle the post request
     const postPost = (newPost) => {
-        return fetch("http://localhost:3001/posts", {
+        return fetch("http://localhost:3001/postdetails", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(newPost),
