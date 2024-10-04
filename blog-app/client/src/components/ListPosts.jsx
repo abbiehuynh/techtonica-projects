@@ -67,11 +67,12 @@ const ListPosts = () => {
             <input
                 id="search-bar"
                 type="text"
+                placeholder='Search Posts...'
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
             />
             <ul>
-                {posts.map((post) => {
+                {searchPosts.map((post) => {
                     return <li key={post.id}> <Post post={post} toDelete={onDelete} toUpdate={onUpdate} /></li>
                 })}
             </ul>
