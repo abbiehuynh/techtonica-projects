@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import * as ioicons from 'react-icons/io5'
-import MyForm from './Form';
-import './Form.css';
 import Post from './Post';
+import MyForm from './Form';
+import './Post.css';
+import './Form.css';
 
 const ListPosts = () => {
 
     // this is my original state with an array of posts 
     const [posts, setPosts] = useState([]);
+
+    // creates state for search query
+    const [searchQuery, setSearchQuery] = useState("");
 
     //this is the state needed for the UpdateRequest
     const [editingPost, setEditingPost] = useState(null)
@@ -69,12 +73,25 @@ const ListPosts = () => {
 
     }
 
+    const searchPosts = posts.filter(post => 
+        (post.title && post.title.toLowerCase().includes(searchQuery.toLowerCase())) ||
+        (post.post_author && post.post_author.toLowerCase().includes(searchQuery.toLowerCase())) ||
+        (post.post_content && post.post_content.toLowerCase().includes(searchQuery.toLowerCase()))
+    );
+
     return (
         <div className="mybody">
         <div className="list-posts">
             <h2> PetPosts </h2>
+            <input
+                id="search-bar"
+                type="text"
+                placeholder='Search Posts...'
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+            />
             <ul>
-                {posts.map((post) => {
+                {searchPosts.map((post) => {
                     return <li key={post.id}> <Post post={post} toDelete={onDelete} toUpdate={onUpdate} /></li>
                 })}
             </ul>
