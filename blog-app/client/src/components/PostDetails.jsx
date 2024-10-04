@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Post from './Post';
 import Comments from './Comments';
 import AddComment from './AddComment';
@@ -36,7 +36,9 @@ const PostDetails = () => {
 
   return (
     <div className="postDetails">
-        <button className="return-btn">return home</button>
+        <Link to="/">
+            <button className="return-btn">return home</button>
+        </Link>
         {/* <p id="quote" style={{textAlign: "center"}}>your daily dose of pet mail</p> */}
         <div style={{backgroundColor:'#C4A88D'}}>
         <img src={postDetails.image_url} style={{display:'block', height:'400px', margin:'auto'}}/>
