@@ -12,6 +12,18 @@ const PostDetails = () => {
     const [postDetails, setPostDetails] = useState(null);
     const [error, setError] = useState(null);
 
+    // useState for style changes with hover effect
+    const [isHovered, setIsHovered] = useState(false);
+
+    const buttonStyle = {
+        backgroundColor: isHovered ? '#eb8931' : 'aliceblue',
+        color: isHovered ? 'aliceblue' : 'black',
+        margin: '10px', 
+        borderRadius:'25px', 
+        padding: '8px',
+        borderStyle: 'none'
+    }
+
     // //this is the state needed for the UpdateRequest
     // const [editingPostDetails, setEditingPostDetails] = useState(null)
 
@@ -37,7 +49,12 @@ const PostDetails = () => {
   return (
     <div className="postDetails">
         <Link to="/">
-            <button className="return-btn">return home</button>
+            <button 
+                className="return-btn"
+                style={buttonStyle}
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+            >return home</button>
         </Link>
         {/* <p id="quote" style={{textAlign: "center"}}>your daily dose of pet mail</p> */}
         <div style={{backgroundColor:'#C4A88D'}}>
