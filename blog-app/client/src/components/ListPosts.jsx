@@ -28,31 +28,46 @@ const ListPosts = () => {
         setPosts((posts) => [...posts, newPost]);
     }
 
-
     //A function to control the update in the parent (post component)
     const updatePost = (savedPost) => {
         loadPosts();
     }
 
     //A function to handle the Delete funtionality
-    const onDelete = (post) => {
-        return fetch(`http://localhost:3001/posts${post.id}`, {
-            method: "DELETE"
-        }).then((response) => {
-            //console.log(response);
-            if (response.ok) {
-                loadPosts();
-            }
-        })
+    const onDelete = async (post) => {
+        console.log("Post object:", post);
+
+        // validates post id
+        if (!post.post_id) {
+            console.error("Post ID is undefined");
+            alert("Post ID is missing");
+            return;
+        }
+
+        try {
+            const response = await fetch(`http://localhost:3001/postdetails/${post.post_id}`, {
+                method: "DELETE"  
+        });
+
+        if (response.ok) {
+            console.log("Post deleted successfully");
+            loadPosts();
+        } else {
+            const errorData = await response.json();
+            console.error("Error deleting post:", errorData.error);
+            alert("Failed to delete post: " + errorData.error);
+        }
+    } catch (error) {
+        console.error("Error with delete request:", error);
+        alert("An error occured while trying to delete the post.");
     }
+};
 
     //A function to handle the Update functionality
     const onUpdate = (toUpdatePost) => {
         setEditingPost(toUpdatePost);
 
     }
-
-
 
     return (
         <div className="mybody">
