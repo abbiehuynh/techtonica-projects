@@ -9,6 +9,9 @@ const ListPosts = () => {
     // this is my original state with an array of posts 
     const [posts, setPosts] = useState([]);
 
+    // creates state for search query
+    const [searchQuery, setSearchQuery] = useState("");
+
     //this is the state needed for the UpdateRequest
     const [editingPost, setEditingPost] = useState(null)
 
@@ -51,7 +54,6 @@ const ListPosts = () => {
         setEditingPost(toUpdatePost);
 
     }
-
 
 
     return (
