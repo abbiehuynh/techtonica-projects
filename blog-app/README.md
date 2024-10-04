@@ -44,11 +44,11 @@ Weekly Project for Week 12 of the Techtonica Software Engineer in Training Progr
 1.  Go to your source directory in your terminal and clone the repository by running the command:
 
 ```
-$ git clone https://github.com/abbiehuynh/techtonica-projects/blod-app.git <NameNewDirectory>
+$ git clone https://github.com/abbiehuynh/techtonica-projects/blog-app.git <NameNewDirectory>
 ```
 2. `npm install` in terminal in server (techtonica-projects/blog-app/server) and client (techtonica-projects/blog-app/client).
 
-3. `npm start` on server side and `npm run dev` on client side to run Eventonica app.
+3. `npm start` on server side and `npm run dev` on client side to run Blog app.
 
 4. Visit `http://localhost:3001` for server site (ExpressJS, NodeJS) and `http://localhost:5173` for client site (React + Vite).
 
