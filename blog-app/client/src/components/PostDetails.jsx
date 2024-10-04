@@ -45,6 +45,7 @@ const PostDetails = () => {
             <h1>{postDetails.title}</h1>
             <h2>Written By: {postDetails.post_author}</h2>
             <p>{postDetails.post_content}</p>
+            <p></p>
         </div>
         <br/>
         {/* in the future, make a comments component */}

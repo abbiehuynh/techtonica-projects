@@ -63,3 +63,52 @@ button.btn.btn-primary {
   margin-left: 2em;
   margin-right: 2em;
 }
+
+/* Profile.jsx */
+
+#profile-card {
+  display: block;
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+  background-color: #98d0f1;
+}
+
+#pfp {
+  display: block;
+  margin: auto;
+  border-radius: 40px;
+  padding: 20px;
+}
+
+#bio {
+  text-align: left;
+}
+
+#profile-container1 {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+}
+
+#profile-container2 {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+}
+
+#my-posts {
+  display: grid;
+  margin: auto;
+  background-color: aliceblue;
+  width: 400px;
+  border-radius: 20px;
+}
+
+#my-comments {
+  display: grid;
+  margin: auto;
+  background-color: rgb(115, 167, 211);
+  width: 400px;
+  border-radius: 20px;
+}
