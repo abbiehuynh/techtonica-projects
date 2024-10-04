@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Post from './Post';
+import Comments from './Comments';
 import './PostDetails.css';
 
 const PostDetails = () => {
@@ -50,11 +51,7 @@ const PostDetails = () => {
         <br/>
         {/* in the future, make a comments component */}
         <div className="comments">
-            <h1>Comments</h1>
-            <div>
-            <h3>{postDetails.comment_author}</h3>
-            <p>{postDetails.comment_content}</p>
-            </div>
+            <Comments postDetails={postDetails}/>
             {/* <ul>
                 {postDetails.comments.map(comment => {
                     <li key={comment.id}>
