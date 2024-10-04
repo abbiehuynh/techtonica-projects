@@ -63,21 +63,17 @@ Wireframes created for main features:
 
 ## Demonstration:
 
-Once the page has loaded, you will see the Home page with cards of pet posts. This can also be re-accessed through the "Home" Link. 
-![Load Home Page]()
-
-To the right of the Home page is a form that will allow you to add a post to the list of posts to the left 
-![Form]()
-
+Once the page has loaded, you will see the Home page with cards of pet posts. This can also be re-accessed through the "Home" Link. To the right of the Home page is a form that will allow you to add a post to the list of posts to the left.
+![Load Home Page](./client/src/assets/home-page.png)
 
 Clicking on "Read More" on each pet post will redirect you to a details page of the pet post. This will include the post with the full written content of the blog, and a comments sections.  
-![Load Blog Details Page]()
+![Load Blog Details Page](./client/src/assets/post-details-page.png)
 
 Scroll to the bottom to find the Comments section, where there will be a form to add a comment to this post.
-![Add Comment]()
+![Add Comment](./client/src/assets/post-details-page-comments.png)
 
 Clicking on the "Profile" Link will redirect you to the User's Profile
-![Profile]()
+![Profile](./client/src/assets/profile-page.png)
 
 
 ## Features: 
