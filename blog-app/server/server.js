@@ -111,19 +111,19 @@ app.post('/postdetails', async (req, res) => {
     }
 });
 
-// // delete request for students
-// app.delete('/api/students/:studentId', async (req, res) => {
-//     try {
-//         const studentId = req.params.studentId;
-//         await db.query('DELETE FROM students WHERE id=$1', [studentId]);
-//         console.log("From the delete request-url", studentId);
-//         res.status(200).end();
-//     } catch (e) {
-//         console.log(e);
-//         return res.status(400).json({ e });
+// delete request for posts
+app.delete('/postdetails/:postId', async (req, res) => {
+    try {
+        const postId = req.params.postId;
+        await db.query('DELETE FROM posts WHERE id=$1', [postId]);
+        console.log("From the delete request-url", postId);
+        res.status(200).end();
+    } catch (error) {
+        console.error("Error with completing delete request", error );
+        return res.status(400).json({ error });
 
-//     }
-// });
+    }
+});
 
 // //A put request - Update a student 
 // app.put('/api/students/:studentId', async (req, res) =>{

@@ -50,7 +50,7 @@ const MyForm = ({ onSavePost, editingPost, onUpdatePost }) => {
             });
     };
 
-    // //A function to handle the post request
+    // //A function to handle the put request
     // const putStudent = (toEditStudent) => {
     //     return fetch(`http://localhost:8080/api/students/${toEditStudent.id}`, {
     //         method: "PUT",
