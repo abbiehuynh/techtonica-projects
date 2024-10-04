@@ -28,7 +28,6 @@ const ListPosts = () => {
         setPosts((posts) => [...posts, newPost]);
     }
 
-
     //A function to control the update in the parent (post component)
     const updatePost = (savedPost) => {
         loadPosts();
@@ -51,8 +50,6 @@ const ListPosts = () => {
         setEditingPost(toUpdatePost);
 
     }
-
-
 
     return (
         <div className="mybody">

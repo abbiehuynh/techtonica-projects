@@ -90,28 +90,26 @@ app.get('/posts/:id', async (req, res) => {
 });
 
 
-// // create the POST request
-// app.post('/api/students', async (req, res) => {
-//     try {
-//         const newStudent = {
-//             firstname: req.body.firstname,
-//             lastname: req.body.lastname,
-//             iscurrent: req.body.iscurrent
-//         };
-//         //console.log([newStudent.firstname, newStudent.lastname, newStudent.iscurrent]);
-//         const result = await db.query(
-//             'INSERT INTO students(firstname, lastname, is_current) VALUES($1, $2, $3) RETURNING *',
-//             [newStudent.firstname, newStudent.lastname, newStudent.iscurrent],
-//         );
-//         console.log(result.rows[0]);
-//         res.json(result.rows[0]);
+// create the POST request
+app.post('/postdetails', async (req, res) => {
+    try {
+        const newPost = {
+            author: req.body.author,
+            title: req.body.title,
+            content: req.body.content
+        };
+        const result = await db.query(
+            'INSERT INTO posts(author, title, content) VALUES($1, $2, $3) RETURNING *',
+            [newPost.author, newPost.title, newPost.content],
+        );
+        console.log(result.rows[0]);
+        res.json(result.rows[0]);
 
-//     } catch (e) {
-//         console.log(e);
-//         return res.status(400).json({ e });
-//     }
-
-// });
+    } catch (error) {
+        console.error("Error making post request", error );
+        return res.status(400).json({ error });
+    }
+});
 
 // // delete request for students
 // app.delete('/api/students/:studentId', async (req, res) => {
