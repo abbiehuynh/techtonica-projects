@@ -57,8 +57,10 @@ const ListPosts = () => {
     }
 
     const searchPosts = posts.filter(post => 
-        post.title.toLowerCase().includes(searchQuery.toLowerCase())
-    )
+        (post.title && post.title.toLowerCase().includes(searchQuery.toLowerCase())) ||
+        (post.post_author && post.post_author.toLowerCase().includes(searchQuery.toLowerCase())) ||
+        (post.post_content && post.post_content.toLowerCase().includes(searchQuery.toLowerCase()))
+    );
 
     return (
         <div className="mybody">
