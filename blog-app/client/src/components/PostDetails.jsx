@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Post from './Post';
 import Comments from './Comments';
+import AddComment from './AddComment';
 import './PostDetails.css';
 
 const PostDetails = () => {
@@ -53,12 +54,11 @@ const PostDetails = () => {
         <div className="comments">
             <Comments postDetails={postDetails}/>
             {/* <ul>
-                {postDetails.comments.map(comment => {
-                    <li key={comment.id}>
-                        <strong>{comment.author}</strong>: {comment.content}
-                    </li>
+                {comments.map((comments) => {
+                    return <li key={postDetails.post_id}> <Comment postDetails={postDetails} /></li>
                 })}
             </ul> */}
+            <AddComment />
 
         </div>
     </div>
