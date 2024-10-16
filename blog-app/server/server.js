@@ -147,6 +147,12 @@ app.delete('/postdetails/:postId', async (req, res) => {
 //     }
 //   })
 
+
+// create request for text summarization endpoint
+    // fetch from AI 
+    // create variable text for req.body
+
+
 // console.log that your server is up and running
 app.listen(PORT, () => {
     console.log(`Blog App Server listening on ${PORT}`);
