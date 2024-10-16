@@ -1,0 +1,29 @@
+/* 
+colors 
+main blue #5A9FC0
+dark blue #3c7e9d
+
+*/
+
+.card-text {
+    overflow: hidden;
+}
+
+.card {
+    border-radius: 40px;
+}
+
+.card:hover {
+    background-color: aliceblue;
+}
+
+/* search bar in ListPosts.jsx */
+#search-bar {
+    margin: 10px;   
+    padding: 8px;
+    border-radius: 20px;
+}
+
+#search-bar:hover {
+    border-color: #3c7e9d;
+}

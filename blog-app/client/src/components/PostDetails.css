@@ -1,0 +1,36 @@
+
+.postDetails {
+    min-height: 100vh;
+}
+
+#quote {
+    padding: 20px;
+    background-color: aliceblue;
+    margin: auto;
+    margin-top: 20px;
+    width: 300px;
+    border-radius: 40px;
+}
+
+.post {
+    padding: 20px;
+    margin: 20px;
+    border-radius: 20px;
+    background-color: rgb(155, 195, 230);
+}
+
+.comments {
+    padding: 20px;
+    margin: 20px;
+    border-radius: 20px;
+    background-color: aliceblue;
+}
+
+/* postDetails.jsx */
+
+/* return button */
+.return-btn {
+    padding:'10px';
+    margin:'10px';
+    border-radius:'20px';
+ }
