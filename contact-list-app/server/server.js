@@ -56,11 +56,21 @@ app.get('/contacts/work-details', async (req, res) => {
 app.get('/contacts/details', async (req, res) => {
     try {
         const { rows: contact_details } = await db.query(
-            `SELECT public.contacts.id, public.contacts.name, public.contacts.email, public.contacts.phone_number, public.contacts.notes,
-                public.personal_details.location, public.personal_details.notes, public.work_details.occupation, public.work_details.location
+            `SELECT 
+                public.contacts.id, 
+                public.contacts.name, 
+                public.contacts.email, 
+                public.contacts.phone_number, 
+                public.contacts.notes AS contact_notes,
+                public.personal_details.location AS home_location, 
+                public.personal_details.notes AS personal_notes, 
+                public.work_details.occupation, 
+                public.work_details.location AS work_location
             FROM public.contacts
-            INNER JOIN public.personal_details ON public.contacts.id = public.personal_details.id
-            INNER JOIN public.work_details ON public.work_details.id = public.contacts.id;`);
+            INNER JOIN 
+                public.personal_details ON public.contacts.id = public.personal_details.id
+            INNER JOIN 
+                public.work_details ON public.work_details.id = public.contacts.id;`);
         res.send(contact_details);
     } catch (error) {
         console.log(error);
