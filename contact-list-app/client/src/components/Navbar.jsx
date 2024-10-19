@@ -4,7 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
 
-const NavigationBar = () => {
+const NavBar = () => {
 
   return (
     <>
@@ -17,13 +17,10 @@ const NavigationBar = () => {
             <li>
                 <Link to="/contacts">Contacts</Link>
             </li>
-            <li>
-                <Link to="/contact/details">Add Contact</Link>
-            </li>
         </ul>
     </nav>
     </>
 );
 };
 
-export default NavigationBar;
+export default NavBar;

@@ -22,8 +22,8 @@ const Contact = ({contact, toUpdate, toDelete}) => {
             <Card.Text>{contact.email}</Card.Text>
             <Card.Text>{contact.phone_number}</Card.Text>
             <Button> Details </Button>
-            <Button variant="outline-danger" onClick={()=>{onDelete(student)}} style={{padding: '0.6em', marginRight:'0.9em'}}><ioicons.IoTrash/></Button>
-            <Button variant="outline-info" onClick={()=>{onUpdate(student)}} style={{padding: '0.6em'}}> <ioicons.IoSync/></Button>
+            <Button variant="outline-danger" onClick={()=>{onDelete(contact)}} style={{padding: '0.6em', marginRight:'0.9em'}}><ioicons.IoTrash/></Button>
+            <Button variant="outline-info" onClick={()=>{onUpdate(contact)}} style={{padding: '0.6em'}}> <ioicons.IoSync/></Button>
             </Card.Body>
         </Card>
     )
