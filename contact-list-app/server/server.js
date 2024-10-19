@@ -37,8 +37,9 @@ app.get('/contacts', async (req, res) => {
 
 
 // for contact details page
-// create get request for ALL three tables - contacts, personal_details, and work_details
-app.get('/contacts/details', async (req, res) => {
+// create get request for contact details by contactId - JOIN tables - contacts, personal_details, and work_details
+app.get('/contacts/:contactId/details', async (req, res) => {
+    const contactId = req.params.contactId;
     try {
         const { rows: contact_details } = await db.query(
             `SELECT 
@@ -55,7 +56,10 @@ app.get('/contacts/details', async (req, res) => {
             INNER JOIN 
                 public.personal_details ON public.contacts.id = public.personal_details.id
             INNER JOIN 
-                public.work_details ON public.work_details.id = public.contacts.id;`);
+                public.work_details ON public.work_details.id = public.contacts.id
+            WHERE 
+                public.contacts.id = $1;`, [contactId]
+            );
         res.send(contact_details);
     } catch (error) {
         console.log(error);
