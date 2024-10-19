@@ -3,7 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './components/Navbar.jsx';
 import Home from './components/Home.jsx';
-import ListContacts from './components/ListContacts'
+import ListContacts from './components/ListContacts';
+import ContactDetails from './components/ContactDetails.jsx';
 
 
 
@@ -19,7 +20,7 @@ function App() {
           <Route path="/contacts" element={<ListContacts/>} />
 
           {/* Route to Contact Details */}
-          {/* <Route path="/contacts/details" element={< />} /> */}
+          <Route path="/contact/details" element={<ContactDetails />} />
         </Routes>
       </Router>
     
