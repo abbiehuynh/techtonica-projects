@@ -13,7 +13,7 @@ const ListContacts = () => {
 
     const loadContacts = () => {
         // A function to fetch the list of contacts that will be load anytime that list change
-        fetch("http://localhost:3001/contacts/details")
+        fetch("http://localhost:3001/contacts")
             .then((response) => response.json())
             .then((contacts) => {
                 setContacts(contacts);

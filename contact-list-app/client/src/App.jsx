@@ -20,7 +20,7 @@ function App() {
           <Route path="/contacts" element={<ListContacts/>} />
 
           {/* Route to Contact Details */}
-          <Route path="/contact/details" element={<ContactDetails />} />
+          <Route path="/contact/:contactId/details" element={<ContactDetails />} />
         </Routes>
       </Router>
     
