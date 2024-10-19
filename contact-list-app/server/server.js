@@ -23,6 +23,20 @@ app.get('/', (req, res) => {
 const testTableRoutes = require('./routes/testTableRoutes.js');
 app.use('/testTable', testTableRoutes);
 
+// for what is shown in contact list 
+// create the get request for the contact list in the endpoint '/contacts'
+app.get('/contacts', async (req, res) => {
+    try {
+        const { rows: contacts } = await db.query('SELECT * FROM public.contacts');
+        res.send(contacts);
+    } catch (error) {
+        console.log(error);
+        return res.status(400).json({ error });
+    }
+});
+
+
+// for contact details page
 // create get request for ALL three tables - contacts, personal_details, and work_details
 app.get('/contacts/details', async (req, res) => {
     try {
