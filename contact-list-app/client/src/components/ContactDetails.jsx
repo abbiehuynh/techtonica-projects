@@ -27,6 +27,11 @@ useEffect(() => {
 }, [contactId]);
 
   return (
+    <>  
+        <div style={{display: "flex", justifyContent: "center"}}>
+            <Button style={{ textAlign: "center", margin: "20px"}}>Edit Contact</Button>
+            <Button style={{ textAlign: "center", margin: "20px"}}>Delete Contact</Button>
+        </div>
         <Card style={{width: "80%", margin: "auto", height: "auto"}}>
             <Card.Body>
                 <Card.Title>Name: {contactDetails.name}</Card.Title>
@@ -52,6 +57,7 @@ useEffect(() => {
                 {/* <Button variant="outline-info" onClick={()=>{onUpdate(contact)}} style={{padding: '0.6em'}}> <ioicons.IoSync/></Button> */}
             </Card.Body>
         </Card>
+    </>
   )
 }
 
