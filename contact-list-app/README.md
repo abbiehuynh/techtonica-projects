@@ -62,18 +62,22 @@ Wireframes created for main features:
 
 ## Demonstration:
 
-Once the page has loaded, you will see the homepage with a list of cards of contacts.
-![Load Contact List]()
+Once the page has loaded, you will see the homepage.
+![Load Home Page](/contact-list-app/assets/home-page-contactlist.png)
 
-Clicking on "Details" on a contact will redirect you to page with more details about the individual contact. 
-![Load Contact Details]()
+Clicking the link to Contacts will take you to view the list of contacts
+![Load Contact List](/contact-list-app/assets/contactlistpage.png)
 
-Clicking on "Add Contact" or using the form to the right will allow you to add a new contact to the current list. 
-![Form]()
+Clicking on "Details" on a contact will redirect you to page with more details.
+![Load Contact Details](/contact-list-app/assets/contactdetailspage.png)
+
+You can add more contacts by using the form to the right of the contact list.
+![Form](/contact-list-app/assets/form.png)
 
 
 ## Features: 
-- Interactive links to see the full contact list, individual contact details or to add a new contact 
+- Interactive links to see the full contact list and individual contact details.
+- Ability to add, update, and delete contacts.
 - Form validation and submission of new contacts. 
 
 
