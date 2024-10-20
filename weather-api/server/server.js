@@ -43,11 +43,13 @@ const getWeather = async (req, res) => {
 // creates get route to use getWeather function
 app.get('/weather', getWeather)
 
-// creates get request for data from users table
-app.get('/users', async (req, res) => {
+// creates get request for data from users table for specific user
+app.get('/users/:user_id', async (req, res) => {
+    const userId = req.params.user_id;
+
     try {
         const { rows: users } = await db.query(
-            `SELECT * FROM public.users;`
+            `SELECT * FROM public.users WHERE id = $1;`, [userId]
         );
         res.send(users);
     } catch (error) {
