@@ -19,6 +19,11 @@ app.get('/', (req, res) => {
     res.json({ message: 'Hello, from ExpressJS with React-Vite' });
 });
 
+// test get request to tables in database
+const testTableRoutes = require('./routes/testTableRoutes.js');
+app.use('/testTable', testTableRoutes);
+
+// for what is shown in contact list 
 // create the get request for the contact list in the endpoint '/contacts'
 app.get('/contacts', async (req, res) => {
     try {
@@ -30,37 +35,31 @@ app.get('/contacts', async (req, res) => {
     }
 });
 
-// create get request for contact's personal details in the endpoint /contacts/personal-details
-app.get('/contacts/personal-details', async (req, res) => {
-    try {
-        const { rows: personal_details } = await db.query('SELECT * FROM public.personal_details');
-        res.send(personal_details);
-    } catch (error) {
-        console.log(error);
-        return res.status(400).json({ error });
-    }
-});
 
-// create get request for contact's work details in the endpoint /contacts/work-details
-app.get('/contacts/work-details', async (req, res) => {
-    try {
-        const { rows: work_details } = await db.query('SELECT * FROM public.work_details');
-        res.send(work_details);
-    } catch (error) {
-        console.log(error);
-        return res.status(400).json({ error });
-    }
-});
-
-// create get request for ALL three tables - contacts, personal_details, and work_details
-app.get('/contacts/details', async (req, res) => {
+// for contact details page
+// create get request for contact details by contactId - JOIN tables - contacts, personal_details, and work_details
+app.get('/contacts/:contactId/details', async (req, res) => {
+    const contactId = req.params.contactId;
     try {
         const { rows: contact_details } = await db.query(
-            `SELECT public.contacts.id, public.contacts.name, public.contacts.email, public.contacts.phone_number, public.contacts.notes,
-                public.personal_details.location, public.personal_details.notes, public.work_details.occupation, public.work_details.location
+            `SELECT 
+                public.contacts.id, 
+                public.contacts.name, 
+                public.contacts.email, 
+                public.contacts.phone_number, 
+                public.contacts.notes AS contact_notes,
+                public.personal_details.location AS home_location, 
+                public.personal_details.notes AS personal_notes, 
+                public.work_details.occupation, 
+                public.work_details.location AS work_location
             FROM public.contacts
-            INNER JOIN public.personal_details ON public.contacts.id = public.personal_details.id
-            INNER JOIN public.work_details ON public.work_details.id = public.contacts.id;`);
+            INNER JOIN 
+                public.personal_details ON public.contacts.id = public.personal_details.id
+            INNER JOIN 
+                public.work_details ON public.work_details.id = public.contacts.id
+            WHERE 
+                public.contacts.id = $1;`, [contactId]
+            );
         res.send(contact_details);
     } catch (error) {
         console.log(error);
@@ -68,59 +67,82 @@ app.get('/contacts/details', async (req, res) => {
     }
 });
 
-// *** COME BACK TO FIX POST REQUEST
-// create the POST request
-app.post('/contacts/details', async (req, res) => {
+// creates post request for contact table
+app.post('/contacts', async (req, res) => {
+    const { name, notes, email, phone_number } = req.body;
+
     try {
-        // create new contact
-        const newContact = {
-            name: req.body.id, 
-            email: req.body.email,
-            phone_number: req.body.phone_number,
-            notes: req.body.notes,
-            location: req.body.location,
-            occupation: req.body.occupation
-        };
-        
-        // insert into public.contacts table
-        const contactsResult = await db.query(
-            `INSERT INTO public.contacts(name, email, phone_number) 
-                VALUES($1, $2, $3) RETURNING id`,
-            [newContact.name, newContact.email, newContact.phone_number]
+        const result = await db.query (
+            `INSERT INTO 
+                public.contacts(name, notes, email, phone_number)
+            VALUES ($1, $2, $3, $4) 
+            RETURNING *`, 
+            [name, notes, email, phone_number]
         );
 
-        // creates new id
-        let contactsId = contactsResult.rows[0].id;
-
-        // insert into public.personal_details table
-        const personalDetailsResult = await db.query(
-            `INSERT INTO public.personal_details(id, notes, location) 
-                VALUES($1, $2, $3) RETURNING id`,
-            [contactsId, newContact.notes, newContact.location]
-        );
-
-        // insert into public.work_details table
-        const workDetailsResult = await db.query(
-            `INSERT INTO public.work_details(id, occupation)
-                VALUES($1, $2) RETURNING id`,
-            [contactsId, newContact.occupation]
-        );
-
-        // creates response with created contact details
         res.status(201).json({
-            contact: contactsResult.rows[0],
-            personalDetails: personalDetailsResult.rows[0],
-            workDetails: workDetailsResult.rows[0],
+            message: "Contact added successfully",
+            contact: result.rows[0],
         });
-
-        // console.log("New Contact Uploaded: ", contactResults.rows[0]);
-        // res.json(contactResults.rows[0]);
-
     } catch (error) {
-        console.error("Error Uploading New Contact: ", error);
-        return res.status(400).json({ error: 'An error has occured while processing your post request.' });
+        console.error('Error adding Contact:', error);
+        res.status(500).json({ error: 'Failed to add Contact' });
     }
 });
+
+// // *** COME BACK TO FIX POST REQUEST FOR ALL CONTACT DETAILS
+// // create the POST request
+// app.post('/contacts/details', async (req, res) => {
+//     try {
+//         // create new contact
+//         const newContact = {
+//             name: req.body.id, 
+//             email: req.body.email,
+//             phone_number: req.body.phone_number,
+//             notes: req.body.notes,
+//             location: req.body.location,
+//             occupation: req.body.occupation
+//         };
+        
+//         // insert into public.contacts table
+//         const contactsResult = await db.query(
+//             `INSERT INTO public.contacts(name, email, phone_number) 
+//                 VALUES($1, $2, $3) RETURNING id`,
+//             [newContact.name, newContact.email, newContact.phone_number]
+//         );
+
+//         // creates new id
+//         let contactsId = contactsResult.rows[0].id;
+
+//         // insert into public.personal_details table
+//         const personalDetailsResult = await db.query(
+//             `INSERT INTO public.personal_details(id, notes, location) 
+//                 VALUES($1, $2, $3) RETURNING id`,
+//             [contactsId, newContact.notes, newContact.location]
+//         );
+
+//         // insert into public.work_details table
+//         const workDetailsResult = await db.query(
+//             `INSERT INTO public.work_details(id, occupation)
+//                 VALUES($1, $2) RETURNING id`,
+//             [contactsId, newContact.occupation]
+//         );
+
+//         // creates response with created contact details
+//         res.status(201).json({
+//             contact: contactsResult.rows[0],
+//             personalDetails: personalDetailsResult.rows[0],
+//             workDetails: workDetailsResult.rows[0],
+//         });
+
+//         // console.log("New Contact Uploaded: ", contactResults.rows[0]);
+//         // res.json(contactResults.rows[0]);
+
+//     } catch (error) {
+//         console.error("Error Uploading New Contact: ", error);
+//         return res.status(400).json({ error: 'An error has occured while processing your post request.' });
+//     }
+// });
 
 // creates delete request for contact
 app.delete('/contacts/details/:contactId', async (req, res) => {
@@ -140,31 +162,26 @@ app.delete('/contacts/details/:contactId', async (req, res) => {
 });
 
 // creates a put request to update a contact
-app.put('/contacts/details/:contactId', async (req, res) =>{
+app.put('/contacts/:contactId', async (req, res) =>{
     //console.log(req.params);
-    //This will be the id that I want to find in the DB - the student to be updated
-    const contactId = req.params.contactId
+    const contactId = req.params.contactId;
     const updatedContact = { 
-        name: req.body.id, 
-        email: req.body.email,
-        phone_number: req.body.phone_number,
+        name: req.body.name,
         notes: req.body.notes,
-        location: req.body.location,
-        occupation: req.body.occupation
-    }
+        email: req.body.email,
+        phone_number: req.body.phone_number
+    };
 
     console.log("In the server from the url - the contact id", contactId);
     console.log("In the server, from the react - the contact to be edited", updatedContact);
     
-    const query = `UPDATE contacts SET name=$1, email=$2, phone_number=$3, notes=$4, occupation=$5 WHERE id=${contactId} RETURNING *`;
+    const query = `UPDATE public.contacts SET name=$1, notes=$2, email=$3, phone_number=$4 WHERE id=$5 RETURNING *`;
     const values = [
-        contactsId,
         updatedContact.name, 
+        updatedContact.notes,
         updatedContact.email,
         updatedContact.phone_number,
-        updatedContact.notes,
-        updatedContact.location,
-        updatedContact.occupation
+        contactId
     ];
 
     try {
