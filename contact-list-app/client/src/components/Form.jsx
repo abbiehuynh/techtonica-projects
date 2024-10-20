@@ -38,7 +38,7 @@ const MyForm = ({ onSaveContact, editingContact, onUpdateContact }) => {
 
     //A function to handle the post request
     const postContact = (newContact) => {
-        return fetch("http://localhost:8080/api/contacts", {
+        return fetch("http://localhost:3001/contacts", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(newContact),
