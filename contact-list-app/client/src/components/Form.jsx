@@ -111,6 +111,7 @@ const MyForm = ({ onSaveContact, editingContact, onUpdateContact }) => {
 
         // updates error
         setErrors(newErrors);
+        console.log("Validation errors:",  newErrors);
         return Object.keys(newErrors).length === 0;
     };
 
