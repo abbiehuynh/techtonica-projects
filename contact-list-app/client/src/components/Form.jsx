@@ -84,7 +84,7 @@ const MyForm = ({ onSaveContact, editingContact, onUpdateContact }) => {
     };
 
     return (
-        <Form className='box form-contacts' onSubmit={handleSubmit}>
+        <Form style={{ top: "0", marginBottom: "90%" }} onSubmit={handleSubmit}>
             <Form.Group>
                 <Form.Label>Name</Form.Label>
                 <input
@@ -102,7 +102,7 @@ const MyForm = ({ onSaveContact, editingContact, onUpdateContact }) => {
                     type="text"
                     id="add-title"
                     placeholder="Title"
-                    required
+                    // not required field
                     value={contact.notes}
                     onChange={handleTitleChange}
                 />

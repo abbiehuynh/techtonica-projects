@@ -13,15 +13,6 @@
   padding: 10px;
 }
 
-a.navbar-brand {
-  margin-inline-start: -5em;
-}
-
-.nav-link {
-  color: white !important;
-  margin-left: 5em;
-}
-
 /* .list-contacts {
   text-align: center;
   margin-top: 25px;
@@ -39,7 +30,12 @@ ul {
   text-align: center;
 }
 
+.form-box {
+  margin-top: 20px;
+}
+
 form {
+  
   /* flex-direction: column;
   align-items: center; */
   text-align: left !important;

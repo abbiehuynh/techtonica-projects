@@ -18,7 +18,7 @@ const loadContactDetails = () => {
         .then((response) => response.json())
         .then((contactDetails) => {
             setContactDetails(contactDetails[0]);
-            console.log(contactDetails)
+            // console.log(contactDetails)
         });
 }
 
@@ -28,11 +28,11 @@ useEffect(() => {
 
   return (
     <>  
-        <div style={{display: "flex", justifyContent: "center"}}>
+        {/* <div style={{display: "flex", justifyContent: "center"}}>
             <Button style={{ textAlign: "center", margin: "20px"}}>Edit Contact</Button>
             <Button style={{ textAlign: "center", margin: "20px"}}>Delete Contact</Button>
-        </div>
-        <Card style={{width: "80%", margin: "auto", height: "auto"}}>
+        </div> */}
+        <Card style={{width: "80%", margin: "auto", height: "auto", marginTop: "40px"}}>
             <Card.Body>
                 <Card.Title>Name: {contactDetails.name}</Card.Title>
                 <Card.Subtitle>Location: {contactDetails.home_location}</Card.Subtitle>
