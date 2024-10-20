@@ -117,6 +117,7 @@ const MyForm = ({ onSaveContact, editingContact, onUpdateContact }) => {
 
     return (
         <Form style={{ top: "0", marginBottom: "90%" }} onSubmit={handleSubmit}>
+            <h2 style={{ textAlign: "center" }}>Add New Friend!</h2>
             <Form.Group>
                 <Form.Label>Name</Form.Label>
                 <input
