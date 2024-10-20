@@ -5,9 +5,10 @@ const MyForm = ({ onSaveContact, editingContact, onUpdateContact }) => {
 
     // This is the original State with not initial Contact 
     const [contact, setContact] = useState(editingContact || {
-        firstname: "",
-        lastname: "",
-        is_current: false
+        name: "", 
+        notes: "", 
+        email: "", 
+        phone_number: ""
     });
 
     //create functions that handle the event of the user typing into the form
@@ -76,11 +77,41 @@ const MyForm = ({ onSaveContact, editingContact, onUpdateContact }) => {
     //A function to handle the submit in both cases - Post and Put request!
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (contact.id) {
-            putContact(contact);
-        } else {
-            postContact(contact);
+        if (validateForm()) {
+            if (contact.id) {
+                putContact(contact);
+            } else {
+                postContact(contact);
+            }
         }
+    };
+
+    // creates state variable to hold error messages
+    const [errors, setErrors] = useState({});
+
+    // a function to check for errors before submitting the form
+    const validateForm = () => {
+        const newErrors = {};
+
+        if (!contact.name) {
+            newErrors.name = "Name is required.";
+        }
+
+        if (!contact.email) {
+            newErrors.email = "Email is required.";
+        } else if (!/\S+@\S+\.\S+/.test(contact.email)) {
+            newErrors.email = "Email format is invalid.";
+        }
+
+        if (!contact.phone_number) {
+            newErrors.phone_number = "Phone number is required.";
+        } else if (!/^\d{3}-\d{3}-\d{4}$/.test(contact.phone_number))
+            newErrors.phone_number = "Phone number format should be 000-000-0000."; {
+        }
+
+        // updates error
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
     };
 
     return (
@@ -95,6 +126,8 @@ const MyForm = ({ onSaveContact, editingContact, onUpdateContact }) => {
                     value={contact.name}
                     onChange={handleNameChange}
                 />
+                {/* displays error handling on form */}
+                {errors.name && <span style={{ color: 'red' }}>{errors.name}</span>}
             </Form.Group>
             <Form.Group>
                 <Form.Label>Title</Form.Label>
@@ -117,6 +150,8 @@ const MyForm = ({ onSaveContact, editingContact, onUpdateContact }) => {
                     value={contact.email}
                     onChange={handleEmailChange}
                 />
+                {/* displays error handling on form */}
+                {errors.email && <span style={{ color: 'red' }}>{errors.email}</span>}
             </Form.Group>
             <Form.Group>
                 <Form.Label>Phone Number</Form.Label>
@@ -128,6 +163,8 @@ const MyForm = ({ onSaveContact, editingContact, onUpdateContact }) => {
                     value={contact.phone_number}
                     onChange={handlePhoneNumberChange}
                 />
+                {/* displays error handling on form */}
+                {errors.phone_number && <span style={{ color: 'red' }}>{errors.phone_number}</span>}
             </Form.Group>
             <Form.Group>
             <Button type="submit" variant="outline-success" style={{marginTop: "10px"}}>{contact.id ? "Edit contact" : "Add Contact"}</Button>
