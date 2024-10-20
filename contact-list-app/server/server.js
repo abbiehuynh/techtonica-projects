@@ -162,31 +162,26 @@ app.delete('/contacts/details/:contactId', async (req, res) => {
 });
 
 // creates a put request to update a contact
-app.put('/contacts/details/:contactId', async (req, res) =>{
+app.put('/contacts/:contactId', async (req, res) =>{
     //console.log(req.params);
-    //This will be the id that I want to find in the DB - the student to be updated
-    const contactId = req.params.contactId
+    const contactId = req.params.contactId;
     const updatedContact = { 
-        name: req.body.id, 
-        email: req.body.email,
-        phone_number: req.body.phone_number,
+        name: req.body.name,
         notes: req.body.notes,
-        location: req.body.location,
-        occupation: req.body.occupation
-    }
+        email: req.body.email,
+        phone_number: req.body.phone_number
+    };
 
     console.log("In the server from the url - the contact id", contactId);
     console.log("In the server, from the react - the contact to be edited", updatedContact);
     
-    const query = `UPDATE contacts SET name=$1, email=$2, phone_number=$3, notes=$4, occupation=$5 WHERE id=${contactId} RETURNING *`;
+    const query = `UPDATE public.contacts SET name=$1, notes=$2, email=$3, phone_number=$4 WHERE id=$5 RETURNING *`;
     const values = [
-        contactsId,
         updatedContact.name, 
+        updatedContact.notes,
         updatedContact.email,
         updatedContact.phone_number,
-        updatedContact.notes,
-        updatedContact.location,
-        updatedContact.occupation
+        contactId
     ];
 
     try {

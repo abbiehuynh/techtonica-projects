@@ -14,7 +14,6 @@ const MyForm = ({ onSaveContact, editingContact, onUpdateContact }) => {
     const handleNameChange = (event) => {
         const name = event.target.value;
         setContact((contact) => ({ ...contact, name }));
-
     };
 
     const handleTitleChange = (event) => {
@@ -32,6 +31,7 @@ const MyForm = ({ onSaveContact, editingContact, onUpdateContact }) => {
         setContact((contact) => ({ ...contact, phone_number }));
     };
 
+    // resets form to have empty or blank inputs
     const clearForm = () => {
         setContact({ name: "", notes: "", email: "", phone_number: "" })
     }
@@ -55,9 +55,9 @@ const MyForm = ({ onSaveContact, editingContact, onUpdateContact }) => {
             });
     };
 
-    //A function to handle the post request
+    //A function to handle the update request
     const putContact = (toEditContact) => {
-        return fetch(`http://localhost:8080/api/contacts/${toEditContact.id}`, {
+        return fetch(`http://localhost:3001/contacts/${contact.id}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(toEditContact),
