@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { Button, Form } from "react-bootstrap"
 
-const MyForm = ({ onSaveStudent, editingStudent, onUpdateStudent }) => {
+const MyForm = ({ onSaveContact, editingContact, onUpdateContact }) => {
 
-    // This is the original State with not initial student 
-    const [student, setStudent] = useState(editingStudent || {
+    // This is the original State with not initial Contact 
+    const [contact, setContact] = useState(editingContact || {
         firstname: "",
         lastname: "",
         is_current: false
@@ -12,57 +12,61 @@ const MyForm = ({ onSaveStudent, editingStudent, onUpdateStudent }) => {
 
     //create functions that handle the event of the user typing into the form
     const handleNameChange = (event) => {
-        const firstname = event.target.value;
-        setStudent((student) => ({ ...student, firstname }));
+        const name = event.target.value;
+        setContact((contact) => ({ ...contact, name }));
 
     };
 
-    const handleLastnameChange = (event) => {
-        const lastname = event.target.value;
-        setStudent((student) => ({ ...student, lastname }));
+    const handleTitleChange = (event) => {
+        const notes = event.target.value;
+        setContact((contact) => ({ ...contact, notes }));
     };
 
-    const handleCheckChange = (event) => {
-        const is_current = event.target.checked;
-        //console.log(iscurrent);
-        setStudent((student) => ({ ...student, is_current }));
+    const handleEmailChange = (event) => {
+        const email = event.target.value;
+        setContact((contact) => ({ ...contact, email }));
+    };
+
+    const handlePhoneNumberChange = (event) => {
+        const phoneNumber = event.target.value;
+        setContact((contact) => ({ ...contact, phoneNumber }));
     };
 
     const clearForm = () => {
-        setStudent({ firstname: "", lastname: "", is_current: false })
+        setContact({ firstname: "", lastname: "", is_current: false })
     }
 
     //A function to handle the post request
-    const postStudent = (newStudent) => {
-        return fetch("http://localhost:8080/api/students", {
+    const postContact = (newContact) => {
+        return fetch("http://localhost:8080/api/contacts", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(newStudent),
+            body: JSON.stringify(newContact),
         })
             .then((response) => {
                 return response.json();
             })
             .then((data) => {
                 //console.log("From the post ", data);
-                //I'm sending data to the List of Students (the parent) for updating the list
-                onSaveStudent(data);
+                //I'm sending data to the List of Contacts (the parent) for updating the list
+                onSaveContact(data);
                 //this line just for cleaning the form
                 clearForm();
             });
     };
 
     //A function to handle the post request
-    const putStudent = (toEditStudent) => {
-        return fetch(`http://localhost:8080/api/students/${toEditStudent.id}`, {
+    const putContact = (toEditContact) => {
+        return fetch(`http://localhost:8080/api/contacts/${toEditContact.id}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(toEditStudent),
+            body: JSON.stringify(toEditContact),
         })
             .then((response) => {
                 return response.json();
             })
             .then((data) => {
-                onUpdateStudent(data);
+                onUpdateContact(data);
                 //this line just for cleaning the form
                 clearForm();
             });
@@ -72,47 +76,62 @@ const MyForm = ({ onSaveStudent, editingStudent, onUpdateStudent }) => {
     //A function to handle the submit in both cases - Post and Put request!
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (student.id) {
-            putStudent(student);
+        if (contact.id) {
+            putContact(contact);
         } else {
-            postStudent(student);
+            postContact(contact);
         }
     };
 
     return (
-        <Form className='box form-students' onSubmit={handleSubmit}>
+        <Form className='box form-contacts' onSubmit={handleSubmit}>
             <Form.Group>
-                <Form.Label>First Name</Form.Label>
+                <Form.Label>Name</Form.Label>
                 <input
                     type="text"
                     id="add-user-name"
-                    placeholder="First Name"
+                    placeholder="Name"
                     required
-                    value={student.firstname}
+                    value={contact.name}
                     onChange={handleNameChange}
                 />
             </Form.Group>
             <Form.Group>
-                <Form.Label>Last Name</Form.Label>
+                <Form.Label>Title</Form.Label>
                 <input
                     type="text"
-                    id="add-user-lastname"
-                    placeholder="Last Name"
+                    id="add-title"
+                    placeholder="Title"
                     required
-                    value={student.lastname}
-                    onChange={handleLastnameChange}
+                    value={contact.notes}
+                    onChange={handleTitleChange}
                 />
             </Form.Group>
-            <Form.Check
-                type={'checkbox'}
-                id={`isCurrent`}
-                checked={student.is_current}
-                onChange={handleCheckChange}
-                label={`Are they in the current program?`}
-            />
             <Form.Group>
-            <Button type="submit" variant="outline-success">{student.id ? "Edit Student" : "Add Student"}</Button>
-            {student.id ? <Button type="button" variant="outline-warning" onClick={clearForm}>Cancel</Button> : null}
+                <Form.Label>Email</Form.Label>
+                <input
+                    type="text"
+                    id="add-email"
+                    placeholder="Email"
+                    required
+                    value={contact.email}
+                    onChange={handleEmailChange}
+                />
+            </Form.Group>
+            <Form.Group>
+                <Form.Label>Phone Number</Form.Label>
+                <input
+                    type="text"
+                    id="add-email"
+                    placeholder="000-000-0000"
+                    required
+                    value={contact.phone_number}
+                    onChange={handlePhoneNumberChange}
+                />
+            </Form.Group>
+            <Form.Group>
+            <Button type="submit" variant="outline-success" style={{marginTop: "10px"}}>{contact.id ? "Edit contact" : "Add Contact"}</Button>
+            {contact.id ? <Button type="button" variant="outline-warning" onClick={clearForm}>Cancel</Button> : null}
             </Form.Group>
         </Form>
     );
