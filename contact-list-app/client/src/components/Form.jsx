@@ -28,12 +28,12 @@ const MyForm = ({ onSaveContact, editingContact, onUpdateContact }) => {
     };
 
     const handlePhoneNumberChange = (event) => {
-        const phoneNumber = event.target.value;
-        setContact((contact) => ({ ...contact, phoneNumber }));
+        const phone_number = event.target.value;
+        setContact((contact) => ({ ...contact, phone_number }));
     };
 
     const clearForm = () => {
-        setContact({ firstname: "", lastname: "", is_current: false })
+        setContact({ name: "", notes: "", email: "", phone_number: "" })
     }
 
     //A function to handle the post request
@@ -131,7 +131,7 @@ const MyForm = ({ onSaveContact, editingContact, onUpdateContact }) => {
             </Form.Group>
             <Form.Group>
             <Button type="submit" variant="outline-success" style={{marginTop: "10px"}}>{contact.id ? "Edit contact" : "Add Contact"}</Button>
-            {contact.id ? <Button type="button" variant="outline-warning" onClick={clearForm}>Cancel</Button> : null}
+            {contact.id ? <Button type="button" variant="outline-warning" onClick={clearForm} style={{marginTop: "10px", marginLeft: "10px"}}>Cancel</Button> : null}
             </Form.Group>
         </Form>
     );
