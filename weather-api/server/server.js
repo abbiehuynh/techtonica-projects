@@ -4,9 +4,6 @@ const cors = require('cors');
 
 require('dotenv').config();
 
-// imports weather api
-// const getWeather = require('./routes/weather.js');
-
 // imports the database connection
 const db = require('./db/db-connection.js');
 
@@ -23,6 +20,68 @@ app.get('/', (req, res) => {
     console.log("Abbie's Weather App")
 });
 
+// creates get request for users table - test connection to db
+app.get('/users', async (req, res) => {
+    try {
+        const { rows: users } = await db.query(
+            `SELECT * FROM users;`
+        );
+        res.send(users);
+    } catch (error) {
+        console.error("Error fetching projects data", error );
+        return res.status(400).json({ error });
+    }
+});
+
+// LOGIN
+// for password hashing
+const bcrypt = require('bcrypt');
+
+const saltRounds = 10;
+const plainPassword = 'password';
+
+bcrypt.hash(plainPassword, saltRounds, (err, hash) => {
+    console.log(hash);
+});
+
+// for creating tokens
+const jwt = require('jsonwebtoken');
+
+// creates post request for login
+app.post('/login', async (req, res) => {
+    const { name, password } = req.body;
+
+    try {
+        // checks if user exists
+        const result = await db.query(`SELECT * FROM users WHERE name = $1`, [name]);
+        const user = result.rows[0];
+    
+        if (!user) {
+            return res.status(401).json({ error: 'Invalid credentials' });
+         }
+
+        console.log("Username:", name);
+        console.log("Password:", password);
+        console.log("User from DB:", user);
+
+        // compares the password
+        const validPassword = await bcrypt.compare(password, user.password);
+
+        if (!validPassword) {
+            return res.status(401).json({ error: 'Invalid credentials'});
+         }
+
+        // generates a token with a 1 hour expiration
+        const token = jwt.sign({ id: user.id }, 'your_secret_key', { expiresIn: '1h' });
+        res.json({ token, userId: user.id });
+    
+    } catch (error) {
+        console.error("Error logging in:", error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+
+// WEATHER API
 // retrieves open weather data api
 const getWeather = async (req, res) => {
     const city = req.query.city;
@@ -43,6 +102,7 @@ const getWeather = async (req, res) => {
 // creates get route to use getWeather function
 app.get('/weather', getWeather)
 
+// FAVORITE FEATURE
 // creates get request for if city is user's favorite city by user id and city name
 app.get('/favorite-city/:userId/:city', async (req, res) => {
     const { userId, city } = req.params;
