@@ -85,7 +85,7 @@ const Weather = ({ userId, setFavoriteCity }) => {
         <br/>
         <button id="button"type="submit">Get Weather</button>
       </form>
-      
+
       {/* Display error message if it exists */}
       {error && <p className="error">{error}</p>}
      
@@ -96,6 +96,7 @@ const Weather = ({ userId, setFavoriteCity }) => {
       <img 
         src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@4x.png`} 
         className="weather-icon" 
+        alt="Weather icon"
         />
       <p>Temperature: {weatherData.main.temp} &deg;F </p>
       <p>Description: {weatherData.weather[0].description}</p>
