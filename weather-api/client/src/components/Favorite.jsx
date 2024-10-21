@@ -1,21 +1,15 @@
-import React, { useState } from 'react';
-import { FaHeart, FaRegHeart } from 'react-icons/fa';
+import React from 'react';
 
-const Favorite = () => {
-  // create state
-  const [isFavorite, setIsFavorite] = useState(false);
-  
-  const toggleFavorite = () => {
-    setIsFavorite((prev) => !prev);
-  }
+const Favorite = ({ userId, favoriteCity }) => {
 
-  
   return (
+    // returns current favorite city, also updates when new city is favorited
     <div>
-      <button onClick={toggleFavorite}>
-        {isFavorite ? <FaHeart color="red" /> : <FaRegHeart />}
-      </button>
-
+      {favoriteCity ? (
+         <p>Your favorite city is: {favoriteCity}</p>
+      ) : (
+        <p>No favorite city found.</p>
+      )}
     </div>
   )
 }

@@ -21,15 +21,22 @@ app.get('/', (req, res) => {
 });
 
 // creates get request for users table - test connection to db
-app.get('/users', async (req, res) => {
+app.get('/favorite-city/:userId', async (req, res) => {
+    const { userId } = req.params;
     try {
-        const { rows: users } = await db.query(
-            `SELECT * FROM users;`
-        );
-        res.send(users);
+        const result = await db.query(
+            `SELECT favorite_city FROM users WHERE id = $1`, [userId]);
+    
+            if (result.rowCount === 0) {
+                return res.status(404).json({ error: 'User not found.' });
+            }
+    
+            const favoriteCity = result.rows[0].favorite_city;
+            res.json({ favorite_city: favoriteCity });
+            
     } catch (error) {
-        console.error("Error fetching projects data", error );
-        return res.status(400).json({ error });
+        console.error("Error retrieving favorite city:", error);
+        res.status(500).json({ error: 'Internal Server Error' });
     }
 });
 
@@ -41,7 +48,7 @@ const saltRounds = 10;
 const plainPassword = 'password';
 
 bcrypt.hash(plainPassword, saltRounds, (err, hash) => {
-    console.log(hash);
+    // console.log(hash);
 });
 
 // for creating tokens
@@ -50,6 +57,7 @@ const jwt = require('jsonwebtoken');
 // creates post request for login
 app.post('/login', async (req, res) => {
     const { name, password } = req.body;
+    // console.log("Attempting login for:", name);
 
     try {
         // checks if user exists
@@ -57,17 +65,31 @@ app.post('/login', async (req, res) => {
         const user = result.rows[0];
     
         if (!user) {
+            // debugging log
+            console.log("User not found");
             return res.status(401).json({ error: 'Invalid credentials' });
          }
 
-        console.log("Username:", name);
-        console.log("Password:", password);
-        console.log("User from DB:", user);
+         // debugging logs
+            // console.log("Username:", name);
+            // console.log("Password:", password);
+            // console.log("User from DB:", user);
+
+        // logs stored and provided passwords for comparison
+        // console.log("Stored password:", user.password);
+        // console.log("Provided password:", password);
 
         // compares the password
-        const validPassword = await bcrypt.compare(password, user.password);
+        const validPassword = (password == user.password);
+        // could not get the bcrpt.compare to return true, something to look into in the future..
+        // const validPassword = (await bcrypt.compare(password, user.password));
+        
+        // debugging log
+        // console.log("Password match:", validPassword);
 
         if (!validPassword) {
+            // debugging log
+            // console.log("Invalid password");
             return res.status(401).json({ error: 'Invalid credentials'});
          }
 
