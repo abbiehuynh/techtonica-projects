@@ -57,6 +57,8 @@ $ git clone https://github.com/abbiehuynh/techtonica-projects/weather-api.git <N
 3. `npm start` on server side and `npm run dev` on client side to run weather app.
 
 4. Visit `http://localhost:3001` for server site (ExpressJS, NodeJS) and `http://localhost:5173` for client site (React + Vite).
+   
+6. Log in Using: Name: `Abbie` , Password: `password`
 
 ## Usage: 
 - Input city name to choose city.
@@ -90,6 +92,10 @@ User can log in and add city as favorite city!
     - requires user to log in to access weather app
     - allows users to save city as favorite city
     - displays favorite city at the bottom of the web page
+ - To include in the future:
+    - allow users to register a new acoount
+    - save multiple cities
+    - include a full week forecast 
 
 
 ## Technologies: 
