@@ -6,14 +6,28 @@ const Weather = ({ userId, setFavoriteCity }) => {
   const [city, setCity] = useState('Birmingham');
   const [weatherData, setWeatherData] = useState(null);
 
+// state for error messages - adds error handling 
+  const [error, setError] = useState(null); 
+
   // fetches open weather api data from express server
   const fetchWeather = async () => {
+    // resets error state before making the request
+    setError(null);
+
     try {
       const response = await fetch(`http://localhost:3001/weather?city=${city}`);
+      // if response is not okay, throw new error
+      if (!response.ok) {
+        throw new Error("Failed to fetch weather data.");
+      }
+
       const data = await response.json();
       setWeatherData(data);
-        } catch (error) {
-          console.error("Error fetching data:", error);
+
+    } catch (error) {
+        // sets/updates the error message
+        setError(error.message);
+        console.error("Error fetching data:", error);
      }
   };
 
@@ -39,15 +53,17 @@ const Weather = ({ userId, setFavoriteCity }) => {
         body: JSON.stringify({ favorite_city: city }),
       });
 
+      if (!response.ok) {
+        throw new Error("Failed to save favorite city.");
+      }
+
       const data = await response.json();
-      if (response.ok) {
         // updates favorite city in parent component
         setFavoriteCity(city);
         alert(data.message);
-      } else {
-        alert(data.error);
-      }
+
     } catch (error) {
+      setError(error.message);
       console.error("Error saving favorite city:", error);
     }
   };
@@ -69,6 +85,9 @@ const Weather = ({ userId, setFavoriteCity }) => {
         <br/>
         <button id="button"type="submit">Get Weather</button>
       </form>
+      
+      {/* Display error message if it exists */}
+      {error && <p className="error">{error}</p>}
      
      {weatherData ? (
       <>
