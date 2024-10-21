@@ -103,6 +103,8 @@ const Weather = ({ userId, setFavoriteCity }) => {
       <p>Humidity: {weatherData.main.humidity} %</p>
       <p>Feels Like: {weatherData.main.feels_like} &deg;F </p>
       <p>Wind Speed: {weatherData.wind.speed} mph</p>
+      <p>Minimum Temperature: {weatherData.main.temp_min} &deg;F </p>
+      <p>Maximum Temperature: {weatherData.main.temp_max} &deg;F </p>
       </div>
       <button onClick={saveFavoriteCity}>Save as Favorite</button>
       </>
