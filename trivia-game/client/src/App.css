@@ -1,0 +1,58 @@
+/* fonts / text */
+.font-link {
+    font-family: "Poppins", sans-serif;
+    font-family: "Space Mono", monospace;
+    font-family: "Tiny5", sans-serif;
+  }
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-image: url(./assets/leopard-background.webp);
+    background-size: auto;
+}
+
+h1 {
+    font-family: "Tiny5", sans-serif;
+    font-size: 4.5rem;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+h2 {
+    font-family: "Space Mono", monospace;
+}
+
+/* load game button */
+
+.load-btn-container {
+    display: flex;
+    justify-content: center;
+}
+
+.load-btn {
+    border: 1px black solid;
+    background-color: #f6a848;
+}
+
+.load-btn:hover {
+    border: 1px black solid;
+    background-color: #92AE57;
+}
+
+/* game card */
+
+.card {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 10px rgba(235, 229, 229, 0.731);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
