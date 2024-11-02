@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Card } from 'react-bootstrap';
+import GameResults from './GameResults';
 
 const TriviaGame = () => {
     // creates initial states
@@ -11,6 +12,7 @@ const TriviaGame = () => {
     const [feedback, setFeedback] = useState(''); // results - tells user if right/wrong
     const [correctScore, setCorrectScore] = useState(0); // tracks correct answers
     const [incorrectScore, setIncorrectScore] = useState(0); // tracks incorrect scores
+    const [gameOver, setGameOver] = useState(false); // tracks if game is over/ongoing
 
     const fetchTrivia = async () => {
         // resets state when new game is being fetched
@@ -21,9 +23,10 @@ const TriviaGame = () => {
         setFeedback('');
         setCorrectScore(0);
         setIncorrectScore(0);
+        setGameOver(false);
         
         try {
-            const response = await fetch('http://localhost:3001/api/trivia');
+            const response = await fetch('http://localhost:3001/api/game');
             if (!response.ok) {
                 throw new Error('Failed to fetch trivia data');
             }
@@ -52,11 +55,26 @@ const TriviaGame = () => {
 
     // function for next question
     const nextQuestion = () => {
-        setCurrentQuestion((prev) => Math.min(prev + 1, trivia.length - 1));
+        if (currentQuestion < trivia.length - 1) {
+            setCurrentQuestion((prev) => prev + 1);
+            setUserAnswer(null);
+            setFeedback('');
+        } else {
+            setGameOver(true);
+        }   
+    };
+
+    // function to reset game
+    const resetGame = () => {
+        setTrivia([]);
+        setCurrentQuestion(0);
         setUserAnswer(null);
         setFeedback('');
-    };
-    
+        setCorrectScore(0);
+        setIncorrectScore(0);
+        setGameOver(false);
+    }
+
   return (
     <div>
         <h1>Animal Trivia</h1>
@@ -64,34 +82,38 @@ const TriviaGame = () => {
         {loading && <p>Loading...</p>}
         {error && <p>Error: {error}</p>}
 
-        <Card>
-            <Card.Title>Score</Card.Title>
-            <Card.Text>Correct: {correctScore}</Card.Text>
-            <Card.Text>Incorrect: {incorrectScore}</Card.Text>
-        </Card>
-
-        {trivia.length > 0 && currentQuestion < trivia.length && (
-            <Card>
-                <h2 dangerouslySetInnerHTML={{ __html: trivia[currentQuestion].question }} />
-                <ul>
-                    {[...trivia[currentQuestion].incorrect_answers, trivia[currentQuestion].correct_answer].map((answer, idx) => (
-                        <li key={idx}>
-                            <Button
-                                variant={userAnswer === answer ? (answer === trivia[currentQuestion].correct_answer ? 'success' : 'danger') : 'light'}
-                                onClick={() => handleAnswerSelection(answer)}
-                                disabled={userAnswer !== null} // disables buttons after an answer has been selected
-                            >
-                                {answer}
-                            </Button>
-                        </li>
-                    ))}
-                </ul>
-                {feedback && <p>{feedback}</p>}
-                {currentQuestion < trivia.length - 1 && userAnswer && (
-                    <Button onClick={nextQuestion} variant="success">Next Question</Button>
-                )}
-            </Card>
-        )}
+        {gameOver ? (
+            <GameResults
+                correctScore={correctScore}
+                totalQuestions={trivia.length}
+                onReset={resetGame}
+            />
+        ) : (
+            trivia.length > 0 && currentQuestion < trivia.length && (
+                <Card>
+                    <Card.Body>
+                        <h2 dangerouslySetInnerHTML={{ __html: trivia[currentQuestion].question }} />
+                        <ul>
+                            {[...trivia[currentQuestion].incorrect_answers, trivia[currentQuestion].correct_answer].map((answer, idx) => (
+                                <li key={idx}>
+                                    <Button
+                                        variant={userAnswer === answer ? (answer === trivia[currentQuestion].correct_answer ? 'success' : 'danger') : 'light'}
+                                        onClick={() => handleAnswerSelection(answer)}
+                                        disabled={userAnswer !== null} // disables buttons after an answer has been selected
+                                    >
+                                        {answer}
+                                    </Button>
+                                </li>
+                            ))}
+                        </ul>
+                        {feedback && <p>{feedback}</p>}
+                        { userAnswer && (
+                            <Button onClick={nextQuestion} variant="success">Next Question</Button>
+                        )}
+                    </Card.Body>
+                </Card>
+            )
+        )}  
     </div>
   );
 }
