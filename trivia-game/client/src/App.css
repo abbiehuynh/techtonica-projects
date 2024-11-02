@@ -1,0 +1,116 @@
+/* fonts / text */
+.font-link {
+    font-family: "Poppins", sans-serif;
+    font-family: "Space Mono", monospace;
+    font-family: "Tiny5", sans-serif;
+  }
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-image: url(./assets/leopard-background.webp);
+    background-size: auto;
+}
+
+h1 {
+    font-family: "Tiny5", sans-serif;
+    font-size: 4.5rem;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+h2, h3 {
+    font-family: "Space Mono", monospace;
+    text-align: center;
+    padding: 5px;
+}
+
+h3 {
+    color: white;
+}
+
+p {
+    font-size: 1.3rem;
+}
+
+/* load game button */
+
+.load-btn-container {
+    display: flex;
+    justify-content: center;
+}
+
+.load-btn {
+    border: 1px black solid;
+    background-color: #f6a848;
+}
+
+.load-btn:hover {
+    border: 1px black solid;
+    background-color: #92AE57;
+}
+
+/* game card */
+
+.card {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px black solid;
+    /* box-shadow: 0 2px 10px rgba(255, 194, 88, 0.845); */
+    background-color: #fffdf6;
+}
+
+/* answer choices */
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px;
+    margin-left: 20px;
+}
+
+label {
+    padding: 10px 30px 10px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+label:hover {
+    background-color: #92AE57;
+    color: white;
+}
+
+input[type="radio"] {
+    margin-right: 10px; /* adds space between radio and text */
+}
+
+/* game over card */
+
+.game-over-card {
+    text-align: center;
+    background-color: #93AE4F;
+}
+
+.game-over {
+    font-family: "Tiny5", sans-serif;
+    font-size: 4rem;
+    color: white;
+}
+
+.play-again-btn {
+    margin: 10px;
+    border: 1px black solid;
+    background-color: #f6a848;
+}
+
+.play-again-btn:hover {
+    border: 1px black solid;
+    background-color: #4D6C30;
+}

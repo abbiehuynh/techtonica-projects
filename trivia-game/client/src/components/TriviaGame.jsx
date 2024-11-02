@@ -78,9 +78,11 @@ const TriviaGame = () => {
   return (
     <div>
         <h1>Animal Trivia</h1>
-        <Button onClick={fetchTrivia} variant="primary">Load Game</Button>
-        {loading && <p>Loading...</p>}
-        {error && <p>Error: {error}</p>}
+        <div className="load-btn-container">
+            <Button className="load-btn" onClick={fetchTrivia} variant="primary">Load Game</Button>
+            {loading && <p>Loading...</p>}
+            {error && <p>Error: {error}</p>}
+        </div>
 
         {gameOver ? (
             <GameResults
@@ -96,13 +98,17 @@ const TriviaGame = () => {
                         <ul>
                             {[...trivia[currentQuestion].incorrect_answers, trivia[currentQuestion].correct_answer].map((answer, idx) => (
                                 <li key={idx}>
-                                    <Button
-                                        variant={userAnswer === answer ? (answer === trivia[currentQuestion].correct_answer ? 'success' : 'danger') : 'light'}
-                                        onClick={() => handleAnswerSelection(answer)}
-                                        disabled={userAnswer !== null} // disables buttons after an answer has been selected
-                                    >
-                                        {answer}
-                                    </Button>
+                                    <label>
+                                        <input 
+                                            type="radio"
+                                            name="answer"
+                                            value={answer}
+                                            onChange={() => handleAnswerSelection(answer)}
+                                            checked={userAnswer === answer}
+                                            disabled={userAnswer !== null} // disables buttons after an answer has been selected
+                                        />
+                                         {answer}
+                                    </label>
                                 </li>
                             ))}
                         </ul>

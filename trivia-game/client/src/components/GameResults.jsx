@@ -6,12 +6,14 @@ const GameResults = ({ correctScore, totalQuestions, onReset }) => {
     const hasWon = correctScore > totalQuestions / 2;
 
   return (
-    <div>
-        <h2>Game Over!</h2>
-        <p>You answered {correctScore} out of {totalQuestions} questions correctly. </p>
-        <h3>{hasWon ? "Congratulations! You won!" : "Better luck next time!"}</h3>
-        <Button onClick={onReset} variant="primary">Play Again</Button>
-    </div>
+    <Card className="game-over-card">
+        <Card.Body>
+            <h2 className="game-over">Game Over!</h2>
+            <p>You answered {correctScore} out of {totalQuestions} questions correctly. </p>
+            <h3>{hasWon ? "Congratulations! You won!" : "Better luck next time!"}</h3>
+            <Button className="play-again-btn" onClick={onReset} variant="primary">Play Again</Button>
+        </Card.Body>
+    </Card>
   )
 }
 
