@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 });
 
 // creates get route to retrieve data from TRIVIA API
-app.use('/api/trivia', getTrivia)
+app.use('/api/game', getTrivia)
 
 // console.log that your server is up and running
 app.listen(PORT, () => {
