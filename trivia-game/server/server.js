@@ -1,10 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const path = require('path');
+const getTrivia = require('./routes/game.js');
 
 require('dotenv').config();
-const path = require('path');
-
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -17,6 +17,9 @@ app.use(bodyParser.json());
 app.get('/', (req, res) => {
     res.json({ message: 'Hello, from ExpressJS with React-Vite' });
 });
+
+// creates get route to retrieve data from TRIVIA API
+app.use('/api/trivia', getTrivia)
 
 // console.log that your server is up and running
 app.listen(PORT, () => {
