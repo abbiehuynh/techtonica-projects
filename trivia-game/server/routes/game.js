@@ -15,7 +15,7 @@ const getTrivia = async (req, res) => {
 
         const data = await response.json();
         res.json(data);
-    } catch {
+    } catch (error) {
         console.error('Error fetching trivia data:', error);
         res.status(500).json({error: "Failed to fetch animal trivia data"});
     }

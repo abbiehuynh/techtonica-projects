@@ -1,5 +1,6 @@
-import React from 'react'
-import TriviaGame from './components/TriviaGame'
+import React from 'react';
+import TriviaGame from './components/TriviaGame';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   return (
