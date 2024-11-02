@@ -56,12 +56,17 @@ $ git clone https://github.com/abbiehuynh/techtonica-projects/weather-api.git <N
 
 3. `npm start` on server side and `npm run dev` on client side to run weather app.
 
-4. Visit `http://localhost:5050` for server site (ExpressJS, NodeJS) and `http://localhost:5173` for client site (React + Vite).
+4. Visit `http://localhost:3001` for server site (ExpressJS, NodeJS) and `http://localhost:5173` for client site (React + Vite).
+   
+6. Log in Using: Name: `Abbie` , Password: `password`
 
 ## Usage: 
 - Input city name to choose city.
 - Click button to generate city's weather data.
 - Can continute to input new city names to generate a differen't city's weather information.
+- Update 2.0:
+    - log in to track favorite city
+    - update favorite city
 
 ## Demonstration:
 
@@ -74,9 +79,23 @@ You can input the city name that you would like to check the weather for. Once y
 The weather data for that city input will then load on the page. 
 ![Get Weather](images/getWeather-weatherapp.png)
 
+Updated Features for Weather App 2.0:
+User can log in and add city as favorite city!
+![App 2.0](./images/home-weatherapp2.0.png)
+
+
 ## Features: 
 - Interactive user experience through mouse click
     - input city name and click "Get Weather" to generate city's temperature, description of weather, humidity, feel's like, and wind-speed.  
+- Update 2.0:
+    - also generates minimum and maximum temperatures
+    - requires user to log in to access weather app
+    - allows users to save city as favorite city
+    - displays favorite city at the bottom of the web page
+ - To include in the future:
+    - allow users to register a new acoount
+    - save multiple cities
+    - include a full week forecast 
 
 
 ## Technologies: 
@@ -91,10 +110,7 @@ The weather data for that city input will then load on the page.
 Specials thanks to Techtonica Program & Staff, my mentor, and the H2 2024 Cohort. Thank you for your continuous love and support for growth through this tech journey. 
 
 ## Contact: 
-[Github](https://github.com/abbiehuynh)
-
-[LinkedIn](https://www.linkedin.com/in/abbie-huynh/)
-
-email: abbiehuynhh@gmail.com
-
-[Project Link: Weather App](https://github.com/abbiehuynh/techtonica-projects/tree/weather-api)
+- [Github](https://github.com/abbiehuynh)
+- [LinkedIn](https://www.linkedin.com/in/abbie-huynh/)
+- email: abbiehuynhh@gmail.com
+- [Project Link: Weather App](https://github.com/abbiehuynh/techtonica-projects/tree/weather-api)
