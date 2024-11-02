@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Card } from 'react-bootstrap';
 
 const TriviaGame = () => {
     // creates initial states
@@ -9,6 +9,8 @@ const TriviaGame = () => {
     const [currentQuestion, setCurrentQuestion] = useState(0); // tracks current question
     const [userAnswer, setUserAnswer] = useState(null); // tracks user answer
     const [feedback, setFeedback] = useState(''); // results - tells user if right/wrong
+    const [correctScore, setCorrectScore] = useState(0); // tracks correct answers
+    const [incorrectScore, setIncorrectScore] = useState(0); // tracks incorrect scores
 
     const fetchTrivia = async () => {
         // resets state when new game is being fetched
@@ -17,6 +19,8 @@ const TriviaGame = () => {
         setCurrentQuestion(0);
         setUserAnswer(null);
         setFeedback('');
+        setCorrectScore(0);
+        setIncorrectScore(0);
         
         try {
             const response = await fetch('http://localhost:3001/api/trivia');
@@ -39,8 +43,10 @@ const TriviaGame = () => {
         const correctAnswer = trivia[currentQuestion].correct_answer;
         if (answer === correctAnswer) {
             setFeedback('Correct!');
+            setCorrectScore(prev => prev + 1); // increments correct score
         } else {
             setFeedback('Wrong answer. The correct answer was: ' + correctAnswer);
+            setIncorrectScore(prev => prev + 1); // increments incorrect score
         }
     };
 
@@ -58,8 +64,14 @@ const TriviaGame = () => {
         {loading && <p>Loading...</p>}
         {error && <p>Error: {error}</p>}
 
+        <Card>
+            <Card.Title>Score</Card.Title>
+            <Card.Text>Correct: {correctScore}</Card.Text>
+            <Card.Text>Incorrect: {incorrectScore}</Card.Text>
+        </Card>
+
         {trivia.length > 0 && currentQuestion < trivia.length && (
-            <div>
+            <Card>
                 <h2 dangerouslySetInnerHTML={{ __html: trivia[currentQuestion].question }} />
                 <ul>
                     {[...trivia[currentQuestion].incorrect_answers, trivia[currentQuestion].correct_answer].map((answer, idx) => (
@@ -78,7 +90,7 @@ const TriviaGame = () => {
                 {currentQuestion < trivia.length - 1 && userAnswer && (
                     <Button onClick={nextQuestion} variant="success">Next Question</Button>
                 )}
-            </div>
+            </Card>
         )}
     </div>
   );
