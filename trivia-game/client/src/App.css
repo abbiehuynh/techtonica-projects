@@ -20,10 +20,18 @@ h1 {
     margin-top: 50px;
 }
 
-h2 {
+h2, h3 {
     font-family: "Space Mono", monospace;
     text-align: center;
     padding: 5px;
+}
+
+h3 {
+    color: white;
+}
+
+p {
+    font-size: 1.3rem;
 }
 
 /* load game button */
@@ -81,4 +89,28 @@ label:hover {
 
 input[type="radio"] {
     margin-right: 10px; /* adds space between radio and text */
+}
+
+/* game over card */
+
+.game-over-card {
+    text-align: center;
+    background-color: #93AE4F;
+}
+
+.game-over {
+    font-family: "Tiny5", sans-serif;
+    font-size: 4rem;
+    color: white;
+}
+
+.play-again-btn {
+    margin: 10px;
+    border: 1px black solid;
+    background-color: #f6a848;
+}
+
+.play-again-btn:hover {
+    border: 1px black solid;
+    background-color: #4D6C30;
 }
