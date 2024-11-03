@@ -13,10 +13,14 @@ const GameBoard = () => {
     ]);
 
     // creates states to track players 
-    const [currPlayer, setCurrPlayer] = useState("X");  // sets initial state of current player to "X" = greenToken 
-    const [oppPlayer, setOppPlayer] = useState("O"); // set initial state of opposing player to "O" = pinkToken 
-    const [gameOver, setGameOver] = useState(false); // create state for Game Over, boolean !isGameOver
+    const [currPlayer, setCurrPlayer] = useState("X");  // current player to "X" = greenToken 
+    const [oppPlayer, setOppPlayer] = useState("O"); // opposing player to "O" = pinkToken 
+    const [gameOver, setGameOver] = useState(false); // for Game Over, boolean !isGameOver
     
+    // creates state to track player scores
+    const [currPlayerScore, setCurrPlayerScore] = useState(0);
+    const [oppPlayerScore, setOppPlayerScore] = useState(0);
+
     // creates function to determine winner of game, 4 slots in a row 
     const checkWin = (row, column, ch) => {
         // checks down
@@ -121,7 +125,17 @@ const GameBoard = () => {
         // if the slot is not occupied, decrememt the row by 1  
         if (gameBoard[row][column] !== "") row -= 1;
 
-        setGameOver(updateBoard(row, column, currPlayer));
+        // creates variable for conditions of winner
+        const winner = updateBoard(row, column, currPlayer);
+        setGameOver(winner);
+        
+        if (winner) {
+            if(currPlayer === "X") {
+                setCurrPlayerScore(prev => prev + 1); // increments current player score
+            } else {
+                setOppPlayerScore(prev => prev + 1); // increment opp player score
+            }
+        }
 
         // swap turns of players as long as game continues (is not over) 
         if(!gameOver) {
@@ -137,6 +151,13 @@ const GameBoard = () => {
             {gameOver && (
                 <h1 id ="winner">{oppPlayer === "X" ? "Cosmo" : "Wanda"} Wins!</h1>
             )}
+
+            {/* displays scores */}
+            <div>
+                <h3>Scores:</h3>
+                <p>Cosmo: {currPlayerScore}</p>
+                <p>Wanda: {oppPlayerScore}</p>
+            </div>
             
             {/* creates header to show current player's turn */}
             <h2 id="showPlayer">{currPlayer === "X" ? "Cosmo's" : "Wanda's"} Move</h2>
