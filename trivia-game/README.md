@@ -1,4 +1,4 @@
-# Project Name: Trivia Game
+<img width="1065" alt="game-over-trivia-game" src="https://github.com/user-attachments/assets/093cabef-4cfb-474d-ab3d-6b9a8b224592"># Project Name: Trivia Game
 
 **Description:**
 Test your animal knowledge by playing Animal Trivia! Fetched from the Open Trivia Database API, this game will present 10 Medium level questions with Multiple Choice options to allow users to test their knowledge on random animal facts. 
@@ -40,10 +40,9 @@ Users will be able to see if their answer choice was correct or incorrect. Once 
 
 https://github.com/user-attachments/assets/e978f8ef-9dba-4ded-9ffd-f15f142220b8
 
-
-
 Once the game is over, the user will be notified if they have either won or loss the game, and how many questions they were able to get correct. 
-![GameOver](/client/src/assets/game-over-trivia-game.png)
+<img width="1065" alt="game-over-trivia-game" src="https://github.com/user-attachments/assets/c00b7e52-9b81-4fd1-9462-e1822a8da3f9">
+
 
 ## Features: 
 - Fetches trivia questions and answers from [Open Trivia Database API](https://opentdb.com/api_config.php)
