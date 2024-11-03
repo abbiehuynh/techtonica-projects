@@ -1,10 +1,10 @@
-import express from "express";
-import { getPokemon, createPokemon, getPokemonUniqueId, deletePokemon, updatePokemon } from "../controllers/pokemon.js";
+const express = require('express');
+const { getPokemon, createPokemon, getPokemonUniqueId, deletePokemon, updatePokemon } = require('../controllers/pokemon.js');
 
-const router = express.Router();
+const app = express.Router();
 
 // create get route to get all pokemon data
-router.get("/", getPokemon);
+app.get("/", getPokemon);
 
 
 // corrects error for "require is undefined"
@@ -27,18 +27,18 @@ router.get("/", getPokemon);
 
 
 // create post route to add pokemon data to database
-router.post("/", createPokemon);
+app.post("/", createPokemon);
 
 // create get route to access pokemon by Unique Id
-router.get('/:id', getPokemonUniqueId);
+app.get('/:id', getPokemonUniqueId);
 
 // create get route to access pokemon by Order no
 // router.get('/:order', getPokemonOrder);
 
 // create delete route to delete pokemon data from database
-router.delete('/:id', deletePokemon);
+app.delete('/:id', deletePokemon);
 
 // create patch route to update pokemon data
-router.patch('/:id', updatePokemon);
+app.patch('/:id', updatePokemon);
 
-export default router;
+module.exports = app;

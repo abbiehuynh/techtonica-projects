@@ -82,4 +82,4 @@ let pokemon = [
     // }
 ];
 
- export default pokemon;
+module.exports = pokemon;

@@ -1,47 +1,31 @@
-import express from "express";
-import bodyParser from "body-parser";
-import pokemonRoutes from "./routes/pokemon.js";
-
-// import pkg from "pg";
-// import dotenv from "dotenv";
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const pokemonRoutes = require('./routes/pokemon.js');
 
 require('dotenv').config();
-
-// import db from "./db.js";
+const path = require('path');
+const db = require('./db/db-connection.js');
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 3001;
 
+app.use(cors());
+app.use(express.json());
 app.use(bodyParser.json());
 
 app.use("/pokemon", pokemonRoutes);
 
-
-// // corrects error for "require is undefined"
-import { createRequire } from "module";
-const require = createRequire(import.meta.url);
-
-// // configures database connection
-const { Pool } = require('pg');
-
-const pool = new Pool({
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    host: process.env.DB_HOST,
-    port: process.env.DB_PORT,
-    database: process.env.DB_NAME
-});
-pool.connect();
-
 // creates route to access SQL table in pokemon database
 app.get('/pokemondb', (req, response) => {
-    pool.query(`SELECT * FROM pokemon`, (error, results) => {
-        if (error) {
-            throw error
-        } 
-        response.status(200).json(results.rows)
-    })
-})
+    try {
+        const results = db.query(`SELECT * FROM pokemon`);
+        response.status(200).json(results.rows);
+    } catch (error) {
+        console.error("Query error:", error);
+        response.status(500).send("Internal Server Error");
+    }
+});
 
 // create route to access SQL table in pokemon database
 // app.get('/pokemondb', async (req, res) => {

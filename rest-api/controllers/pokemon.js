@@ -1,10 +1,10 @@
-import { v4 as uuidv4 } from "uuid";
+const { v4: uuidv4 } = require('uuid');
 
 // imports hardcoded data of pokemon
-import pokemon from "/Users/tpl622_3/techtonica/techtonica-projects/rest-api/pokemondb.js";
+const pokemon = require("/Users/tpl622_3/techtonica/techtonica-projects/rest-api/pokemondb.js");
 
 // create get route to access Pokemon from hardcoded database
-export const getPokemon = (req, res) => {
+const getPokemon = (req, res) => {
     res.json(pokemon);
 }
 
@@ -13,7 +13,7 @@ export const getPokemon = (req, res) => {
 
 
 // create post route to add pokemon data to database
-export const createPokemon = (req, res) => {
+const createPokemon = (req, res) => {
     // access and add new pokemon data from postman to database
     const newPokemon = req.body;
 
@@ -25,7 +25,7 @@ export const createPokemon = (req, res) => {
 };
 
 // create get route to access pokemon by Unique Id
-export const getPokemonUniqueId = (req, res) => {
+const getPokemonUniqueId = (req, res) => {
     const { id } = req.params;
  
     const findPokemon = pokemon.find((newPokemon) => newPokemon.id === id);
@@ -40,7 +40,7 @@ export const getPokemonUniqueId = (req, res) => {
 // }
 
  // create delete route to delete pokemon data from database
-export const deletePokemon = (req, res) => {
+const deletePokemon = (req, res) => {
     const { id } = req.params;
 
     // deletes if false => id === id; if true keeps id
@@ -53,7 +53,7 @@ export const deletePokemon = (req, res) => {
 // patch route - changes an attribute 
 
 // create patch route to update pokemon data
-export const updatePokemon = (req, res) => {
+const updatePokemon = (req, res) => {
     const { id } = req.params;
     const { order, name, type, evolutionStage } = req.body;
     
@@ -75,3 +75,11 @@ export const updatePokemon = (req, res) => {
 //     "type": "Bug and Poison",
 //     "evolutionStage": "Basic"
 // }
+
+module.exports = {
+    getPokemon, 
+    createPokemon, 
+    getPokemonUniqueId,
+    deletePokemon,
+    updatePokemon,
+};
