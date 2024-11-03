@@ -2,7 +2,7 @@ import Slot from "./Slot";
 import { useState } from "react";
 
 const GameBoard = () => {
-    {/* creates state to track board, creates gameboard */}
+    // creates state to track board, creates gameboard
     const [gameBoard, setGameBoard] = useState([
         ['','','','','','',''],
         ['','','','','','',''],
@@ -12,21 +12,14 @@ const GameBoard = () => {
         ['','','','','','',''],
     ]);
 
-    {/* creates states to track players */}
-        
-    {/* set initial state of current player to "X" = greenToken */}
-    const [currPlayer, setCurrPlayer] = useState("X");
-
-    {/* set initial state of opposing player to "O" = pinkToken */}
-    const [oppPlayer, setOppPlayer] = useState("O");
-
-    {/* create state for Game Over, boolean !isGameOver */ }
-    const [gameOver, setGameOver] = useState(false);
-
-    {/* create function to determine winner of game, 4 slots in a row */}
+    // creates states to track players 
+    const [currPlayer, setCurrPlayer] = useState("X");  // sets initial state of current player to "X" = greenToken 
+    const [oppPlayer, setOppPlayer] = useState("O"); // set initial state of opposing player to "O" = pinkToken 
+    const [gameOver, setGameOver] = useState(false); // create state for Game Over, boolean !isGameOver
+    
+    // creates function to determine winner of game, 4 slots in a row 
     const checkWin = (row, column, ch) => {
-
-        {/* checks down */}
+        // checks down
         try {
             if (gameBoard[row + 1][column] === ch) {
                 if (gameBoard[row + 2][column] === ch) {
@@ -37,7 +30,7 @@ const GameBoard = () => {
             }   
         } catch (event) {console.log(event)}
 
-        {/* checks diagonal right */}
+        // checks diagonal right
         try {
             if (gameBoard[row + 1][column + 1] === ch) {
                 if (gameBoard[row + 2][column + 2] === ch) {
@@ -48,7 +41,7 @@ const GameBoard = () => {
             }   
         } catch (event) {console.log(event)}
 
-        {/* checks diagonal left */}
+        // checks diagonal left
         try {
             if (gameBoard[row + 1][column - 1] === ch) {
                 if (gameBoard[row + 2][column - 2] === ch) {
@@ -59,7 +52,7 @@ const GameBoard = () => {
             }   
         } catch (event) {console.log(event)}
 
-         {/* checks right */}
+         // checks right
          try {
             if (gameBoard[row][column + 1] === ch) {
                 if (gameBoard[row][column + 2] === ch) {
@@ -70,7 +63,7 @@ const GameBoard = () => {
             }   
         } catch (event) {console.log(event)}
 
-        {/* checks left */}
+        // checks left
         try {
             if (gameBoard[row][column - 1] === ch) {
                 if (gameBoard[row][column - 2] === ch) {
@@ -81,7 +74,7 @@ const GameBoard = () => {
             }   
         } catch (event) {console.log(event)}
 
-         {/* checks diagnol up right */}
+         // checks diagnol up right
          try {
             if (gameBoard[row - 1][column - 1] === ch) {
                 if (gameBoard[row - 2][column - 2] === ch) {
@@ -92,7 +85,7 @@ const GameBoard = () => {
             }   
         } catch (event) {console.log(event)}
 
-         {/* checks diagnol up left */}
+         // checks diagnol up left
          try {
             if (gameBoard[row - 1][column + 1] === ch) {
                 if (gameBoard[row - 2][column + 2] === ch) {
@@ -104,7 +97,7 @@ const GameBoard = () => {
         } catch (event) {console.log(event)}
     }
     
-    {/* create copy of game board to update as game progresses */}
+    // create copy of game board to update as game progresses
     const updateBoard = (row, column, ch) => {
         setGameBoard(prev => {
             const gameBoardCopy = [...prev];
@@ -114,23 +107,23 @@ const GameBoard = () => {
         return checkWin(row, column, ch);
     }
 
-    {/* creates event listener for board components */}
+    // creates event listener for board components 
     const handleClick = event => {
         const column = event.target.getAttribute("x");
 
-        {/* find which row in the column the token needs to appear */}
+        // find which row in the column the token needs to appear 
         let row = gameBoard.findIndex((rowArr, index) => {
-            {/* return true if the space is occuppied (not empty) and if it is the bottom most slot (in the row) in the column */}
+            // return true if the space is occuppied (not empty) and if it is the bottom most slot (in the row) in the column 
             return (rowArr[column] !== "" || (index === gameBoard.length - 1));
         });
-        {/* if the row is not the bottom most row, decrement the row by 1 */}
+        // if the row is not the bottom most row, decrement the row by 1 
         if (row !== gameBoard.length - 1) row -= 1;
-        {/* if the slot is not occupied, decrememt the row by 1  */}
+        // if the slot is not occupied, decrememt the row by 1  
         if (gameBoard[row][column] !== "") row -= 1;
 
         setGameOver(updateBoard(row, column, currPlayer));
 
-        { /* swap turns of players as long as game continues (is not over) */}
+        // swap turns of players as long as game continues (is not over) 
         if(!gameOver) {
             const currPlayerCopy = currPlayer;
             setCurrPlayer(oppPlayer);
