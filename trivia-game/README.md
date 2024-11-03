@@ -1,4 +1,4 @@
-<img width="1065" alt="game-over-trivia-game" src="https://github.com/user-attachments/assets/093cabef-4cfb-474d-ab3d-6b9a8b224592"># Project Name: Trivia Game
+# Project Name: Trivia Game
 
 **Description:**
 Test your animal knowledge by playing Animal Trivia! Fetched from the Open Trivia Database API, this game will present 10 Medium level questions with Multiple Choice options to allow users to test their knowledge on random animal facts. 
