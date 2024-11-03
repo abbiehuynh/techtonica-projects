@@ -34,14 +34,19 @@ Weekly Project for Week 5 of the Techtonica Software Engineer in Training Progra
 1.  Go to your source directory in your terminal and clone the repository by running the command:
 
 ```
-$ git clone https://github.com/abbiehuynh/techtonica-projects.git NameNewDirectory
+$ git clone https://github.com/abbiehuynh/techtonica-projects/react-game-connectfour.git NameNewDirectory
 ```
-2. Open using the live server extenstion to play the game (if using VSCode).
+2. `npm install` in terminal in client (techtonica-projects/contact-list-app/client).
+
+3. `npm run dev` on client side to run Connect Four app.
+
+4. Visit `http://localhost:5173` to view app.
 
 ## Usage: 
 - Click circle or "slot" to insert token.
 - Alternate turns with opposing player.  
-- Refresh to restart game.
+- Update 2.0
+    - Click "Play Another Game" to 
 
 ## Demonstration:
 
@@ -57,10 +62,16 @@ If you click on another slot, the next token inserted will be the token of the o
 Continue taking turns to continue the game until someone "Connects Four!" The game will anounce the winner!
 ![Win Game](readme-images/fairlyFour-winGame.png)
 
+App 2.0 Update
+![Update 2.0](/readme-images/connect-four2.0.png)
+
 ## Features: 
 - Interactive user experience through mouse click
     - click slot to insert token to bottom most available slot
-
+- Update 2.0
+    - Adds "Play Another Game" Button to allow players to play mulitple rounds
+    - Adds Score Counter to keep track of player wins
+    - Adds "Reset Score" Button to reset current score
 
 ## Technologies: 
 - React
