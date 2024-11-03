@@ -46,7 +46,8 @@ $ git clone https://github.com/abbiehuynh/techtonica-projects/react-game-connect
 - Click circle or "slot" to insert token.
 - Alternate turns with opposing player.  
 - Update 2.0
-    - Click "Play Another Game" to 
+    - Click "Play Another Game" button to play again
+    - Click "Reset Score" button to reset the score tracker
 
 ## Demonstration:
 
@@ -63,7 +64,7 @@ Continue taking turns to continue the game until someone "Connects Four!" The ga
 ![Win Game](readme-images/fairlyFour-winGame.png)
 
 App 2.0 Update
-![Update 2.0](/readme-images/connect-four2.0.png)
+![connect-four2 0](https://github.com/user-attachments/assets/721d77f7-e0dc-49cf-aff9-55ead8209a22)
 
 ## Features: 
 - Interactive user experience through mouse click
@@ -74,10 +75,10 @@ App 2.0 Update
     - Adds "Reset Score" Button to reset current score
 
 ## Technologies: 
-- React
+- React + Vite
 - JS       
 - HTML
-- CSS
+- CSS, Flexbox
 - Git
 
 ## Acknowledgments:
