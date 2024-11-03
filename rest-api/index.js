@@ -25,11 +25,11 @@ const require = createRequire(import.meta.url);
 const { Pool } = require('pg');
 
 const pool = new Pool({
-    user: "tpl622_3",
-    password: "password",
-    host: "localhost",
-    port: 5432,
-    database: "pokemon"
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    database: process.env.DB_NAME
 });
 pool.connect();
 
