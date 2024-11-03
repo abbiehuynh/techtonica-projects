@@ -31,14 +31,16 @@ Building a REST API with Node and Express in the Backend for Week 6 of the Techt
 ```
 $ git clone https://github.com/abbiehuynh/techtonica-projects/rest-api.git <NameNewDirectory>
 ```
-2. `npm install` in terminal in server (techtonica-projects/rest-api/server).
+2. `npm install` in terminal in server (techtonica-projects/rest-api).
 
-3. `npm start` to run Rest API app.
+3. `npm start` to run Rest API server.
 
-4. Visit `http://localhost:5000` for server site (ExpressJS, NodeJS).
+4. Visit `http://localhost:3001` for server site (ExpressJS, NodeJS).
 
 ## Testing:
-- Fetches data from 
+- Fetches data from postgreSQL database
+- Tested GET, POST, DELETE, and PUT requests from pokemon database
+- Demo of GET & POST requests
 
 
 ## Technologies: 
