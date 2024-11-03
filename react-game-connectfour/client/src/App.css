@@ -55,26 +55,26 @@ body {
 }
 
 #gameBoard {
-  width: 770px;
-  height: 660px;
-  gap: 10px;
+  width: 600px;
+  height: 520px;
+  gap: 5px;
 
   margin: auto;
   margin-bottom: 50px;
-  padding: 20px;
+  padding: 10px;
   
   display: flex;
   flex-wrap: wrap;
 
   border-radius: 30px;
-  border-right: 50px solid #a75f37;
-  border-left: 50px solid #a75f37;
+  border-right: 30px solid #a75f37;
+  border-left: 30px solid #a75f37;
   background: #dab9a1;
 }
 
 .slot {
-  width: 100px;
-  height: 100px;
+  width: calc((600px / 7) - 5px);
+  height: calc((520px / 6) - 5px);
 
   display: inline-flex;
   align-items: center;
