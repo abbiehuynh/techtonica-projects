@@ -46,7 +46,8 @@ $ git clone https://github.com/abbiehuynh/techtonica-projects/react-game-connect
 - Click circle or "slot" to insert token.
 - Alternate turns with opposing player.  
 - Update 2.0
-    - Click "Play Another Game" to 
+    - Click "Play Another Game" button to play again
+    - Click "Reset Score" button to reset the score tracker
 
 ## Demonstration:
 
