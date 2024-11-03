@@ -145,6 +145,28 @@ const GameBoard = () => {
         }
     };
 
+    // starts a new game without resetting scores
+    const startNewGame = () => {
+        setGameBoard([
+            ['','','','','','',''],
+            ['','','','','','',''],
+            ['','','','','','',''],
+            ['','','','','','',''],
+            ['','','','','','',''],
+            ['','','','','','',''],
+        ])
+        setGameOver(false);
+        setCurrPlayer("X");
+        setOppPlayer("O");
+    };
+
+    // resets both the game and the scores
+    const resetGame = () => {
+        startNewGame();
+        setCurrPlayerScore(0);
+        setOppPlayerScore(0);
+    };
+
     return (
         <>
             {/* declares winner */}
@@ -152,11 +174,16 @@ const GameBoard = () => {
                 <h1 id ="winner">{oppPlayer === "X" ? "Cosmo" : "Wanda"} Wins!</h1>
             )}
 
+            {/* button for starting new game  */}
+            <button onClick={startNewGame}>Play Another Game</button>
+
             {/* displays scores */}
             <div>
                 <h3>Scores:</h3>
-                <p>Cosmo: {currPlayerScore}</p>
-                <p>Wanda: {oppPlayerScore}</p>
+                    <p>Cosmo: {currPlayerScore}</p>
+                    <p>Wanda: {oppPlayerScore}</p>
+                {/* button for resetting scores */}
+                <button onClick={resetGame}>Reset Score</button>
             </div>
             
             {/* creates header to show current player's turn */}
@@ -175,37 +202,16 @@ const GameBoard = () => {
                     })
                 })}
             </div>
+
         </>
     );
 };
 export default GameBoard;
-
 
 // bugs to fix:
     // win algorithm is not complete, does not always count wins
     // iterate through array to check each slot
         // can check for empty?
 
-
-// other features to work on:
-// create start page when dom content is loaded
-    // create start button component
-    // onclick, start game, load board 
-
 // if slot is empty, hover: highlight cell in different color to show available cells
     // if slot === " "
-
-// create component to hold player information below the game board
-    // playerInformation {player, wins, tokenUrl} , shows player name and image of token
-        // counts wins, player: 1
-
-// counter of wins?
-    // saves wins and adds a count to playerInformation
-
-// win screen
-    // image of summon parent!
-    // clear "move" if don't do win screen
-        // remove child
-
-// create component with reset button to reset game
-
