@@ -38,6 +38,9 @@ Once the page has loaded, you will see the homepage that allows the user to clic
 
 Users will be able to see if their answer choice was correct or incorrect. Once the answer has been chosen, the "Next Question" button will appear, allowing the user to click to go to the next question. If the choice was incorrect, users will be presented with the correct answer. 
 
+https://github.com/user-attachments/assets/e978f8ef-9dba-4ded-9ffd-f15f142220b8
+
+
 
 Once the game is over, the user will be notified if they have either won or loss the game, and how many questions they were able to get correct. 
 ![GameOver](/client/src/assets/game-over-trivia-game.png)
