@@ -113,6 +113,9 @@ const GameBoard = () => {
 
     // creates event listener for board components 
     const handleClick = event => {
+        // prevents any action if the game is over
+        if (gameOver) return;
+
         const column = event.target.getAttribute("x");
 
         // find which row in the column the token needs to appear 
@@ -175,19 +178,24 @@ const GameBoard = () => {
             )}
 
             {/* button for starting new game  */}
-            <button onClick={startNewGame}>Play Another Game</button>
+            <div className="game-btn">
+                <button onClick={startNewGame}>Play Another Game</button>
+            </div>
 
             {/* displays scores */}
-            <div>
+            <div className="score-board">
                 <h3>Scores:</h3>
                     <p>Cosmo: {currPlayerScore}</p>
                     <p>Wanda: {oppPlayerScore}</p>
+            </div>
+
+            <div className="game-btn">
                 {/* button for resetting scores */}
                 <button onClick={resetGame}>Reset Score</button>
             </div>
             
             {/* creates header to show current player's turn */}
-            <h2 id="showPlayer">{currPlayer === "X" ? "Cosmo's" : "Wanda's"} Move</h2>
+            <h2 id="showPlayer" style={{ textDecoration: gameOver ? "line-through" : "none" }}>{currPlayer === "X" ? "Cosmo's" : "Wanda's"} Move</h2>
 
             {/* gameBoard */}
             <div 
