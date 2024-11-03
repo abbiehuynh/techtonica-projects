@@ -42,6 +42,7 @@ $ git clone https://github.com/abbiehuynh/techtonica-projects/rest-api.git <Name
 - Tested GET, POST, DELETE, and PUT requests from pokemon database
 - Demo of GET & POST requests
 
+https://github.com/user-attachments/assets/50adf7b2-0aa2-4e86-92b0-1d5bb9e6bec3
 
 ## Technologies: 
 - ExpressJS, NodeJS
