@@ -5,7 +5,7 @@ import pokemonRoutes from "./routes/pokemon.js";
 // import pkg from "pg";
 // import dotenv from "dotenv";
 
-// dotenv.config();
+require('dotenv').config();
 
 // import db from "./db.js";
 
