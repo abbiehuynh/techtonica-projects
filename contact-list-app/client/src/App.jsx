@@ -16,7 +16,7 @@ function App() {
         <NavBar />
         <Routes>
           {/* Routes to pages in NavBar - Home, Contacts */}
-          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/contacts" element={<ListContacts/>} />
 
           {/* Route to Contact Details */}

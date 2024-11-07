@@ -116,8 +116,8 @@ const MyForm = ({ onSaveContact, editingContact, onUpdateContact }) => {
     };
 
     return (
-        <Form style={{ top: "0", marginBottom: "90%" }} onSubmit={handleSubmit}>
-            <h2 style={{ textAlign: "center" }}>Add New Friend!</h2>
+        <Form style={{ top: "0", marginBottom: "90%" }} onSubmit={handleSubmit} data-test="form">
+            <h2 style={{ textAlign: "center" }} data-test="form-header">Add New Friend!</h2>
             <Form.Group>
                 <Form.Label>Name</Form.Label>
                 <input
@@ -153,13 +153,13 @@ const MyForm = ({ onSaveContact, editingContact, onUpdateContact }) => {
                     onChange={handleEmailChange}
                 />
                 {/* displays error handling on form */}
-                {errors.email && <span style={{ color: 'red' }}>{errors.email}</span>}
+                {errors.email && <span style={{ color: 'red' }} data-test="email-error">{errors.email}</span>}
             </Form.Group>
             <Form.Group>
                 <Form.Label>Phone Number</Form.Label>
                 <input
                     type="text"
-                    id="add-email"
+                    id="add-phone-number"
                     placeholder="000-000-0000"
                     required
                     value={contact.phone_number}

@@ -22,7 +22,7 @@ const ListContacts = () => {
 
     useEffect(() => {
         loadContacts();
-    }, [contacts]);
+    }, []);
 
     const onSaveContact = (newContact) => {
         setContacts((contacts) => [...contacts, newContact]);
@@ -57,9 +57,9 @@ const ListContacts = () => {
 
     return (
         <div className="container">
-        <div className="box list-contacts">
+        <div className="box list-contacts" data-test="contacts-list">
             <h2 id="contacts-header">Contact List </h2>
-            <ul style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', alignItems: 'center', gap: '20px', paddingTop: '20px' }}>
+            <ul style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', alignItems: 'center', gap: '20px', paddingTop: '20px' }} data-test="contact-list">
                 {contacts.map((contact) => {
                     return <li key={contact.id}> <Contact contact={contact} toDelete={onDelete} toUpdate={onUpdate} /></li>
                 })}
