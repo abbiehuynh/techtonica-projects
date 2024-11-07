@@ -28,7 +28,7 @@ h3 {
 }
 
 div {
-  background-color: #82b27c;
+
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -139,44 +139,29 @@ label:hover {
 }
 
 /* media queries */
-/* phones */
-
-/* recipe header */
-@media screen and (max-width: 150px) {
-  #recipeHeader {
-    width: 10px;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  #recipeHeader {
-    width: 500px;
-  }
-}
 
 @media screen and (max-width: 800px) {
+  body {
+    background-color: #4f684c !important;
+  }
+
+  .container {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .description {
+    width: 500px;
+  }
+  
   #recipeHeader {
     width: 600px;
   }
 }
 
-@media screen and (max-width: 550px) {
-  .description {
-    width: 450px;
-    margin-left: 40px;
-  }
-}
-
-@media screen and (max-width: 750px) {
-  .description {
-    width: 500px;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .container {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+@media screen and (max-width: 1200px) {
+  body {
+    background-color: #eaa43a !important;
   }
 }
