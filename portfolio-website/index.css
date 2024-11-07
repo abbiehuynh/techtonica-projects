@@ -7,6 +7,7 @@
 
 body {
     background-color: #b6c369;
+    margin: auto;
 }
 
 nav {
@@ -308,6 +309,14 @@ div ul li a:hover {
 
 nav ul {
     margin-bottom: 40px !important;
+}
+
+.links {
+    list-style-type: none;
+    display: flex;
+    gap: 5px;
+    padding: 15px;
+    margin-right: 10px;
 }
 
 /* ipad */
