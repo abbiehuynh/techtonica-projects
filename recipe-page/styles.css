@@ -2,6 +2,10 @@ body {
   background-color: #82a07e;
 }
 
+nav {
+  margin-bottom: 40px;
+}
+
 h1, h2 {
   font-family: "Playfair Display", serif;
   font-weight: 500;
@@ -28,8 +32,10 @@ div {
   font-style: normal;
 }
 
+
 #recipeHeader {
   text-align: center;
+  padding-top: 20px;
 }
 
 ol.instructions {
@@ -114,6 +120,10 @@ img {
   text-align: center;
 }
 
+li {
+  list-style-type: none;
+  padding: 10px;
+}
 
 /* media queries */
 /* phones */
