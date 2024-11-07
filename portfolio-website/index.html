@@ -18,12 +18,14 @@
 
     <!--/navigation bar-->
     <nav class="container-nav">
+        <!-- hamburger menu for mobile -->
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
         <ul class="nav-links">
             <li class="nav-link"><a href="index.html">Home</a></li>
             <li class="nav-link"><a href="#">About</a></li>
             <li class="nav-link"><a href="portfolio.html">Portfolio</a></li>
             <li class="nav-link"><a href="#">Blog</a></li>
-            <li class="nav-link"><a href="#">Contact Me</a></li>
+            <li class="nav-link"><a href="#">Contact</a></li>
         </ul>
     </nav>
     
@@ -67,7 +69,6 @@
                     <div class="name-and-email">
                         <label for="name">Name:</label>
                         <input type="text" id="name" name="name" placeholder="  Your Name" oniput="upperCase()" required>
-                        <br> <br>
 
                         <label for="email">Email:</label>
                         <input type="email" id="email" name="email" placeholder="  Your Email" required>
