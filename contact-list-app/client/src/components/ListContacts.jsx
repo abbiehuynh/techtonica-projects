@@ -22,7 +22,7 @@ const ListContacts = () => {
 
     useEffect(() => {
         loadContacts();
-    }, [contacts]);
+    }, []);
 
     const onSaveContact = (newContact) => {
         setContacts((contacts) => [...contacts, newContact]);
