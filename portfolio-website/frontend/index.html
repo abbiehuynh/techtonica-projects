@@ -13,25 +13,27 @@
     <!--/header-->
     <header id="welcome">
         <img id="welcome-img" src="https://mail.google.com/mail/u/0?ui=2&ik=ef80a9788e&attid=0.2&permmsgid=msg-a:r2136900649522723084&th=191021484f5bd7c9&view=fimg&fur=ip&sz=s0-l75-ft&attbid=ANGjdJ8k5LaCr1aa52H374a9_EfhNDPd1gvVDL2aZhHZFy71-drZzhd3dNfO-MXW4b0kE9aq1LKLR6Kv9nQ4KqXxO-JlhEDXW7P-YBNwYHTnGSWAtCS_ppHuVMiAxMQ&disp=emb&realattid=19102147ae5c54a0a221" height="200px"
-        alt="Girl with Glasses">
+        alt="Welcome image">
     </header>
 
     <!--/navigation bar-->
     <nav class="container-nav">
+        <!-- hamburger menu for mobile -->
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
         <ul class="nav-links">
-            <li class="nav-link"><a href="index.html">Home</a></li>
-            <li class="nav-link"><a href="#">About</a></li>
-            <li class="nav-link"><a href="portfolio.html">Portfolio</a></li>
-            <li class="nav-link"><a href="#">Blog</a></li>
-            <li class="nav-link"><a href="#">Contact Me</a></li>
+            <li class="nav-link"><a href="index.html" aria-label="Go to Home Page">Home</a></li>
+            <li class="nav-link"><a href="#" aria-label="Go to About Page">About</a></li>
+            <li class="nav-link"><a href="portfolio.html" aria-label="Go to Portfolio Page">Portfolio</a></li>
+            <li class="nav-link"><a href="#" aria-label="Go to Blog Page">Blog</a></li>
+            <li class="nav-link"><a href="#" aria-label="Go to Contact Page">Contact</a></li>
         </ul>
     </nav>
     
     <!--/social media links-->
     <section class="container-social-media">
         <ul class="links">
-            <li class="linkedIn"><a href="https://www.linkedin.com/in/abbie-huynh/">LinkedIn</a></li>
-            <li class="GitHub"><a href="https://github.com/abbiehuynh">GitHub</a></li>
+            <li class="linkedIn"><a href="https://www.linkedin.com/in/abbie-huynh/" aria-label="Go to Abbie's LinkedIn Profile">LinkedIn</a></li>
+            <li class="GitHub"><a href="https://github.com/abbiehuynh" aria-label="Go to Abbie's Github Profile">GitHub</a></li>
         </ul>
     </section>
 
@@ -41,7 +43,7 @@
         <!--/greeting-->
         <section class="greeting">
             <figure class="greeting-img">
-                <img id="profile-pic" src="https://media.licdn.com/dms/image/D5603AQHXr0q6ckeFrA/profile-displayphoto-shrink_800_800/0/1719973736901?e=1727308800&v=beta&t=EV7m0PpTieMUMn0Cm2fOTYeQ8Nwn781v4AlWnvN4OTA" alt="Girl in glasses"></img>
+                <img id="profile-pic" src="../assets/profile-picture.jpeg" alt="Girl in glasses"></img>
             </figure>
             <section class="greeting-text">
                 <p class="greet-text"><strong>Hello,</strong></p>
@@ -58,39 +60,38 @@
                 <div class="container-form">
 
                     <!--/contact text-->
-                    <div class="contact-text">
+                    <header class="contact-text">
                         <p id="contact-text"><strong>Contact me here!</strong></p>
                         <br>
-                    </div>
+                    </header>
 
                     <!--/name and email, required-->
-                    <div class="name-and-email">
+                    <section class="name-and-email">
                         <label for="name">Name:</label>
                         <input type="text" id="name" name="name" placeholder="  Your Name" oniput="upperCase()" required>
-                        <br> <br>
 
                         <label for="email">Email:</label>
                         <input type="email" id="email" name="email" placeholder="  Your Email" required>
-                    </div>
+                    </section>
                     <!--/phone and address, not required-->
-                    <div class="phone-and-address">
+                    <section class="phone-and-address">
                         <label for="phone">Phone:</label>
                         <input type="tel" id="phone" name="phone" placeholder="  XXX-XXX-XXXX">
 
                         <label for="address">Address:</label>
                         <input type="text" id="address" name="address" placeholder="  Your Address">
-                    </div>
+                    </section>
 
                     <!--/message, required-->
-                    <div class="message">
+                    <section class="message">
                         <label for="message">Message</label>
                         <textarea id="message" name="message" placeholder="  Your Message" rows="5" required></textarea>
                         <span class="error-message" id=""messageError"></span>
-                    </div>
+                    </section>
 
                     <!--/button-->
                     <div class="button">
-                         <button id="button" type="submit" value="submit">Submit</button>
+                         <button id="button" type="submit" value="submit" aria-label="submit form">Submit</button>
                     </div>
 
                 </div>

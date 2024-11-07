@@ -55,6 +55,12 @@ function(event) {
 
 });
 
+// hamburger menu
+function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+}
+
 // transforms input into name as uppercase
 // function upperCase() {
 //     const capitalize = nam;
