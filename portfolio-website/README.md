@@ -57,7 +57,7 @@ Small, Medium, and Large Screens
 - Interactive links to social media such as LinkedIn and Gihub, as well as a Portfolio Page!
 - Text animation of title, "I am a software engineer"
 - Semantic tags to improve SEO and accessibility
-- HTML Form with required and not required inputs
+- HTML Form with required and not required inputs, as well as validation
 - Media queries for narrow, medium, and wide browser views
 
 - Future implementation:
