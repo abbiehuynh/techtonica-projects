@@ -57,7 +57,7 @@ const ListContacts = () => {
 
     return (
         <div className="container">
-        <div className="box list-contacts">
+        <div className="box list-contacts" data-test="contacts-list">
             <h2 id="contacts-header">Contact List </h2>
             <ul style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', alignItems: 'center', gap: '20px', paddingTop: '20px' }}>
                 {contacts.map((contact) => {
