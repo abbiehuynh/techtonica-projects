@@ -6,7 +6,8 @@ nav {
   margin-bottom: 40px;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-family: "Playfair Display", serif;
   font-weight: 500;
   font-size: 3em;
@@ -91,15 +92,15 @@ img {
 }
 
 .step:hover {
-  color:#82a07e;
+  color: #82a07e;
   background-color: #EDEFE9;
   padding: 6px;
   border-radius: 35px;
 }
 
 .ing:hover {
-  color:#EDEFE9;
-  background-color:#82a07e;
+  color: #EDEFE9;
+  background-color: #82a07e;
   padding: 4px;
   border-radius: 20px;
 }
@@ -110,7 +111,7 @@ img {
 }
 
 #congratulations:hover {
-  color:#EDEFE9;
+  color: #EDEFE9;
   background-color: #4f684c;
   padding: 10px;
   border-radius: 40px;
@@ -123,6 +124,17 @@ img {
 li {
   list-style-type: none;
   padding: 10px;
+}
+
+label {
+  padding: 10px;
+  border-radius: 20px;
+}
+
+label:hover {
+  color: #EDEFE9;
+  background-color: #4f684c;
+  cursor: pointer;
 }
 
 /* media queries */
